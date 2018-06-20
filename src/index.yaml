@@ -1,0 +1,7 @@
+ProjectTitle: Axur
+
+PageList:
+- file: homepage.html
+  ready: 30
+- file: page.html
+  ready: 0
