@@ -1,18 +1,27 @@
 // HEADER :: START
 header.header
   .container
-    .header__wrapper
+    .header__wrapper.wow(data-animation-class="wowFadeDown")
       a(href="#").header__logo
-        +icon('ico-email')
+        include ../../inline-svg/logo.svg
       ul.header__menu
-        - var list = ["Homepage", "Shop", "Blog", "Lorem"]
-          each item in list
-            li
-              a.header__menu-link(href="#")=item
+        li
+          a(href="#") Soluções
+        li
+          a(href="#") Peça uma demonstração
       
+      ul.header__lang
+        li
+          a(href="#") EN
+        li
+          a(href="#") ES
+        li.is-active
+          a(href="#") PT
+        
       .header__cta
-        .header__cart
-          +icon('ico-email')
+        a(href="#").btn.btn-outline
+          span acesse sua conta
+
       
       .header__hamburger
         .hamburger.hamburger--squeeze(js-hamburger)

@@ -1,7 +1,77 @@
 // FOOTER :: START
-footer.footer
+footer.footer(js-reveal-footer)
   .container
+    .footer__logo
+      include ../../inline-svg/logo.svg
+      
     .footer__wrapper
+      .footer__navi
+        // col
+        .footer__navi-col
+          h4.h4-title.footer__navi-heading Axur
+          ul.footer__menu
+            li
+              a(href="#") Sobre nós
+            li
+              a(href="#") Seja um parceiro
+            li
+              a(href="#") Vagas
+            li
+              a(href="#") Blog
+            li
+              a(href="#") Perguntas frequentes
+            li
+              a(href="#") Política de Privacidade
+            li
+              a(href="#") Fale conosco
+        // col
+        .footer__navi-col
+          h4.h4-title.footer__navi-heading Soluções Axur One
+          ul.footer__menu
+            li
+              a(href="#") Digital Brand Compliance
+            li
+              a(href="#") Digital Fraud Discovery
+            li
+              a(href="#") Sales Abuse Discovery
+            li
+              a(href="#") Partner Compliance
+            li
+              a(href="#") Information Leakage Discovery
+            li
+              a(href="#") Threat Intelligence Discovery
+        // col
+        .footer__navi-col
+          h4.h4-title.footer__navi-heading Credential Protection
+          ul.footer__menu
+            li
+              a(href="#") Hashcast™ Proteção de senha
+            li
+              a(href="#") Leakstream
+              
+      // contacts
+      .footer__contacts
+        p Latin America<br/> 
+          | Av. Paulista, 1374 - 11º Andar<br/>  
+          | São Paulo
+
+        p Latin America <br/> 
+          | Mostardeiro, 322 - CJ 6 <br/> 
+          | Porto Alegre
+
+        p US <br/> 
+          | 535 Mission St. <br/> 
+          | San Francisco, CA 94105
       
+    .footer__bottom
+      .footer__copy © Axur. Digital Risk Protection. 2018 Todos os direitos reservados.
       
+      .footer__socials
+        a(href="#" target="_blank").footer__social-google-plus
+          +icon('ico-social-googleplus')
+        a(href="#" target="_blank").footer__social-facebook
+          +icon('ico-social-facebook')
+        a(href="#" target="_blank").footer__social-twitter
+          +icon('ico-social-twitter')
+          
 // FOOTER :: END

@@ -15,8 +15,17 @@ $(document).ready(function(){
     updateHeaderActiveClass();
     initHeaderScroll();
 
+    initTypograph();
     initPopups();
     initSliders();
+    initTypewriter();
+
+    initPerfectScrollbar();
+    initLazyLoad();
+    initTeleport();
+    revealFooter();
+    _window.on('resize', throttle(revealFooter, 200));
+
     initScrollMonitor();
     initMasks();
     initSelectric();
@@ -25,14 +34,6 @@ $(document).ready(function(){
     // development helper
     _window.on('resize', debounce(setBreakpoint, 200))
 
-    // AVAILABLE in _components folder
-    // copy paste in main.js and initialize here
-    // initPerfectScrollbar();
-    // initLazyLoad();
-    // initTeleport();
-    // parseSvg();
-    // revealFooter();
-    // _window.on('resize', throttle(revealFooter, 100));
   }
 
   // this is a master function which should have all functionality
@@ -61,17 +62,55 @@ $(document).ready(function(){
     });
   }
 
+  function initTypograph(){
+    var tp = new Typograf({
+      locale: ['es']
+    });
+    var elem = document.querySelector('.page__content');
+    elem.innerHTML = tp.execute(elem.innerHTML);
+  }
+
+
+  // detectors
+  function isRetinaDisplay() {
+    if (window.matchMedia) {
+        var mq = window.matchMedia("only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen  and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 1.3dppx)");
+        return (mq && mq.matches || (window.devicePixelRatio > 1));
+    }
+  }
+
+  function isMobile(){
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  function msieversion() {
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE ");
+
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  if ( msieversion() ){
+    $('body').addClass('is-ie');
+  }
+
+  if ( isMobile() ){
+    $('body').addClass('is-mobile');
+  }
+
 
   // Prevent # behavior
 	_document
     .on('click', '[href="#"]', function(e) {
-  		e.preventDefault();
-  	})
-    .on('click', 'a[href^="#section"]', function() { // section scroll
-      var el = $(this).attr('href');
-      $('body, html').animate({
-          scrollTop: $(el).offset().top}, 1000);
-      return false;
+      e.preventDefault();
     })
 
 
@@ -161,6 +200,63 @@ $(document).ready(function(){
       }
     })
 
+  }
+
+
+  // FOOTER REVEAL
+  function revealFooter() {
+    var footer = $('[js-reveal-footer]');
+    if (footer.length > 0) {
+      var footerHeight = footer.outerHeight();
+      var maxHeight = _window.height() - footerHeight > 100;
+      if (maxHeight && !msieversion() ) {
+        $('body').css({
+          'margin-bottom': footerHeight
+        });
+        footer.css({
+          'position': 'fixed',
+          'z-index': -10
+        });
+      } else {
+        $('body').css({
+          'margin-bottom': 0
+        });
+        footer.css({
+          'position': 'static',
+          'z-index': 10
+        });
+      }
+    }
+  }
+
+
+  function initTypewriter(){
+    if ( $('[js-typewriter]').length > 0 ){
+      $('[js-typewriter]').each(function(i,el){
+        var typewriter = new Typewriter(el, {
+          loop: true
+        });
+        var strings = $(el).data("type").split(';');
+
+        // $.each(strings, function(i,str){
+        //   // add to chain ??
+        //   .typeString(strings[0])
+        //   .pauseFor(2000)
+        //   .deleteAll()
+        // })
+        typewriter
+          .typeString(strings[0])
+          .pauseFor(2000)
+          .deleteAll()
+          .typeString(strings[1])
+          .pauseFor(2000)
+          .deleteAll()
+          .typeString(strings[2])
+          .pauseFor(2000)
+          .start();
+
+      })
+    }
   }
 
   //////////
@@ -264,6 +360,72 @@ $(document).ready(function(){
     });
   }
 
+  //////////
+  // LAZY LOAD
+  //////////
+  function initLazyLoad(){
+    _document.find('[js-lazy]').Lazy({
+      threshold: 500,
+      enableThrottle: true,
+      throttle: 100,
+      scrollDirection: 'vertical',
+      effect: 'fadeIn',
+      effectTime: 350,
+      // visibleOnly: true,
+      // placeholder: "data:image/gif;base64,R0lGODlhEALAPQAPzl5uLr9Nrl8e7...",
+      onError: function(element) {
+          console.log('error loading ' + element.data('src'));
+      },
+      beforeLoad: function(element){
+        // element.attr('style', '')
+      }
+    });
+  }
+
+
+  ////////////
+  // SCROLLBAR
+  ////////////
+  function initPerfectScrollbar(){
+    if ( $('[js-scrollbar]').length > 0 ){
+      $('[js-scrollbar]').each(function(i, scrollbar){
+        var ps;
+
+        function initPS(){
+          ps = new PerfectScrollbar(scrollbar, {
+            // wheelSpeed: 2,
+            // wheelPropagation: true,
+            minScrollbarLength: 20
+          });
+        }
+
+        initPS();
+
+        // toggle init destroy
+        function checkMedia(){
+          if ( $(scrollbar).data('disable-on') ){
+
+            if ( mediaCondition($(scrollbar).data('disable-on')) ){
+              if ( $(scrollbar).is('.ps') ){
+                ps.destroy();
+                ps = null;
+              }
+            } else {
+              if ( $(scrollbar).not('.ps') ){
+                initPS();
+              }
+            }
+          }
+        }
+
+        checkMedia();
+        _window.on('resize', debounce(checkMedia, 250));
+
+      })
+    }
+  }
+
+
   ////////////
   // SCROLLMONITOR - WOW LIKE
   ////////////
@@ -362,7 +524,7 @@ $(document).ready(function(){
     /////////////////////
     // REGISTRATION FORM
     ////////////////////
-    $(".js-registration-form").validate({
+    $("[js-validate-signup]").validate({
       errorPlacement: validateErrorPlacement,
       highlight: validateHighlight,
       unhighlight: validateUnhighlight,
@@ -374,29 +536,53 @@ $(document).ready(function(){
           required: true,
           email: true
         },
-        password: {
-          required: true,
-          minlength: 6,
-        }
-        // phone: validatePhone
       },
       messages: {
-        last_name: "Заполните это поле",
-        first_name: "Заполните это поле",
         email: {
-            required: "Заполните это поле",
-            email: "Email содержит неправильный формат"
+            required: "Preencha este campo",
+            email: "Ops! Veja se está tudo certo com seu e-mail."
         },
-        password: {
-            required: "Заполните это поле",
-            email: "Пароль мимимум 6 символов"
-        },
-        // phone: {
-        //     required: "Заполните это поле",
-        //     minlength: "Введите корректный телефон"
-        // }
       }
     });
+  }
+
+  ////////////
+  // TELEPORT PLUGIN
+  ////////////
+  function initTeleport(){
+    $('[js-teleport]').each(function (i, val) {
+      var self = $(val)
+      var objHtml = $(val).html();
+      var target = $('[data-teleport-target=' + $(val).data('teleport-to') + ']');
+      var conditionMedia = $(val).data('teleport-condition').substring(1);
+      var conditionPosition = $(val).data('teleport-condition').substring(0, 1);
+
+      if (target && objHtml && conditionPosition) {
+
+        function teleport() {
+          var condition;
+
+          if (conditionPosition === "<") {
+            condition = _window.width() < conditionMedia;
+          } else if (conditionPosition === ">") {
+            condition = _window.width() > conditionMedia;
+          }
+
+          if (condition) {
+            target.html(objHtml)
+            self.html('')
+          } else {
+            self.html(objHtml)
+            target.html("")
+          }
+        }
+
+        teleport();
+        _window.on('resize', debounce(teleport, 100));
+
+
+      }
+    })
   }
 
 

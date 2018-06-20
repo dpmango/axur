@@ -20,6 +20,51 @@
   textarea
     resize: vertical
 
+/* input as separate componenet
+.ui-input
+  position: relative
+  width: 100%
+  input
+    display: block
+    width: 100%
+    -webkit-appearance: none
+    background: white
+    color: $fontColor
+    border: 1px solid $colorLightGray
+    font-size: 15px
+    line-height: 1.5
+    border-radius: 4px
+    padding: 14px 15px 10px 45px
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.05)
+    border-radius: 4px
+    transition: .25s $ease
+    &:placeholder
+      color: $colorMuted
+    &:focus
+      border-color: $colorOrange
+
+  &--iconed
+    .ico
+      position: absolute
+      top: 50%
+      left: 15px
+      transform: translateY(-50%)
+      fill: $colorLightGray
+      &-mail
+        font-size: 12px
+  &.has-error
+    // padding-bottom: 30px
+    input
+      border-color: $colorOrange
+
+.ui-input__validation
+  position: absolute
+  bottom: -30px
+  display: inline-block
+  margin-top: 20px
+  color: $colorOrange
+  font-size: 13px
+
 
 // Checkbox
 .ui-checkbox

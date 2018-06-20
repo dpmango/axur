@@ -7,3 +7,6 @@ mixin icon(name, modClass)
     - var modClass = ' ' + modClass
   svg(class="ico " + name + modClass)
     use(xlink:href= svgSprite + '#' + name)
+
+mixin img(name)
+  img(src='img/'+name+'.png' srcset='img/'+name+'@2x.png 2x')

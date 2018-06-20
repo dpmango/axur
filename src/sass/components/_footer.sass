@@ -1,7 +1,90 @@
 // FOOTER
 .footer
-  background: #f5f5f5
+  background: white
+  padding: 65px 0
+  bottom: 0
+  left: 0
+  right: 0
   &__wrapper
     display: flex
+    // flex-wrap: wrap
+    margin-top: 65px
+    margin-left: -15px
+    margin-right: -15px
+  &__logo
+
+  &__navi
+    flex: 1 1 auto
+    display: flex
+    margin-left: -15px
+    margin-right: -15px
+    padding: 0 15px
+    &-heading
+      margin-top: 0
+    &-col
+      flex: 0 1 33.3%
+      max-width: 33.3%
+      min-width: 1px
+      min-height: 0
+      padding: 0 15px
+  &__menu
+    margin: 20px 0
+    padding: 0
+    list-style: none
+    li
+      display: block
+    a
+      display: inline-block
+      padding: 8px 0
+      color: $colorMuted
+      transition: color .25s $ease
+      &:hover
+        color: $colorOrange
+
+  &__contacts
+    padding: 0 15px
+    font-size: 15px
+    line-height: 1.5
+    p
+      margin: 20px 0
+      &:first-child
+        margin-top: 0
+
+
+  &__bottom
+    display: flex
     align-items: center
-    height: 100px
+
+  &__copy
+    font-size: 13px
+    color: $colorMuted
+
+  &__socials
+    flex: 0 0 auto
+    margin-left: auto
+    padding-left: 30px
+    display: flex
+    align-items: center
+    a
+      display: inline-block
+      margin-right: 30px
+      color: $colorOrange
+      transition: .25s $ease
+      &:last-child
+        margin-right: 0
+  &__social
+    &-google-plus
+      font-size: 18px
+      a
+        &:hover
+          color: $googleplus
+    &-facebook
+      font-size: 19px
+      a
+        &:hover
+          color: $facebook
+    &-twitter
+      font-size: 17px
+      a
+        &:hover
+          color: $twitter

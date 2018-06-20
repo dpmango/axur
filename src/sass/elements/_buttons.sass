@@ -18,17 +18,50 @@ button
     display: block
     width: 100%
 
-  &-example
-    // please use paddings instead of line-height to control btn height
-    background: $colorOrange
-    font-size: 20px
-    padding: 15px 30px
-    color: white
-    transition: .25s $ease
-    transform-origin: center bottom
-    box-shadow: none
-    will-change: box-shadow, transform
+  &-outline
+    border: 2px solid $colorOrange
+    background: transparent
+    font-size: 13px
+    font-weight: 500
+    letter-spacing: 0.01em
+    border-radius: 4px
+    color: $colorOrange
+    padding: 17px 25px 13px
+    text-transform: uppercase
     &:hover
-      transform: scale(1.05) translateY(-5px)
-      background: rgba($colorOrange, .9)
-      box-shadow: 0 15px 10px -15px rgba($fontColor, .4)
+      background-color: $colorOrange
+      color: white
+
+  &-primary
+    border: 2px solid $colorOrange
+    background: $colorOrange
+    font-size: 13px
+    font-weight: 500
+    letter-spacing: 0.01em
+    border-radius: 4px
+    color: white
+    padding: 17px 25px 13px
+    text-transform: uppercase
+    &::after
+      /* shadow
+      display: inline-block
+      content: ' '
+      position: absolute
+      z-index: -1
+      bottom: 0
+      left: 8px
+      right: 8px
+      filter: blur(15px)
+      background: $fontColor
+      opacity: .5
+      box-shadow: 0 10px 16px 0 rgba(255,88,36,0.40)
+      border-radius: 10px
+      height: 25px
+      transition: .25s $ease
+
+    &:hover
+      background-color: transparent
+      color: $colorOrange
+      &::after
+        transform: translateY(-5px)
+        opacity: 0

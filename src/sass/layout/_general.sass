@@ -13,10 +13,25 @@ ul
   li
     display: inline-block
 
+h1,h2,h3,h4,h5
+  font-weight: normal
+
+h2
+  font-size: 30px
+h3
+  font-size: 23px
+  letter-spacing: -0.048em
+
+h4
+  font-size: 18px
+  
+input, button
+  font-family: $fontFamily
+
 body, html
   background: white
   color: $fontColor
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+  font-family: $fontFamily
   font-size: 16px
   min-width: 320px
   max-width: 100%
@@ -35,15 +50,15 @@ body, html
     display: flex
     flex-direction: column
     // header offset ex
-    padding-top: 100px
+    padding-top: 115px
 
 .container
-  max-width: 1200px
+  max-width: 1350px
   width: 100%
   margin-left: auto
   margin-right: auto
-  padding-left: 40px
-  padding-right: 40px
+  padding-left: 50px
+  padding-right: 50px
 
 +r($mobile)
   .container
