@@ -26,7 +26,8 @@ block content
             span Veja o que mais podemos fazer pela sua marca
           
         .hero__image.wow
-          iframe(frameborder="0" src='inline-animations/animation-2/homepage.html')
+          include ../inline-svg/animation-2.svg
+          //- iframe(frameborder="0" src='inline-animations/animation-2/homepage.html')
           
   // PUBLICATIONS PROMO
   .publ.wow
@@ -161,3 +162,41 @@ block content
                 h3 
                   span Proteção para executivos
                 p.t-p2 Temos uma extensão que garante proteção extra para os dados dos executivos da sua empresa.
+
+  // HOW IT WORKS
+  .how
+    .container
+      .section-heading
+        h2 Monitoramos todas as camadas da web, 24h por dia
+      
+      .how__wrapper
+        .how__image
+          .how__image-wrapper(js-stick-in-parent)
+            .svg-animation-container(js-animation-1)
+              include ../inline-svg/animation-1.svg
+            //- iframe(frameborder="0" src='inline-animations/animation-1/demo.html')
+          
+        .how__content
+          .how__section
+            .how__facts-grid
+              .how__fact
+                .h2.c-orange +1.2 bi
+                p.t-p2 Páginas e mensagens identificadas por mês pelos nossos coletores.
+              .how__fact
+                .h2.c-orange +210 mi
+                p.t-p2 Domínios brasileiros ou em unicode analisados, em mais de 500 extensões diferentes.
+              .how__fact
+                .h2.c-orange +180 mi
+                p.t-p2 Posts analisados automaticamente através de algorítimos especializados.
+              .how__fact
+                .h2.c-orange +44 mi
+                p.t-p2 SMS analisados automaticamente através de algorítimos especializados.
+                
+          .how__section
+            h2 Tudo isso com o poder da Inteligência Artificial
+            p.t-p2 Para acompanhar a evolução das fraudes na web, combinamos Inteligência Artificial com as possibilidades infinitas do machine learning. Assim, nossos sistemas aprendem não só a detectar ameaças, mas a identificar mudanças na forma como elas são executadas.
+            
+          .how__section
+            h2 Resultado: detecção e remoção com rapidez
+            p.t-p2 Para acompanhar a evolução das fraudes na web, combinamos Inteligência Artificial com as possibilidades infinitas do machine learning. Assim, nossos sistemas aprendem não só a detectar ameaças, mas a identificar mudanças na forma como elas são executadas.
+            

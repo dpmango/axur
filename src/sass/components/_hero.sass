@@ -14,7 +14,6 @@
   &__title
     font-size: 50px
     line-height: 1.25
-    letter-spacing: -.022em
     span
       color: $colorOrange
 
@@ -29,27 +28,28 @@
   &__image
     position: relative
     z-index: 1
-    flex: 0 1 40%
+    flex: 0 1 50%
     display: flex
     flex-direction: column
     padding: 0 15px
     pointer-events: none
+    margin-right: -5%
     img, svg
       max-width: 100%
     iframe
       // transform: scale(2)
       // display: block
-      width: 150%
-      margin-left: -20%
-      flex: 1 0 auto
-      display: flex
-      flex-direction: column
-      overflow: hidden
-      border: 0
-      box-shadow: none
-      margin: 0 auto
-  		transform-origin: 0 0
-      outline: 1px solid $colorOrange
+      // width: 150%
+      // margin-left: -20%
+      // flex: 1 0 auto
+      // display: flex
+      // flex-direction: column
+      // overflow: hidden
+      // border: 0
+      // box-shadow: none
+      // margin: 0 auto
+  		// transform-origin: 0 0
+      // outline: 1px solid $colorOrange
 
   &__form
     margin-top: 60px
@@ -79,3 +79,8 @@
       &:hover
         &:after
           right: 100%
+
++r(1200)
+  .hero
+    &__content
+      margin-left: 30px

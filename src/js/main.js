@@ -15,11 +15,12 @@ $(document).ready(function(){
     updateHeaderActiveClass();
     initHeaderScroll();
 
-    initTypograph();
+    // initTypograph();
     initPopups();
     initSliders();
     initSticky();
-    initTypewriter();
+    // initTypewriter();
+    initSvgAnimations();
 
     initPerfectScrollbar();
     initLazyLoad();
@@ -228,6 +229,25 @@ $(document).ready(function(){
         });
       }
     }
+  }
+
+  function initSvgAnimations(){
+    var easingSwing = [.02, .01, .47, 1]; // default jQuery easing for anime.js
+
+
+    // first
+    var el = $('[js-animation-1] svg');
+    var socialIcons = el.get(0).querySelectorAll('.social-icon')
+
+    anime({
+      targets: socialIcons,
+      translateX: '4%',
+      direction: 'alternate',
+      loop: true,
+      easing: 'linear',
+      duration: 1000,
+    })
+
   }
 
   /////////////
