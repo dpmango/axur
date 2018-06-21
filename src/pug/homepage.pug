@@ -12,15 +12,15 @@ block content
         .hero__content.wow
           h1.hero__title É possível ter uma <br/>
             | internet livre de <br/>
-            span(js-typewriter data-type="perfis falsos;digital fraud;Sales Abuse") perfis falsos
+            span(js-typewriter data-type="perfis falsos;digital fraud;Sales Abuse;Partner Compliance;Threat Intelligence") perfis falsos
           p.t-p1 Usamos a força da Inteligência Artificial para encontrar e eliminar riscos para sua marca e seus clientes.
           // signup form
           form(action="#" js-validate-signup).signup-form.hero__form
             .ui-input.ui-input--iconed
               input(type="text" name="email" placeholder="Seu e-mail corporativo…")
               +icon('ico-mail')
-            button(type="submit").btn.btn-primary Ask for a demo
-          
+            button(type="submit").btn.btn-primary conheça a plataforma
+            
           a(href="#").hero__play
             +icon('ico-play')
             span Veja o que mais podemos fazer pela sua marca
@@ -28,7 +28,7 @@ block content
         .hero__image.wow
           iframe(frameborder="0" src='inline-animations/animation-2/homepage.html')
           
-  // PUBLICATIONS
+  // PUBLICATIONS PROMO
   .publ.wow
     .container
       .publ__wrapper
@@ -42,3 +42,122 @@ block content
         .publ__cta
           a(href="#").btn.btn-outline
             span confira o relatório
+  
+  // PRODUCTS
+  .products
+    .products-bg__oval
+      include ../inline-svg/productGrid-oval.svg
+    .products-bg__triangle
+      include ../inline-svg/productGrid-triangle.svg
+      
+    .container
+      // section heading
+      .section-heading
+        h2 As soluções para proteger sua presença digital
+        p.t-p2 Exploramos todo o potencial da inteligência artificial para oferecer proteção sob medida contra riscos digitais.
+      
+      .products__wrapper
+        // info
+        .products__info
+          .products__info-wrapper(js-stick-in-parent)
+            +img("camRobot")
+            p.t-p1 Não tem certeza de qual solução é a melhor para sua marca?
+            a(href="#").btn.btn-primary descubra aqui
+        
+        .products__content
+          .products__grid
+            // col
+            .products__col
+              // card
+              .products-card.wow
+                h3 
+                  span Digital Fraud Discovery
+                p.t-p2 Buscamos e removemos sites que usam sua marca em fraudes como phishing e infecção por malware.
+                a.link-p2(href="#") Saiba mais
+                .products-card__price
+                  span A PARTIR DE
+                  .products-card__price-num
+                    span R$1.499
+                    span /mês
+              // card
+              .products-card.wow
+                h3 
+                  span Partner Compliance
+                p.t-p2 Analisamos as atividades dos seus parceiros, além de identificar quem finge ter ligação com sua marca.
+                a.link-p2(href="#") Saiba mais
+                .products-card__price
+                  span A PARTIR DE
+                  .products-card__price-num
+                    span R$1.499
+                    span /mês
+            
+            // col
+            .products__col
+              // card
+              .products-card.wow
+                h3 
+                  span Digital Marketing Compliance
+                p.t-p2 Procuramos apps falsos, perfis não oficiais e roubos de identidade que confundem seus clientes.
+                a.link-p2(href="#") Saiba mais
+                .products-card__price
+                  span A PARTIR DE
+                  .products-card__price-num
+                    span R$1.499
+                    span /mês
+              // card
+              .products-card.wow
+                h3 
+                  span Data Leakage Discovery
+                p.t-p2 Monitoramos possíveis vazamentos de dados para agir rápido e reduzir o impacto do incidente.
+                a.link-p2(href="#") Saiba mais
+                .products-card__price
+                  span A PARTIR DE
+                  .products-card__price-num
+                    span R$1.999
+                    span /mês
+            
+            // col
+            .products__col
+              // card
+              .products-card.wow
+                h3 
+                  span Sales Abuse Discovery
+                p.t-p2 Descobrimos e tiramos do ar vendas ilegais ou produtos piratas, que prejudicam sua imagem e seus resultados.
+                a.link-p2(href="#") Saiba mais
+                .products-card__price
+                  span A PARTIR DE
+                  .products-card__price-num
+                    span R$1.499
+                    span /mês
+              // card
+              .products-card.wow
+                h3 
+                  span Threat Intelligence
+                p.t-p2 Escaneamos a deep web atrás de ataques, golpes e esquemas que ameaçam sua marca e seus clientes. 
+                a.link-p2(href="#") Saiba mais
+                .products-card__price
+                  span A PARTIR DE
+                  .products-card__price-num
+                    span R$1.499
+                    span /mês
+          
+        
+          .products__benefits
+            .products__col
+              // card
+              .products-card.products-card--no-bg.wow
+                h3 
+                  span Takedown rápido e em qualquer lugar
+                p.t-p2 Nossa exeperiência e tecnologia garantem velocidade de reação para proteger a reputação da sua marca.
+            .products__col
+              // card
+              .products-card.products-card--no-bg.wow
+                h3 
+                  span Suporte em todas as fases do projeto
+                p.t-p2 Nossa equipe pode oferecer apoio adicional, do onboarding até o acompanhamento técnico.
+            .products__col
+              // card
+              .products-card.products-card--no-bg.wow
+                h3 
+                  span Proteção para executivos
+                p.t-p2 Temos uma extensão que garante proteção extra para os dados dos executivos da sua empresa.

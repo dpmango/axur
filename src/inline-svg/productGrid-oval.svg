@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="545px" height="545px" viewBox="0 0 545 545" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>productGrid-oval</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage-Axur" transform="translate(-302.000000, -1322.000000)" fill="#871AE5">
+            <g id="Produtos" transform="translate(-603.000000, 990.000000)">
+                <g id="big-shapes" transform="translate(774.000000, 201.000000)">
+                    <path d="M337.879568,178.600563 C161.945375,178.600563 19.3239924,321.221945 19.3239924,497.156138 L656.432708,497.156138 C656.432708,321.221945 513.811326,178.600563 337.879568,178.600563" id="productGrid-oval" transform="translate(337.878350, 337.878350) rotate(-45.000000) translate(-337.878350, -337.878350) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

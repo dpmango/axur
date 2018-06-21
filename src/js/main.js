@@ -18,6 +18,7 @@ $(document).ready(function(){
     initTypograph();
     initPopups();
     initSliders();
+    initSticky();
     initTypewriter();
 
     initPerfectScrollbar();
@@ -229,6 +230,21 @@ $(document).ready(function(){
     }
   }
 
+  /////////////
+  // STICKY KIT
+  /////////////
+
+  function initSticky(){
+    if ( $('[js-stick-in-parent]').length > 0 ){
+      $('[js-stick-in-parent]').each(function(i,el){
+        $(el).stick_in_parent();
+      });
+    }
+  }
+
+  /////////////
+  // TypeWritter
+  /////////////
 
   function initTypewriter(){
     if ( $('[js-typewriter]').length > 0 ){
@@ -238,21 +254,13 @@ $(document).ready(function(){
         });
         var strings = $(el).data("type").split(';');
 
-        // $.each(strings, function(i,str){
-        //   // add to chain ??
-        //   .typeString(strings[0])
-        //   .pauseFor(2000)
-        //   .deleteAll()
-        // })
+        $.each(strings, function(i,str){
+          typewriter = typewriter
+            .typeString(str)
+            .pauseFor(2000)
+            .deleteAll()
+        })
         typewriter
-          .typeString(strings[0])
-          .pauseFor(2000)
-          .deleteAll()
-          .typeString(strings[1])
-          .pauseFor(2000)
-          .deleteAll()
-          .typeString(strings[2])
-          .pauseFor(2000)
           .start();
 
       })
