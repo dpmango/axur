@@ -232,3 +232,33 @@ block content
     .features__image.wow
       .container
         +img("features-img")
+  
+  // INTEGRATIONS
+  .integrations
+    .container
+      .integrations__wrapper
+        .integrations__title 
+          h3 Com as nossas integrações, nenhum alerta vai passar despercebido
+        
+        .integrations__logos-grid
+          .integrations__logo
+            +img("connectwith-slack")
+          .integrations__logo
+            +img("connectwith-arcsight")
+          .integrations__logo
+            +img("connectwith-splunk")
+          .integrations__logo
+            +img("connectwith-radar")
+  
+  // Testimonials
+  .testimonials
+    .container
+      .testimonials__head
+        .testimonials__title
+          h2 Acompanhamos o dia a dia de centenas de empresas ao redor do mundo
+          
+        .testimonials__head-image
+          include ../inline-svg/testimonialsBg-oval.svg
+          
+      .testimonials__wrapper
+        .testimonials__
