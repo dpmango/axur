@@ -173,31 +173,24 @@ $(document).ready(function(){
   function initSliders(){
 
     // EXAMPLE SWIPER
-    new Swiper('[js-slider]', {
+    new Swiper('[js-testimonials-slider]', {
       wrapperClass: "swiper-wrapper",
-      slideClass: "example-slide",
+      slideClass: "testimonials-card",
       direction: 'horizontal',
       loop: false,
       watchOverflow: true,
       setWrapperSize: false,
-      spaceBetween: 0,
-      slidesPerView: 'auto',
-      // loop: true,
+      spaceBetween: 30,
+      slidesPerView: 2,
       normalizeSlideIndex: true,
-      // centeredSlides: true,
-      freeMode: true,
-      // effect: 'fade',
+      freeMode: false,
       autoplay: {
         delay: 5000,
-      },
-      navigation: {
-        nextEl: '.example-next',
-        prevEl: '.example-prev',
       },
       breakpoints: {
         // when window width is <= 992px
         992: {
-          autoHeight: true
+          slidesPerView: 1,
         }
       }
     })

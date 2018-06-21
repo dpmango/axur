@@ -19,6 +19,71 @@
     h2
       max-width: 550px
 
+  &__wrapper
+    margin-top: 100px
+    margin-bottom: 60px
+  &__slider
+    position: relative
+    height: 100%
+    padding-left: 200px
+    // padding-bottom: 60px
+
+  &__logos-grid
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding-top: 60px
+    border-top: 1px solid $colorLightGray
+    margin-left: -10px
+    margin-right: -10px
+  &__logo
+    flex: 0 1 auto
+    padding: 10px
+    display: flex
+    align-items: center
+    img
+      max-width: 100%
+
+.testimonials-card
+  position: relative
+  flex: 0 0 auto
+  min-width: 1px
+  min-height: 0
+  height: auto!important
+  // height: 100px
+  // max-width: 370px
+  &__quotemark
+    // position: absolute
+    // left: 0
+    // top: 0
+    font-size: 37px
+    color: $colorPurple
+
+  &__content
+    padding-left: 40px
+
+  &__author
+    margin-top: 20px
+    color: $colorMuted
+    font-size: 15px
+    span
+      font-weight: 500
+
+  &__link
+    display: inline-block
+    margin-top: 5px
+    font-size: 13px
+    color: $colorOrange
+    transition: color .25s $ease
+    &:hover
+      color: $colorBlue
+
+  &__logo
+    margin-top: 20px
+    img
+      max-width: 100%
+
+
 +r(1200)
   .testimonials
     &__head

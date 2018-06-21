@@ -237,28 +237,104 @@ block content
   .integrations
     .container
       .integrations__wrapper
-        .integrations__title 
+        .integrations__title.wow
           h3 Com as nossas integrações, nenhum alerta vai passar despercebido
         
         .integrations__logos-grid
-          .integrations__logo
+          .integrations__logo.wow(data-animation-delay=".1s")
             +img("connectwith-slack")
-          .integrations__logo
+          .integrations__logo.wow(data-animation-delay=".15s")
             +img("connectwith-arcsight")
-          .integrations__logo
+          .integrations__logo.wow(data-animation-delay=".2s")
             +img("connectwith-splunk")
-          .integrations__logo
+          .integrations__logo.wow(data-animation-delay=".25s")
             +img("connectwith-radar")
   
   // Testimonials
   .testimonials
     .container
-      .testimonials__head
+      .testimonials__head.wow
         .testimonials__title
           h2 Acompanhamos o dia a dia de centenas de empresas ao redor do mundo
           
         .testimonials__head-image
           include ../inline-svg/testimonialsBg-oval.svg
           
-      .testimonials__wrapper
-        .testimonials__
+      .testimonials__wrapper.wow
+        .testimonials__slider.swiper-container(js-testimonials-slider)
+          .swiper-wrapper
+            // card
+            .testimonials-card
+              .testimonials-card__quotemark
+                +icon('ico-quotemark')
+                .testimonials-card__content
+                  p.t-p1 A Axur possui profissinais de elevado conhecimento que estão comprometidos e engajados com os últimos assuntos relacionados à segurança e estabilidade de DNS em nível global.
+                  .testimonials-card__author <span>Daniel Fink</span>, Engagement Sr Manager
+                  a(href="#" target="_blank").testimonials-card__link www.icann.org
+                  .testimonials-card__logo
+                    +img("logo-icann")
+            // card
+            .testimonials-card
+              .testimonials-card__quotemark
+                +icon('ico-quotemark')
+                .testimonials-card__content
+                  p.t-p1 A Axur vem participando do trabalho colaborativo da indústria através de esforços de seu Gerente de Engajamento com a Comunidade e Relacionamento Fabricio Pessôa, que vem fazendo a diferença ajudando a unir a indústria em questões importantes relacionadas ao abuso na web.
+                  .testimonials-card__author <span>Sara Roper<span/>, Vice Chair Person
+                  a(href="#" target="_blank").testimonials-card__link M3AAWG
+                  .testimonials-card__logo
+                    +img("logo-M3AAWG")
+                    
+            // card
+            .testimonials-card
+              .testimonials-card__quotemark
+                +icon('ico-quotemark')
+                .testimonials-card__content
+                  p.t-p1 A Axur possui profissinais de elevado conhecimento que estão comprometidos e engajados com os últimos assuntos relacionados à segurança e estabilidade de DNS em nível global.
+                  .testimonials-card__author <span>Daniel Fink</span>, Engagement Sr Manager
+                  a(href="#" target="_blank").testimonials-card__link www.icann.org
+                  .testimonials-card__logo
+                    +img("logo-icann")
+            // card
+            .testimonials-card
+              .testimonials-card__quotemark
+                +icon('ico-quotemark')
+                .testimonials-card__content
+                  p.t-p1 A Axur vem participando do trabalho colaborativo da indústria através de esforços de seu Gerente de Engajamento com a Comunidade e Relacionamento Fabricio Pessôa, que vem fazendo a diferença ajudando a unir a indústria em questões importantes relacionadas ao abuso na web.
+                  .testimonials-card__author <span>Sara Roper<span/>, Vice Chair Person
+                  a(href="#" target="_blank").testimonials-card__link M3AAWG
+                  .testimonials-card__logo
+                    +img("logo-M3AAWG")
+    
+      .testimonials__logos-grid
+        .testimonials__logo.wow(data-animation-delay=".1s")
+          +img("logo-marisa")
+        .testimonials__logo.wow(data-animation-delay=".15s")
+          +img("logo-mercado")
+        .testimonials__logo.wow(data-animation-delay=".2s")
+          +img("logo-foxbit")
+        .testimonials__logo.wow(data-animation-delay=".25s")
+          +img("logo-sorocred")
+        .testimonials__logo.wow(data-animation-delay=".3s")
+          +img("logo-rico")
+        .testimonials__logo.wow(data-animation-delay=".35s")
+          +img("logo-ferratum")
+        .testimonials__logo.wow(data-animation-delay=".4s")
+          +img("logo-spc")
+    
+  // CTA
+  .cta.wow
+    .container
+      .cta__wrapper
+        h3 Escolha uma internet mais segura para sua marca e seus clientes
+        
+        // signup form
+        form(action="#" js-validate-signup).signup-form.cta__form
+          .ui-input.ui-input--iconed
+            input(type="text" name="email" placeholder="Seu e-mail corporativo…")
+            +icon('ico-mail')
+          button(type="submit").btn.btn-primary conheça a plataforma
+  
+  // BLOG
+  .blog
+    .container
+      
