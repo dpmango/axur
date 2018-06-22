@@ -33,21 +33,28 @@ button
       color: white
 
   &-primary
-    border: 2px solid $colorOrange
-    background: $colorOrange
-    font-size: 13px
-    font-weight: 500
-    letter-spacing: 0.01em
-    border-radius: 4px
-    color: white
-    padding: 17px 25px 13px
-    text-transform: uppercase
-    &::after
+    background: transparent
+    transition: none
+    span
+      display: inline-block
+      position: relative
+      z-index: 2
+      border: 2px solid transparent
+      background: $colorOrange
+      font-size: 13px
+      font-weight: 500
+      letter-spacing: 0.01em
+      border-radius: 4px
+      color: white
+      padding: 17px 25px 13px
+      text-transform: uppercase
+      transition: .25s $ease
+    &::before
       /* shadow
       display: inline-block
       content: ' '
       position: absolute
-      z-index: -1
+      z-index: 1
       bottom: 0
       left: 8px
       right: 8px
@@ -60,8 +67,11 @@ button
       transition: .25s $ease
 
     &:hover
-      background-color: transparent
-      color: $colorOrange
-      &::after
-        transform: translateY(-5px)
-        opacity: 0
+      span
+        background: $colorOrange2
+        // color: $colorOrange
+        transform: translateY(1px)
+      &::before
+        // transform: translateY(5px)
+        filter: blur(7px)
+        // opacity: 0

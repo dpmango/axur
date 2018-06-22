@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="13px" viewBox="0 0 8 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>nav-arrow-right</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage-Axur" transform="translate(-1297.000000, -7251.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Blog" transform="translate(0.000000, 6654.000000)">
+                <g id="Slider" transform="translate(897.000000, 593.000000)">
+                    <g id="arrow" transform="translate(389.000000, 10.500000) rotate(-90.000000) translate(-389.000000, -10.500000) translate(382.000000, -9.000000)">
+                        <polygon id="nav-arrow-right" transform="translate(7.000000, 34.824468) rotate(180.000000) translate(-7.000000, -34.824468) " points="1.3527202 38.2980249 0.647279798 37.5892557 6.97168717 31.2945518 13.3527202 37.6456154 12.6472798 38.3543846 6.97168717 32.7054482"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

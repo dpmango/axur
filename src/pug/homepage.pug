@@ -19,7 +19,8 @@ block content
             .ui-input.ui-input--iconed
               input(type="text" name="email" placeholder="Seu e-mail corporativo…")
               +icon('ico-mail')
-            button(type="submit").btn.btn-primary conheça a plataforma
+            button(type="submit").btn.btn-primary 
+              span conheça a plataforma
             
           a(href="#").hero__play
             +icon('ico-play')
@@ -63,7 +64,8 @@ block content
           .products__info-wrapper(js-stick-in-parent)
             +img("camRobot")
             p.t-p1 Não tem certeza de qual solução é a melhor para sua marca?
-            a(href="#").btn.btn-primary descubra aqui
+            a(href="#").btn.btn-primary 
+              span descubra aqui
         
         .products__content
           .products__grid
@@ -293,7 +295,7 @@ block content
                   .testimonials-card__author <span>Daniel Fink</span>, Engagement Sr Manager
                   a(href="#" target="_blank").testimonials-card__link www.icann.org
                   .testimonials-card__logo
-                    +img("logo-icann")
+                    +img("logo-marisa")
             // card
             .testimonials-card
               .testimonials-card__quotemark
@@ -303,22 +305,65 @@ block content
                   .testimonials-card__author <span>Sara Roper<span/>, Vice Chair Person
                   a(href="#" target="_blank").testimonials-card__link M3AAWG
                   .testimonials-card__logo
-                    +img("logo-M3AAWG")
+                    +img("logo-mercado")
+            
+            // card
+            .testimonials-card
+              .testimonials-card__quotemark
+                +icon('ico-quotemark')
+                .testimonials-card__content
+                  p.t-p1 A Axur vem participando do trabalho colaborativo da indústria através de esforços de seu Gerente de Engajamento com a Comunidade e Relacionamento Fabricio Pessôa, que vem fazendo a diferença ajudando a unir a indústria em questões importantes relacionadas ao abuso na web.
+                  .testimonials-card__author <span>Sara Roper<span/>, Vice Chair Person
+                  a(href="#" target="_blank").testimonials-card__link M3AAWG
+                  .testimonials-card__logo
+                    +img("logo-foxbit")
     
-      .testimonials__logos-grid
-        .testimonials__logo.wow(data-animation-delay=".1s")
+            // card
+            .testimonials-card
+              .testimonials-card__quotemark
+                +icon('ico-quotemark')
+                .testimonials-card__content
+                  p.t-p1 A Axur vem participando do trabalho colaborativo da indústria através de esforços de seu Gerente de Engajamento com a Comunidade e Relacionamento Fabricio Pessôa, que vem fazendo a diferença ajudando a unir a indústria em questões importantes relacionadas ao abuso na web.
+                  .testimonials-card__author <span>Sara Roper<span/>, Vice Chair Person
+                  a(href="#" target="_blank").testimonials-card__link M3AAWG
+                  .testimonials-card__logo
+                    +img("logo-rico")
+            // card
+            .testimonials-card
+              .testimonials-card__quotemark
+                +icon('ico-quotemark')
+                .testimonials-card__content
+                  p.t-p1 A Axur vem participando do trabalho colaborativo da indústria através de esforços de seu Gerente de Engajamento com a Comunidade e Relacionamento Fabricio Pessôa, que vem fazendo a diferença ajudando a unir a indústria em questões importantes relacionadas ao abuso na web.
+                  .testimonials-card__author <span>Sara Roper<span/>, Vice Chair Person
+                  a(href="#" target="_blank").testimonials-card__link M3AAWG
+                  .testimonials-card__logo
+                    +img("logo-ferratum")      
+            
+            // card
+            .testimonials-card
+              .testimonials-card__quotemark
+                +icon('ico-quotemark')
+                .testimonials-card__content
+                  p.t-p1 A Axur vem participando do trabalho colaborativo da indústria através de esforços de seu Gerente de Engajamento com a Comunidade e Relacionamento Fabricio Pessôa, que vem fazendo a diferença ajudando a unir a indústria em questões importantes relacionadas ao abuso na web.
+                  .testimonials-card__author <span>Sara Roper<span/>, Vice Chair Person
+                  a(href="#" target="_blank").testimonials-card__link M3AAWG
+                  .testimonials-card__logo
+                    +img("logo-spc")
+                    
+      .testimonials__logos-grid(js-testimonials-slider-nav)
+        .testimonials__logo.wow(data-slide-to="3" data-animation-delay=".1s")
           +img("logo-marisa")
-        .testimonials__logo.wow(data-animation-delay=".15s")
+        .testimonials__logo.wow(data-slide-to="4" data-animation-delay=".15s")
           +img("logo-mercado")
-        .testimonials__logo.wow(data-animation-delay=".2s")
+        .testimonials__logo.wow(data-slide-to="5" data-animation-delay=".2s")
           +img("logo-foxbit")
-        .testimonials__logo.wow(data-animation-delay=".25s")
+        .testimonials__logo.wow(data-slide-to="6" data-animation-delay=".25s")
           +img("logo-sorocred")
-        .testimonials__logo.wow(data-animation-delay=".3s")
+        .testimonials__logo.wow(data-slide-to="7" data-animation-delay=".3s")
           +img("logo-rico")
-        .testimonials__logo.wow(data-animation-delay=".35s")
+        .testimonials__logo.wow(data-slide-to="8" data-animation-delay=".35s")
           +img("logo-ferratum")
-        .testimonials__logo.wow(data-animation-delay=".4s")
+        .testimonials__logo.wow(data-slide-to="9" data-animation-delay=".4s")
           +img("logo-spc")
     
   // CTA
@@ -332,9 +377,54 @@ block content
           .ui-input.ui-input--iconed
             input(type="text" name="email" placeholder="Seu e-mail corporativo…")
             +icon('ico-mail')
-          button(type="submit").btn.btn-primary conheça a plataforma
+          button(type="submit").btn.btn-primary 
+            span conheça a plataforma
   
   // BLOG
   .blog
     .container
+      .blog__wrapper
+        .blog__heading
+          p.t-label dicas de segurança
+          h2 Informação é a principal arma contra as ameaças na internet
+          a(href="#" target="_blank").btn.btn-outline acesse o blog
+  
+        .blog__content
+          .blog__bg
+            include ../inline-svg/blogBg-triangle.svg
+            
+          .blog__slider(js-blog-slider).swiper-container
+            .swiper-wrapper
+              // slides will be populated here with WP Json API
+              //- // slide
+              //- .blog__slide
+              //-   .blog-card
+              //-     .blog-card__image
+              //-       +img("blogPost-1")
+              //-     .blog-card__title.t-p1.c-orange Vazamentos de senha: como acontecem e dicas para se proteger
+              //-     .blog-card__description
+              //-     .blog-card__date.t-p3 20th March 2018
+              //- // slide
+              //- .blog__slide
+              //-   .blog-card
+              //-     .blog-card__image
+              //-       +img("blogPost-2")
+              //-     .blog-card__title.t-p1.c-orange Vazamentos de senha: como acontecem e dicas para se proteger
+              //-     .blog-card__description
+              //-     .blog-card__date.t-p3 7th March 2018
       
+            // nav elements
+            .blog__nav
+              // handled by swiper API
+              .blog__nav-fraction
+              // custom swiper API
+              .blog__progress
+                .blog__progress-fill(js-set-swiper-progress)
+                  
+              .blog__navigation
+                .blog__navigation-prev
+                  +icon('ico-nav-arrow-left')
+                .blog__navigation-next
+                  +icon('ico-nav-arrow-right')
+                  
+                  

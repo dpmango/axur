@@ -1,4 +1,107 @@
 .blog
   padding: 100px 0
   background: #FAFAFA
+  overflow: hidden
   &__wrapper
+    display: flex
+    align-items: center
+    margin-left: -15px
+    margin-right: -15px
+
+  &__heading
+    flex: 0 0 40%
+    max-width: 40%
+    min-width: 1px
+    padding: 0 15px
+
+  &__content
+    position: relative
+    flex: 1 0 60%
+    max-width: calc(60% + 50px)
+    // max-width: 60%
+    min-width: 1px
+    padding-left: 15px
+    margin-right: -50px
+
+  &__slider
+
+  &__slide
+    flex: 0 0 400px
+    padding: 40px 15px 20px
+    display: flex
+    flex-direction: column
+
+  &__bg
+    position: absolute
+    bottom: -100px
+    right: 0
+
+  &__nav
+    display: flex
+    align-items: center
+    justify-content: center
+    color: white
+
+    &-fraction
+      width: auto
+      font-size: 15px
+      color: white
+
+  &__progress
+    position: relative
+    background: rgba(white, .3)
+    height: 1px
+    margin: 0 40px
+    width: 270px
+    &-fill
+      display: inline-block
+      position: absolute
+      left: 0
+      top: 0
+      height: 1px
+      background: white
+      transition: width .1s linear
+
+  &__navigation
+    display: flex
+    align-items: center
+
+  &__navigation-prev, &__navigation-next
+    padding: 8px 12px
+    cursor: pointer
+    transition: .25s $ease
+    .ico
+      font-size: 12px
+
+.blog-card
+  flex: 1 0 auto
+  display: flex
+  flex-direction: column
+  padding: 0 15px 25px
+  background: white
+  box-shadow: 0 10px 16px 0 rgba(0,0,0,0.05)
+  border-radius: 4px
+  &__image
+    transform: translateY(-35px)
+    text-align: center
+    font-size: 0
+    position: relative
+    z-index: 1
+    border-radius: 4px
+    overflow: hidden
+    background: lighten($colorLightGray,10%)
+    min-height: 100px
+    display: flex
+    flex-direction: column
+    img
+      /* make aspect ratio 1,2 ?
+      width: 100%
+
+  &__title
+    margin-top: -12px
+
+  &__description
+
+  &__date
+    margin-top: auto
+    padding-top: 40px

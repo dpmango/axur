@@ -3,5 +3,19 @@ ProjectTitle: Axur
 PageList:
 - file: homepage.html
   ready: 50
-- file: page.html
+- file: digital-fraud.html
+  ready: 0
+- file: sales-abuse.html
+  ready: 0
+- file: digital-compilance.html
+  ready: 0
+- file: partner-compilance.html
+  ready: 0
+- file: data-leak.html
+  ready: 0
+- file: threat-discovery.html
+  ready: 0
+- file: contacts.html
+  ready: 0
+- file: solicitar.html
   ready: 0

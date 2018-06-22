@@ -173,7 +173,7 @@ $(document).ready(function(){
   function initSliders(){
 
     // EXAMPLE SWIPER
-    new Swiper('[js-testimonials-slider]', {
+    var testimonialsSlider = new Swiper('[js-testimonials-slider]', {
       wrapperClass: "swiper-wrapper",
       slideClass: "testimonials-card",
       direction: 'horizontal',
@@ -184,9 +184,6 @@ $(document).ready(function(){
       slidesPerView: 2,
       normalizeSlideIndex: true,
       freeMode: false,
-      autoplay: {
-        delay: 5000,
-      },
       breakpoints: {
         // when window width is <= 992px
         992: {
@@ -194,6 +191,89 @@ $(document).ready(function(){
         }
       }
     })
+
+    // custom nav
+    _document.on('click', '[js-testimonials-slider-nav] .testimonials__logo', function(){
+      var targetSlide = parseInt( $(this).data('slideTo') ) - 1;
+      testimonialsSlider.slideTo( targetSlide );
+    })
+
+    // BLOG SWIPER
+    var blogSliderProgress = $('[js-set-swiper-progress]')
+    var blogSlider = new Swiper('[js-blog-slider]', {
+      wrapperClass: "swiper-wrapper",
+      slideClass: "blog__slide",
+      direction: 'horizontal',
+      loop: false,
+      watchOverflow: true,
+      setWrapperSize: false,
+      spaceBetween: 0,
+      slidesPerView: 'auto',
+      normalizeSlideIndex: true,
+      freeMode: true,
+      watchSlidesProgress: true,
+      pagination: {
+        el: '.blog__nav-fraction',
+        type: 'fraction',
+      },
+      navigation: {
+        nextEl: '.blog__navigation-next',
+        prevEl: '.blog__navigation-prev',
+      },
+      on: {
+        progress: function(progress){
+          blogSliderProgress.css({
+            'width': Math.floor(progress * 100) + '%'
+          })
+        }
+        // sliderMove: function(e){
+        //   console.log(blogSlider.progress)
+        // }
+      }
+    })
+
+    // blog API
+    var blogAPIEndpointPosts = "https://blog.axur.com/wp-json/wp/v2/posts";
+    var blogAPIEndpointMedia = "https://blog.axur.com/wp-json/wp/v2/media/";
+
+    // get last 10 posts & media
+    $.get(blogAPIEndpointPosts, function(data){
+      $.each(data, function(index, post){
+        // get featured media element
+        $.get(blogAPIEndpointMedia + post.featured_media, function(media){
+          addBlogSlides(index, post, media)
+        })
+      })
+    })
+
+    function addBlogSlides(index, post, media){
+      // date convert
+      var utcTime = new Date(post.date + 'Z')
+      var renderDate = post.date
+      try { // just in case. will render api resp in case of failture
+        renderDate = utcTime.renderDate() // + prototype on Date (in the of the file)
+      } catch(err){
+        console.log(err)
+      }
+
+      // var mediaThumb = media.media_details.sizes["extra-image-square-medium"].source_url
+      var mediaThumb = media.media_details.sizes["extra-image-medium"].source_url
+
+      var blogSlideTpl = '<div class="blog__slide">' +
+        '<a href="'+post.link+'" target="_blank" class="blog-card" data-id="'+post.id+'">' +
+          '<div class="blog-card__image">' +
+            '<img src="'+mediaThumb+'"/>' +
+          '</div>' +
+          '<div class="blog-card__title t-p1 c-orange">'+post.title.rendered+'</div>' +
+          '<div class="blog-card__description"></div>' +
+          '<div class="blog-card__date t-p3">'+renderDate+'</div>' +
+        '</a>' +
+      '</div>';
+
+      // blogSlider.appendSlide(blogSlideTpl) // append slide to swiper
+      // index is required to prevent showing later posts by date in front of the que
+      blogSlider.addSlide(index, blogSlideTpl)
+    }
 
   }
 
@@ -729,3 +809,33 @@ $(document).ready(function(){
   }
 
 });
+
+
+// Propotyes
+Date.prototype.renderDate = function() {
+  var mm = this.getMonth();
+  var dd = this.getDate();
+
+  var monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+
+  // https://stackoverflow.com/questions/15397372/javascript-new-date-ordinal-st-nd-rd-th
+  function nth(d) {
+    if(d>3 && d<21) return 'th';
+    switch (d % 10) {
+        case 1:  return "st";
+        case 2:  return "nd";
+        case 3:  return "rd";
+        default: return "th";
+      }
+  }
+
+  var dateArr = [
+    (dd>9 ? '' : '0') + dd + nth(dd),
+    monthNames[mm],
+    this.getFullYear()
+  ]
+
+  return dateArr.join(' ');
+};

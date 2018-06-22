@@ -13,6 +13,13 @@ gulp.task('copy:vendor', function() {
     .pipe(gulp.dest(config.dest.vendor));
 });
 
+gulp.task('copy:json', function() {
+  return gulp
+    .src(config.src.json + '/*.*')
+    .pipe(gulp.dest(config.dest.json));
+});
+
+
 gulp.task('copy:rootfiles', function() {
   return gulp
     .src(config.src.root + '/*.*')
@@ -36,4 +43,5 @@ gulp.task('copy:watch', function() {
   gulp.watch(config.src.root + '/inline-animations/**/*.*', ['copy:animations']);
   gulp.watch(config.src.vendor + '/**/*.*', ['copy:vendor']);
   gulp.watch(config.src.root + '/*.*', ['copy:rootfiles']);
+  gulp.watch(config.src.json + '/*.*', ['copy:json']);
 });
