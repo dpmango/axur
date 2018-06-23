@@ -86,14 +86,42 @@
       max-width: 50%
 
 .products-card
-  background: white
-  box-shadow: 0 10px 16px 0 rgba(0,0,0,0.05)
-  border-radius: 4px
+  position: relative
+  display: inline-block
+  // background: white
+  // box-shadow: 0 10px 16px 0 rgba(0,0,0,0.05)
+  // border-radius: 4px
   padding: 70px 40px 40px
   margin-bottom: 40px
+  cursor: pointer
   transition: box-shadow .25s $ease
+  &::before
+    display: inline-block
+    content: ' '
+    position: absolute
+    height: 100%
+    width: 100%
+    top: 50%
+    left: 50%
+    z-index: 1
+    transition: .25s $ease
+    background: white
+    transform: translate(-50%,-50%)
+    will-change: transform
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.05)
+    border-radius: 4px
   &:hover
-    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.1)
+    box-shadow: 0 15px 26px 0 rgba(0,0,0,0.1)
+    &::before
+      transform: translate(-50%,-50%) scale(1.02)
+    .link-p2
+      color: $colorBlue
+  &.is-muted
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.05)
+
+  > h3, > p, > div
+    position: relative
+    z-index: 2
   h3, h4
     margin-top: 0
     margin-bottom: 1.2em
@@ -135,6 +163,9 @@
   &--no-bg
     background: transparent
     padding: 0
+    cursor: default
     box-shadow: none
+    &::before
+      display: none
     &:hover
       box-shadow: none

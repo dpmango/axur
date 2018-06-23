@@ -186,6 +186,23 @@ $(document).ready(function(){
   }
 
 
+  // Product cards
+  _document
+    .on('mouseenter', '[js-diminish-hover-cards] .products-card', function(){
+      var siblings = $(this).closest('.products__grid').find('.products-card');
+      var $this = $(this)
+
+      $.each(siblings, function(i,el){
+        if ( $(el).data('id') !== $this.data('id') ){
+          $(el).addClass('is-muted')
+        }
+      });
+    })
+    .on('mouseleave', '[js-diminish-hover-cards] .products-card', function(){
+      console.log('leave')
+      $('.products-card').removeClass('is-muted')
+    })
+
 
   /////////////////
   // functional blocks
