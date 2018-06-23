@@ -29,11 +29,14 @@
       margin-right: 65px
       &:last-child
         margin-right: 0
+      &.is-active
+        a
+          color: $colorOrange
     a
       display: inline-block
       color: $colorMuted
       transition: color .25s $ease
-      &:hover
+      &:hover, &.is-active
         color: $colorOrange
 
   &__lang

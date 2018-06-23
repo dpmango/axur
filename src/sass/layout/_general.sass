@@ -19,9 +19,13 @@ body, html
   color: white
 
 .page
+  position: relative
   display: flex
   flex-direction: column
   min-height: 100vh
+  transition: opacity .25s $ease
+  &.is-muted
+    opacity: .4
   &__content
     // used for sticky footer (flexbox way)
     flex: 1 0 auto

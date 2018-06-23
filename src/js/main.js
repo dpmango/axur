@@ -11,27 +11,32 @@ $(document).ready(function(){
   // READY - triggered when PJAX DONE
   ////////////
   function pageReady(){
+    // layout
     legacySupport();
-    updateHeaderActiveClass();
-    initHeaderScroll();
-
     // initTypograph();
-    initPopups();
+    closeAllActives(); // close all hamburgers, menus, etc.
+    updateHeaderActiveClass(); // set is-active class for header nav
+    // initHeaderScroll();
+    adjustAsyncLayout(); // set padding-left|right for async layout
+    _window.on('resize', debounce(adjustAsyncLayout, 200));
+
+    // functional
     initSliders();
-    initSticky();
-    // initTypewriter();
+    initPopups();
     initSvgAnimations();
+    initSticky();
+    initTypewriter(); // typewriter (i.e hero section)
 
-    initPerfectScrollbar();
-    initLazyLoad();
-    initTeleport();
-    revealFooter();
-    _window.on('resize', throttle(revealFooter, 200));
+    // ui
+    // initMasks();
+    // initSelectric();
 
+    // extra stuff
+    // initLazyLoad();
+    // initPerfectScrollbar();
     initScrollMonitor();
-    initMasks();
-    initSelectric();
     initValidations();
+    // initTeleport();
 
     // development helper
     _window.on('resize', debounce(setBreakpoint, 200))
@@ -108,13 +113,89 @@ $(document).ready(function(){
     $('body').addClass('is-mobile');
   }
 
+  //////////////////
+  // CLICK HANDLERS, (etc)
+  /////////////////
 
   // Prevent # behavior
 	_document
     .on('click', '[href="#"]', function(e) {
       e.preventDefault();
     })
+    .on('click', '[js-hamburger]', function(){
+      $(this).toggleClass('is-active');
+      $('.mobile-navi').toggleClass('is-active');
+    })
 
+  function closeMobileMenu(){
+    $('[js-hamburger]').removeClass('is-active');
+    $('.mobile-navi').removeClass('is-active');
+  }
+
+  // Menu controls
+  _document
+    .on('click', '[js-toggle-menu]', function(){
+      var target = $(this).data('target-menu')
+      toggleMenu(target);
+    })
+    .on('click', '[js-close-menu]', function(){
+      var target = $(this).closest('.menu').data('menu')
+      closeMenu(target);
+    })
+    .on('click', function(e){
+      var $target = $(e.target);
+
+      if ( $target.closest('.menu') ){
+        closeAllMenus();
+      }
+    })
+
+  function toggleMenu(name){
+    var target = $('[data-menu="'+name+'"]');
+    if ( target ){
+      $('[data-target-menu]').toggleClass('is-active');
+      target.toggleClass('is-active');
+    }
+  }
+
+  function closeMenu(name){
+    var target = $('[data-menu="'+name+'"]');
+    if ( target ){
+      $('[data-target-menu]').toggleClass('is-active');
+      target.toggleClass('is-active');
+    }
+  }
+
+  function closeAllMenus(){
+    $('[data-target-menu]').removeClass('is-active');
+    $('[data-menu]').removeClass('is-active');
+  }
+
+  // master function to close everything
+  // specially usefull for barba page transitions
+  function closeAllActives(){
+    closeMobileMenu();
+    closeAllMenus();
+  }
+
+
+
+  /////////////////
+  // functional blocks
+  ////////////////
+
+
+  // SET ACTIVE CLASS IN HEADER
+  // * could be removed in production and server side rendering when header is inside barba-container
+  function updateHeaderActiveClass(){
+    $('.header__menu li').each(function(i,val){
+      if ( $(val).find('a').attr('href') == window.location.pathname.split('/').pop() ){
+        $(val).addClass('is-active');
+      } else {
+        $(val).removeClass('is-active')
+      }
+    });
+  }
 
   // HEADER SCROLL
   // add .header-static for .page or body
@@ -142,34 +223,50 @@ $(document).ready(function(){
     }, 10));
   }
 
+  ////////////////
+  // Adjust layout
+  ////////////////
+  function adjustAsyncLayout(){
+    // makes layout sides sticky to edges
+    // while preserving the container
+    if ( $('[js-layout-padding]').length > 0 ){
 
-  // HAMBURGER TOGGLER
-  _document.on('click', '[js-hamburger]', function(){
-    $(this).toggleClass('is-active');
-    $('.mobile-navi').toggleClass('is-active');
-  });
+      var wWidth = _window.width();
+      var containerPadding = wWidth > 568 ? 50 : 20
 
-  function closeMobileMenu(){
-    $('[js-hamburger]').removeClass('is-active');
-    $('.mobile-navi').removeClass('is-active');
+      $('[js-layout-padding]').each(function(i, el){
+        var $el = $(el);
+        var containerWidth = $el.data('container-width') || 1250
+        var type = $el.data('type')
+        var setPaddingPx = 0
+
+        // calculate base container diff
+        var widthDiff = wWidth - containerWidth
+
+        // if the diff within max-width: 1250 + pad - just add default padding
+        if ( widthDiff < containerPadding * 2 ){
+          setPaddingPx = containerPadding
+        } else {
+          // get container diff with window size
+          var containerDiff = widthDiff - (containerPadding * 2)
+          setPaddingPx = containerPadding + (containerDiff / 2)
+        }
+
+        // set values
+        if ( type === "container-left" ){
+          $el.css({ 'padding-left': setPaddingPx })
+        } else if ( type === "container-right" ){
+          $el.css({ 'padding-right': setPaddingPx })
+        }
+
+      })
+    }
   }
 
-  // SET ACTIVE CLASS IN HEADER
-  // * could be removed in production and server side rendering when header is inside barba-container
-  function updateHeaderActiveClass(){
-    $('.header__menu li').each(function(i,val){
-      if ( $(val).find('a').attr('href') == window.location.pathname.split('/').pop() ){
-        $(val).addClass('is-active');
-      } else {
-        $(val).removeClass('is-active')
-      }
-    });
-  }
 
   //////////
   // SLIDERS
   //////////
-
   function initSliders(){
 
     // EXAMPLE SWIPER
@@ -277,36 +374,61 @@ $(document).ready(function(){
 
   }
 
-
-  // FOOTER REVEAL
-  function revealFooter() {
-    var footer = $('[js-reveal-footer]');
-    if (footer.length > 0) {
-      var footerHeight = footer.outerHeight();
-      var maxHeight = _window.height() - footerHeight > 100;
-      if (maxHeight && !msieversion() ) {
-        $('body').css({
-          'margin-bottom': footerHeight
-        });
-        footer.css({
-          'position': 'fixed',
-          'z-index': -10
-        });
-      } else {
-        $('body').css({
-          'margin-bottom': 0
-        });
-        footer.css({
-          'position': 'static',
-          'z-index': 10
-        });
+  //////////
+  // MODALS
+  //////////
+  function initPopups(){
+    // Magnific Popup
+    var startWindowScroll = 0;
+    $('[js-popup]').magnificPopup({
+      type: 'inline',
+      fixedContentPos: true,
+      fixedBgPos: true,
+      overflowY: 'auto',
+      closeBtnInside: true,
+      preloader: false,
+      midClick: true,
+      removalDelay: 300,
+      mainClass: 'popup-buble',
+      callbacks: {
+        beforeOpen: function() {
+          startWindowScroll = _window.scrollTop();
+          // $('html').addClass('mfp-helper');
+        },
+        close: function() {
+          // $('html').removeClass('mfp-helper');
+          _window.scrollTop(startWindowScroll);
+        }
       }
-    }
+    });
+
+    $('[js-popup-gallery]').magnificPopup({
+  		delegate: 'a',
+  		type: 'image',
+  		tLoading: 'Загрузка #%curr%...',
+  		mainClass: 'popup-buble',
+  		gallery: {
+  			enabled: true,
+  			navigateByImgClick: true,
+  			preload: [0,1]
+  		},
+  		image: {
+  			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+  		}
+  	});
   }
+
+  function closeMfp(){
+    $.magnificPopup.close();
+  }
+
+
+  //////////
+  // SVG animations with anime.js
+  /////////
 
   function initSvgAnimations(){
     var easingSwing = [.02, .01, .47, 1]; // default jQuery easing for anime.js
-
 
     // first
     var el = $('[js-animation-1] svg');
@@ -360,54 +482,6 @@ $(document).ready(function(){
     }
   }
 
-  //////////
-  // MODALS
-  //////////
-
-  function initPopups(){
-    // Magnific Popup
-    var startWindowScroll = 0;
-    $('[js-popup]').magnificPopup({
-      type: 'inline',
-      fixedContentPos: true,
-      fixedBgPos: true,
-      overflowY: 'auto',
-      closeBtnInside: true,
-      preloader: false,
-      midClick: true,
-      removalDelay: 300,
-      mainClass: 'popup-buble',
-      callbacks: {
-        beforeOpen: function() {
-          startWindowScroll = _window.scrollTop();
-          // $('html').addClass('mfp-helper');
-        },
-        close: function() {
-          // $('html').removeClass('mfp-helper');
-          _window.scrollTop(startWindowScroll);
-        }
-      }
-    });
-
-    $('[js-popup-gallery]').magnificPopup({
-  		delegate: 'a',
-  		type: 'image',
-  		tLoading: 'Загрузка #%curr%...',
-  		mainClass: 'popup-buble',
-  		gallery: {
-  			enabled: true,
-  			navigateByImgClick: true,
-  			preload: [0,1]
-  		},
-  		image: {
-  			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-  		}
-  	});
-  }
-
-  function closeMfp(){
-    $.magnificPopup.close();
-  }
 
   ////////////
   // UI

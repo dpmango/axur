@@ -1,0 +1,121 @@
+.menu
+  position: absolute
+  z-index: 9
+  top: 122px
+  left: -1px
+  right: -1px
+  background: white
+  background: #FFFFFF
+  border: 1px solid #EEEEEE
+  box-shadow: 0 10px 16px 0 rgba(0,0,0,0.05)
+  opacity: 0
+  pointer-events: none
+  transform: translate(0,10px)
+  transition: .25s $ease
+  &.is-active
+    opacity: 1
+    pointer-events: all
+    transform: translate(0,0)
+  &__wrapper
+    position: relative
+    display: flex
+    // margin-left: -15px
+    // margin-right: -15px
+
+  &__close
+    position: absolute
+    right: 30px
+    top: 30px
+    color: $colorMuted
+    font-size: 14px
+    padding: 10px
+    cursor: pointer
+    transition: color .25s $ease
+    &:hover
+      color: $colorOrange
+  &__nav
+    display: flex
+    flex-wrap: wrap
+    margin: 65px -15px 55px
+    // padding: 0 15px
+
+    li
+      flex: 0 1 33.3%
+      max-width: 33.3%
+      padding: 0px 15px
+      min-width: 1px
+      display: block
+      margin-bottom: 7px
+      a
+        display: block
+        padding: 20px 0px
+        p
+          margin-bottom: 0
+        span
+          position: relative
+          display: inline-block
+          font-size: 18px
+          color: $colorOrange
+          transition: .25s $ease
+          &::after
+            display: inline-block
+            content: ' '
+            position: absolute
+            left: 0
+            right: 0
+            bottom: 0
+            height: 1px
+            opacity: 0
+            background: rgba($colorOrange2, .2)
+            transition: opacity .25s $ease
+        &:hover
+          span
+            color: $colorOrange2
+            &::after
+              opacity: 1
+
+  &__sidebar
+    flex: 0 0 auto
+    border-left: 1px solid #EEEEEE
+    background: #FAFAFA
+    padding: 65px 0 30px 40px
+    &-wrapper
+      /* right padding will be set by js
+      padding-top: 17px
+      // padding-bottom: 30px
+      p
+        margin-top: 0
+
+
+    &-links
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      a
+        padding: 5px 0
+
++r(1200)
+  .menu
+    &__nav
+      li
+        flex-basis: 50%
+        max-width: 50%
+    /* clone the same styles as for max-height: 500
+    /* because container gets higher
+    &__close
+      top: 15px
+      right: 15px
+    &__nav
+      margin: 35px -15px 25px
+    &__sidebar
+      padding-top: 35px
+
++rh(500)
+  .menu
+    &__close
+      top: 15px
+      right: 15px
+    &__nav
+      margin: 35px -15px 25px
+    &__sidebar
+      padding-top: 35px
