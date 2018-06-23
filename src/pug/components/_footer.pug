@@ -1,14 +1,14 @@
 // FOOTER :: START
 footer.footer
   .container
-    .footer__logo
+    .footer__logo.wow
       img(src='img/svg/logo.svg')
       //- include ../../inline-svg/logo.svg
       
     .footer__wrapper
       .footer__navi
         // col
-        .footer__navi-col
+        .footer__navi-col.wow(data-animation-delay=".1s")
           h4.h4-title.footer__navi-heading Axur
           ul.footer__menu
             li
@@ -26,7 +26,7 @@ footer.footer
             li
               a(href="#") Fale conosco
         // col
-        .footer__navi-col
+        .footer__navi-col.wow(data-animation-delay=".2s")
           h4.h4-title.footer__navi-heading Soluções Axur One
           ul.footer__menu
             li
@@ -42,7 +42,7 @@ footer.footer
             li
               a(href="#") Threat Intelligence Discovery
         // col
-        .footer__navi-col
+        .footer__navi-col.wow(data-animation-delay=".3s")
           h4.h4-title.footer__navi-heading Credential Protection
           ul.footer__menu
             li
@@ -51,9 +51,9 @@ footer.footer
               a(href="#") Leakstream
               
       // contacts
-      .footer__contacts
+      .footer__contacts.wow(data-animation-delay=".4s")
         p Latin America<br/> 
-          | Av. Paulista, 1374 - 11º Andar<br/>  
+          | Av. Paulista, 1374 - 11º Andar <br/> 
           | São Paulo
 
         p Latin America <br/> 
@@ -64,7 +64,7 @@ footer.footer
           | 535 Mission St. <br/> 
           | San Francisco, CA 94105
       
-    .footer__bottom
+    .footer__bottom.wow(data-animation-class="wowFadeLeft")
       .footer__copy © Axur. Digital Risk Protection. 2018 Todos os direitos reservados.
       
       .footer__socials

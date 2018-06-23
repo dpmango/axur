@@ -10,16 +10,13 @@
     display: flex
     // flex-wrap: wrap
     margin-top: 65px
-    margin-left: -15px
-    margin-right: -15px
   &__logo
 
   &__navi
-    flex: 1 1 auto
+    flex: 0 1 calc(75% + 30px)
     display: flex
     margin-left: -15px
     margin-right: -15px
-    padding: 0 15px
     &-heading
       margin-top: 0
     &-col
@@ -29,7 +26,7 @@
       min-height: 0
       padding: 0 15px
   &__menu
-    margin: 20px 0
+    margin: 35px 0 20px
     padding: 0
     list-style: none
     li
@@ -43,8 +40,10 @@
         color: $colorOrange
 
   &__contacts
-    flex: 0 0 240px
-    padding: 0 15px
+    flex: 0 0 242px
+    margin-left: auto
+    padding-left: 30px
+    padding-top: 17px
     font-size: 15px
     line-height: 1.5
     p
@@ -57,23 +56,23 @@
 
 
   &__bottom
-    margin-top: 40px
+    margin-top: 30px
     display: flex
-    align-items: center
 
   &__copy
     font-size: 13px
     color: $colorMuted
 
   &__socials
-    flex: 0 0 240px
+    flex: 0 0 242px
     margin-left: auto
     padding-left: 30px
     display: flex
     align-items: center
     a
       display: inline-block
-      margin-right: 30px
+      margin-right: 32px
+      // padding: 10px
       color: $colorOrange
       transition: .25s $ease
       &:last-child

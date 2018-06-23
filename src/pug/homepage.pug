@@ -1,6 +1,5 @@
 ---
-title: Homepage title
-bodyClass: homepage
+title: Homepage
 ---
 extends shared/_layout
 block content
@@ -49,11 +48,9 @@ block content
   .products
     .products-bg__oval.wow(js-sticky-products-oval)
       img(src='img/svg/productGrid-oval.svg')
-      //- include ../inline-svg/productGrid-oval.svg
     .products-bg__triangle.wow(js-sticky-products-triangle)
       img(src='img/svg/productGrid-triangle.svg')
-      //- include ../inline-svg/productGrid-triangle.svg
-      
+
     .container
       // section heading
       .section-heading.wow
@@ -236,37 +233,39 @@ block content
                 span Alertas no seu celular
               p.t-p2 Receba notificações sobre incidentes direto no seu celular. Nossa plataforma envia um alerta sempre que identificar uma ameaça e você pode agir em tempo real.
       
-      .features__image.wow
-        +img("features-img")
+    .features__image.wow
+      .container
+        .features__image-wrapper
+          +img("features-img")
   
   // INTEGRATIONS
   .integrations
-    .container
+    .container.container--narrow
       .integrations__wrapper
         .integrations__title.wow
           h3 Com as nossas integrações, nenhum alerta vai passar despercebido
         
         .integrations__logos-grid
-          .integrations__logo.wow(data-animation-delay=".1s")
+          .integrations__logo.integrations__logo--slack.wow(data-animation-delay=".1s")
             +img("connectwith-slack")
-          .integrations__logo.wow(data-animation-delay=".15s")
+          .integrations__logo.integrations__logo--arcsight.wow(data-animation-delay=".15s")
             +img("connectwith-arcsight")
-          .integrations__logo.wow(data-animation-delay=".2s")
+          .integrations__logo.integrations__logo--splunk.wow(data-animation-delay=".2s")
             +img("connectwith-splunk")
-          .integrations__logo.wow(data-animation-delay=".25s")
+          .integrations__logo.integrations__logo--radar.wow(data-animation-delay=".25s")
             +img("connectwith-radar")
   
   // Testimonials
   .testimonials
     .container
-      .testimonials__head.wow
-        .testimonials__title
-          h2 Acompanhamos o dia a dia de centenas de empresas ao redor do mundo
-          
-        .testimonials__head-image
-          img(src='img/svg/testimonialsBg-oval.svg')
-          //- include ../inline-svg/testimonialsBg-oval.svg
-          
+      .holder
+        .testimonials__head.wow
+          .testimonials__title
+            h2 Acompanhamos o dia a dia de centenas de empresas ao redor do mundo
+            
+          .testimonials__head-image
+            img(src='img/svg/testimonialsBg-oval.svg')
+
       .testimonials__wrapper.wow
         .testimonials__slider.swiper-container(js-testimonials-slider)
           .swiper-wrapper
@@ -354,22 +353,23 @@ block content
                   a(href="#" target="_blank").testimonials-card__link M3AAWG
                   .testimonials-card__logo
                     +img("logo-spc")
-                    
-      .testimonials__logos-grid(js-testimonials-slider-nav)
-        .testimonials__logo.wow(data-slide-to="3" data-animation-delay=".1s")
-          +img("logo-marisa")
-        .testimonials__logo.wow(data-slide-to="4" data-animation-delay=".15s")
-          +img("logo-mercado")
-        .testimonials__logo.wow(data-slide-to="5" data-animation-delay=".2s")
-          +img("logo-foxbit")
-        .testimonials__logo.wow(data-slide-to="6" data-animation-delay=".25s")
-          +img("logo-sorocred")
-        .testimonials__logo.wow(data-slide-to="7" data-animation-delay=".3s")
-          +img("logo-rico")
-        .testimonials__logo.wow(data-slide-to="8" data-animation-delay=".35s")
-          +img("logo-ferratum")
-        .testimonials__logo.wow(data-slide-to="9" data-animation-delay=".4s")
-          +img("logo-spc")
+      
+      .holder              
+        .testimonials__logos-grid
+          .testimonials__logo.wow(data-animation-delay=".1s")
+            +img("logo-marisa")
+          .testimonials__logo.wow(data-animation-delay=".15s")
+            +img("logo-mercado")
+          .testimonials__logo.wow(data-animation-delay=".2s")
+            +img("logo-foxbit")
+          .testimonials__logo.wow(data-animation-delay=".25s")
+            +img("logo-sorocred")
+          .testimonials__logo.wow(data-animation-delay=".3s")
+            +img("logo-rico")
+          .testimonials__logo.wow(data-animation-delay=".35s")
+            +img("logo-ferratum")
+          .testimonials__logo.wow(data-animation-delay=".4s")
+            +img("logo-spc")
     
   // CTA
   .cta.wow
@@ -387,50 +387,40 @@ block content
   
   // BLOG
   .blog
-    .container
-      .blog__wrapper
-        .blog__heading
+    .blog__bg
+      img(src='img/svg/blogBg-triangle.svg')
+    .blog__wrapper
+      .blog__heading(js-layout-padding data-type="container-left").wow
+        .blog__heading-wrapper
           p.t-label dicas de segurança
           h2 Informação é a principal arma contra as ameaças na internet
           a(href="#" target="_blank").btn.btn-outline acesse o blog
-  
-        .blog__content
-          .blog__bg
-            img(src='img/svg/blogBg-triangle.svg')
-            //- include ../inline-svg/blogBg-triangle.svg
-            
-          .blog__slider(js-blog-slider).swiper-container
-            .swiper-wrapper
-              // slides will be populated here with WP Json API
-              //- // slide
-              //- .blog__slide
-              //-   .blog-card
-              //-     .blog-card__image
-              //-       +img("blogPost-1")
-              //-     .blog-card__title.t-p1.c-orange Vazamentos de senha: como acontecem e dicas para se proteger
-              //-     .blog-card__description
-              //-     .blog-card__date.t-p3 20th March 2018
-              //- // slide
-              //- .blog__slide
-              //-   .blog-card
-              //-     .blog-card__image
-              //-       +img("blogPost-2")
-              //-     .blog-card__title.t-p1.c-orange Vazamentos de senha: como acontecem e dicas para se proteger
-              //-     .blog-card__description
-              //-     .blog-card__date.t-p3 7th March 2018
-      
-            // nav elements
-            .blog__nav
-              // handled by swiper API
-              .blog__nav-fraction
-              // custom swiper API
-              .blog__progress
-                .blog__progress-fill(js-set-swiper-progress)
-                  
-              .blog__navigation
-                .blog__navigation-prev
-                  +icon('ico-nav-arrow-left')
-                .blog__navigation-next
-                  +icon('ico-nav-arrow-right')
-                  
+
+      .blog__content.wow
+
+        .blog__slider(js-blog-slider).swiper-container
+          .swiper-wrapper
+            // slides will be populated here with WP Json API
+            //- // slide
+            //- .blog__slide
+            //-   .blog-card
+            //-     .blog-card__image
+            //-       +img("blogPost-1")
+            //-     .blog-card__title.t-p1.c-orange Vazamentos de senha: como acontecem e dicas para se proteger
+            //-     .blog-card__date.t-p3 20th March 2018
+
+          // nav elements
+          .blog__nav
+            // handled by swiper API
+            .blog__nav-fraction
+            // custom swiper API
+            .blog__progress
+              .blog__progress-fill(js-set-swiper-progress)
+                
+            .blog__navigation
+              .blog__navigation-prev
+                +icon('ico-nav-arrow-left')
+              .blog__navigation-next
+                +icon('ico-nav-arrow-right')
+                
                   

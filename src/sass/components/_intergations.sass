@@ -1,9 +1,9 @@
 .integrations
-  margin: 100px 0
+  margin: 110px 0 110px
   &__wrapper
     display: flex
     align-items: flex-end
-    margin-left: 60px
+    margin-left: -15px
     margin-right: -15px
 
   &__title
@@ -11,18 +11,30 @@
     padding: 0 15px
     h3
       margin: 0
+      line-height: .9
 
   &__logos-grid
     flex: 1 1 auto
+    margin-left: auto
     display: flex
-    padding: 0 15px 5px
+    justify-content: space-between
+    padding: 0 0px 3px
+    max-width: 700px
 
   &__logo
-    flex: 1 1 25%
+    flex: 0 0 auto
     display: flex
     align-items: center
     justify-content: center
     padding: 10px
     text-align: center
+    &--slack
+      padding-bottom: 5px
+    &--arcsight
+      padding-bottom: 3px
+    &--splunk
+      padding-bottom: 5px
+    &--radar
+      padding-top: 4px
     img
       max-width: 100%

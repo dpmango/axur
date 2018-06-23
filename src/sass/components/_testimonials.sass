@@ -1,16 +1,29 @@
 .testimonials
   padding: 0px 0
+  margin: 100px 0 0
+  > .container
+    &:first-child
+      position: relative
+      &::after
+        display: block
+        content: ' '
+        background: $colorBlue
+        height: 4px
+        position: absolute
+        left: 50px
+        right: 50px
+        top: 0
   &__head
-    padding-top: 70px
-    border-top: 2px solid $colorBlue
+    padding-top: 80px
     display: flex
     align-items: center
-    margin-left: 60px
+    margin-left: -15px
     margin-right: -15px
     &-image
       flex: 0 0 auto
       padding: 0 15px
       margin-left: auto
+      padding-top: 10px
       svg, img
         max-width: 100%
   &__title
@@ -18,24 +31,37 @@
     padding: 0 15px
     h2
       max-width: 550px
+      line-height: .9
 
   &__wrapper
     margin-top: 100px
     margin-bottom: 60px
+    padding-left: 200px
+    padding-right: 110px
   &__slider
     position: relative
     height: 100%
-    padding-left: 200px
+    // padding-left: 200px
+    // padding-right: 110px
     // padding-bottom: 60px
 
   &__logos-grid
+    position: relative
     display: flex
     align-items: center
     justify-content: space-between
     padding-top: 60px
-    border-top: 1px solid $colorLightGray
     margin-left: -10px
     margin-right: -10px
+    &::before
+      display: inline-block
+      content: ' '
+      position: absolute
+      left: 10px
+      right: 10px
+      height: 1px
+      top: 0
+      background: $colorLightGray
   &__logo
     flex: 0 1 auto
     padding: 10px
@@ -63,7 +89,7 @@
     padding-left: 40px
 
   &__author
-    margin-top: 20px
+    margin-top: 25px
     color: $colorMuted
     font-size: 15px
     span

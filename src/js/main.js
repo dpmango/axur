@@ -13,7 +13,7 @@ $(document).ready(function(){
   function pageReady(){
     // layout
     legacySupport();
-    initTypograph();
+    // initTypograph();
     closeAllActives(); // close all hamburgers, menus, etc.
     updateHeaderActiveClass(); // set is-active class for header nav
     // initHeaderScroll();
@@ -337,6 +337,7 @@ $(document).ready(function(){
       slidesPerView: 2,
       normalizeSlideIndex: true,
       freeMode: false,
+      // effect: 'flip',
       breakpoints: {
         // when window width is <= 992px
         992: {
@@ -346,10 +347,10 @@ $(document).ready(function(){
     })
 
     // custom nav
-    _document.on('click', '[js-testimonials-slider-nav] .testimonials__logo', function(){
-      var targetSlide = parseInt( $(this).data('slideTo') ) - 1;
-      testimonialsSlider.slideTo( targetSlide );
-    })
+    // _document.on('click', '[js-testimonials-slider-nav] .testimonials__logo', function(){
+    //   var targetSlide = parseInt( $(this).data('slideTo') ) - 1;
+    //   testimonialsSlider.slideTo( targetSlide );
+    // })
 
     // BLOG SWIPER
     var blogSliderProgress = $('[js-set-swiper-progress]')
@@ -365,6 +366,7 @@ $(document).ready(function(){
       normalizeSlideIndex: true,
       freeMode: true,
       watchSlidesProgress: true,
+      slidesOffsetAfter: 50,
       pagination: {
         el: '.blog__nav-fraction',
         type: 'fraction',
@@ -375,8 +377,9 @@ $(document).ready(function(){
       },
       on: {
         progress: function(progress){
+          var reverseTransform = Math.floor(progress * 100) - 100
           blogSliderProgress.css({
-            'width': Math.floor(progress * 100) + '%'
+            'transform': 'translate('+ reverseTransform + '%,0)'
           })
         }
         // sliderMove: function(e){

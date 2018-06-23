@@ -1,29 +1,45 @@
 .blog
-  padding: 100px 0
+  position: relative
+  padding: 100px 0 100px 0
   background: #FAFAFA
-  overflow: hidden
+  // overflow: hidden
   &__wrapper
     display: flex
-    align-items: center
-    margin-left: -15px
-    margin-right: -15px
+    // align-items: center
 
   &__heading
-    flex: 0 0 40%
-    max-width: 40%
+    flex: 0 1 48%
+    max-width: 48%
     min-width: 1px
-    padding: 0 15px
+    // padding-right: 30px
+    &-wrapper
+      margin-left: 80px
+      padding-top: 50px
+    h2
+      line-height: .9
+      margin-bottom: 1.8em
 
   &__content
     position: relative
-    flex: 1 0 60%
-    max-width: calc(60% + 50px)
-    // max-width: 60%
+    flex: 0 1 52%
+    max-width: 52%
     min-width: 1px
-    padding-left: 15px
-    margin-right: -50px
+    // padding-left: 15px
 
   &__slider
+    padding-left: 30px
+    &::before
+      display: inline-block
+      content: ' '
+      position: absolute
+      bottom: -30px
+      top: -30px
+      left: -50px
+      z-index: 2
+      width: 100px
+      background: #FAFAFA
+      pointer-events: none
+      filter: blur(10px)
 
   &__slide
     flex: 0 0 400px
@@ -32,37 +48,48 @@
     flex-direction: column
 
   &__bg
+    font-size: 0
     position: absolute
-    bottom: -100px
-    right: 0
+    bottom: 0px
+    /* because images are smaller than in design
+    right: -70px
 
   &__nav
+    max-width: 500px
+    margin-left: auto
     display: flex
     align-items: center
-    justify-content: center
+    justify-content: flex-end
+    padding-right: 50px
+    padding-top: 20px
     color: white
 
     &-fraction
+      flex: 0 0 auto
       width: auto
       font-size: 15px
       color: white
 
   &__progress
+    flex: 1 1 auto
     position: relative
     background: rgba(white, .3)
     height: 1px
     margin: 0 40px
     width: 270px
+    overflow: hidden
     &-fill
       display: inline-block
       position: absolute
       left: 0
+      right: 0
       top: 0
       height: 1px
       background: white
-      transition: width .1s linear
+      transition: transform .1s linear
 
   &__navigation
+    flex: 0 0 auto
     display: flex
     align-items: center
 
@@ -98,10 +125,11 @@
       width: 100%
 
   &__title
-    margin-top: -12px
-
-  &__description
-
+    margin-top: -8px
+    padding-left: 10px
+    padding-right: 10px
   &__date
     margin-top: auto
-    padding-top: 40px
+    padding-top: 10px
+    padding-left: 10px
+    padding-right: 10px
