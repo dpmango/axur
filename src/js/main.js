@@ -144,8 +144,10 @@ $(document).ready(function(){
     })
     .on('click', function(e){
       var $target = $(e.target);
-
-      if ( $target.closest('.menu') ){
+      if (
+        !$target.closest('.menu').length > 0 &&
+        !$target.closest('.header').length > 0
+      ){
         closeAllMenus();
       }
     })
@@ -155,6 +157,7 @@ $(document).ready(function(){
     if ( target ){
       $('[data-target-menu]').toggleClass('is-active');
       target.toggleClass('is-active');
+      $('.page').toggleClass('is-muted');
     }
   }
 
@@ -163,12 +166,14 @@ $(document).ready(function(){
     if ( target ){
       $('[data-target-menu]').toggleClass('is-active');
       target.toggleClass('is-active');
+      $('.page').removeClass('is-muted');
     }
   }
 
   function closeAllMenus(){
     $('[data-target-menu]').removeClass('is-active');
     $('[data-menu]').removeClass('is-active');
+    $('.page').removeClass('is-muted');
   }
 
   // master function to close everything
