@@ -19,6 +19,8 @@ $(document).ready(function(){
     // initHeaderScroll();
     adjustAsyncLayout(); // set padding-left|right for async layout
     _window.on('resize', debounce(adjustAsyncLayout, 100));
+    stickyBgElements(); // adjust svg bg elements positions
+    _window.on('resize', debounce(stickyBgElements, 100))
 
     // functional
     initSliders();
@@ -268,6 +270,55 @@ $(document).ready(function(){
     }
   }
 
+  function stickyBgElements(){
+
+    var productsOval = $('[js-sticky-products-oval]');
+    var productsTriangle = $('[js-sticky-products-triangle]');
+
+    if (productsOval){
+      var anchor = $('.products-card[data-for-prodcuts-oval]');
+      var anchorOffsetX = Math.floor(anchor.offset().left);
+      var anchorOffsetY = Math.floor( Math.abs( $('.products').offset().top - anchor.offset().top ));
+      // will be position X by the center of a card - so, need width of oval and anchor
+      var ovalWidth = productsOval.outerWidth()
+      var anchorWidth = anchor.outerWidth();
+      var anchorCenterOffsetX =  Math.floor(anchorOffsetX + (anchorWidth / 2))
+
+      // TO DO
+      // watch product info to prevent overlowing the element?
+
+      // oval is positioned abs to products seciton (full-width container)
+      var calcOvalPosition = {
+        x: Math.floor(anchorCenterOffsetX - (ovalWidth / 2)),
+        y: anchorOffsetY - 42
+      }
+
+      productsOval.css({
+        'left': calcOvalPosition.x,
+        'top': calcOvalPosition.y
+      })
+    }
+
+    // logic for the triagle
+    if (productsTriangle){
+      var anchor = $('[data-for-prodcuts-triangle]');
+      var anchorOffsetY = Math.floor( Math.abs( $('.products').offset().top - anchor.offset().top ) );
+      // get values to do it as a sticky to the bottom
+      var anchorHeight = anchor.outerHeight();
+      var triangleHeight = productsTriangle.outerHeight();
+      var anchorBottomPosition = anchorOffsetY + (anchorHeight - triangleHeight)
+
+      // triangle is also positioned abs to products seciton (full-width container)
+      var calcTriabglePosition = anchorBottomPosition - 105
+
+      productsTriangle.css({
+        'top': calcTriabglePosition,
+        'bottom': 'auto'
+      })
+    }
+
+  }
+
 
   //////////
   // SLIDERS
@@ -342,9 +393,14 @@ $(document).ready(function(){
     $.get(blogAPIEndpointPosts, function(data){
       $.each(data, function(index, post){
         // get featured media element
-        $.get(blogAPIEndpointMedia + post.featured_media, function(media){
-          addBlogSlides(index, post, media)
-        })
+        try{
+          $.get(blogAPIEndpointMedia + post.featured_media, function(media){
+            addBlogSlides(index, post, media)
+          })
+        } catch(err){
+          console.log(err)
+        }
+
       })
     })
 

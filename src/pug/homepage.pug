@@ -26,7 +26,7 @@ block content
             +icon('ico-play')
             span Veja o que mais podemos fazer pela sua marca
           
-      .hero__image.wow
+      .hero__image.wow(data-animation-class="wowFadeRight")
         include ../inline-svg/animation-2.svg
         //- iframe(frameborder="0" src='inline-animations/animation-2/homepage.html')
           
@@ -47,16 +47,16 @@ block content
   
   // PRODUCTS
   .products
-    .products-bg__oval
+    .products-bg__oval.wow(js-sticky-products-oval)
       img(src='img/svg/productGrid-oval.svg')
       //- include ../inline-svg/productGrid-oval.svg
-    .products-bg__triangle
+    .products-bg__triangle.wow(js-sticky-products-triangle)
       img(src='img/svg/productGrid-triangle.svg')
       //- include ../inline-svg/productGrid-triangle.svg
       
     .container
       // section heading
-      .section-heading
+      .section-heading.wow
         h2 As soluções para proteger sua presença digital
         p.t-p2 Exploramos todo o potencial da inteligência artificial para oferecer proteção sob medida contra riscos digitais.
       
@@ -70,11 +70,12 @@ block content
               span descubra aqui
         
         .products__content
-          .products__grid
+          .products__grid(data-for-prodcuts-triangle)
             // col
             .products__col
               // card
-              .products-card.wow
+              // data-for is for correct position of background oval
+              .products-card.wow(data-for-prodcuts-oval)
                 h3 
                   span Digital Fraud Discovery
                 p.t-p2 Buscamos e removemos sites que usam sua marca em fraudes como phishing e infecção por malware.
