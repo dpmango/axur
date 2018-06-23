@@ -1,8 +1,9 @@
 .how
-  margin: 100px 0 0
+  margin: 110px 0 0
 
   &__wrapper
     display: flex
+    margin-top: -15px
     margin-left: -15px
     margin-right: -15px
 
@@ -10,7 +11,7 @@
     flex: 0 1 50%
     max-width: 50%
     min-width: 1px
-    padding: 53px 15px 30px
+    padding: 53px 15px 123px
     // background: url('../img/howBg.png') no-repeat
     // background-position: -50px top
     // overflow: hidden
@@ -20,15 +21,16 @@
       padding: 20px 0
     .svg-animation-container
       position: relative
+      padding-top: 45px
       &::before
         display: inline-block
         content: ' '
         position: absolute
-        left: -50px
-        top: 0
+        left: -95px
+        top: -10px
         size: 658px 510px
         background: url('../img/howBg.png') no-repeat
-        background-position: -50px top
+        background-position: left top
 
     svg
       width: 80%
@@ -56,6 +58,7 @@
     max-width: 50%
     min-width: 1px
     padding: 0 15px
+    padding-bottom: 100px
 
   &__section
     margin: 170px 0
@@ -66,6 +69,7 @@
     h2
       line-height: .9
       font-weight: 500
+      margin-bottom: 1.2em
 
   &__facts-grid
     display: flex
@@ -81,14 +85,16 @@
     padding: 0 15px
 
     h2, p
-    max-width: 240px
+      max-width: 240px
 
   &__results-grid
     display: flex
     flex-wrap: wrap
     margin-left: -10px
     margin-right: -10px
-    margin-bottom: 200px
+    max-width: 575px
+    padding-top: 10px
+    // margin-bottom: 200px
   &__result
     flex: 0 1 33.3%
     max-width: 33.3%

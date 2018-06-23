@@ -62,6 +62,7 @@ block content
       
       .products__wrapper
         // info
+        //.wow(data-animation-class="wowFadeLeft")
         .products__info
           .products__info-wrapper(js-stick-in-parent)
             +img("camRobot")
@@ -152,26 +153,26 @@ block content
             .products__col
               // card
               .products-card.products-card--no-bg.wow
-                h3 
-                  span Takedown rápido e em qualquer lugar
+                h4
+                  span Takedown rápido <br>e em qualquer lugar
                 p.t-p2 Nossa exeperiência e tecnologia garantem velocidade de reação para proteger a reputação da sua marca.
             .products__col
               // card
-              .products-card.products-card--no-bg.wow
-                h3 
-                  span Suporte em todas as fases do projeto
+              .products-card.products-card--no-bg.wow(data-animation-delay=".1s")
+                h4
+                  span Suporte em todas<br> as fases do projeto
                 p.t-p2 Nossa equipe pode oferecer apoio adicional, do onboarding até o acompanhamento técnico.
             .products__col
               // card
-              .products-card.products-card--no-bg.wow
-                h3 
-                  span Proteção para executivos
+              .products-card.products-card--no-bg.wow(data-animation-delay=".2s")
+                h4
+                  span Proteção para <br>executivos
                 p.t-p2 Temos uma extensão que garante proteção extra para os dados dos executivos da sua empresa.
 
   // HOW IT WORKS
   .how
     .container
-      .section-heading
+      .section-heading.wow
         h2 Monitoramos todas as camadas da web, 24h por dia
       
       .how__wrapper
@@ -182,7 +183,7 @@ block content
             //- iframe(frameborder="0" src='inline-animations/animation-1/demo.html')
           
         .how__content
-          .how__section
+          .how__section.wow
             .how__facts-grid
               .how__fact
                 .h2.c-orange +1.2 bi
@@ -197,11 +198,11 @@ block content
                 .h2.c-orange +44 mi
                 p.t-p2 SMS analisados automaticamente através de algorítimos especializados.
                 
-          .how__section
+          .how__section.wow
             h2 Tudo isso com o poder da Inteligência Artificial
             p.t-p2 Para acompanhar a evolução das fraudes na web, combinamos Inteligência Artificial com as possibilidades infinitas do machine learning. Assim, nossos sistemas aprendem não só a detectar ameaças, mas a identificar mudanças na forma como elas são executadas.
             
-          .how__section
+          .how__section.wow
             h2 Resultado: detecção e remoção com rapidez
             .how__results-grid
               .how__result

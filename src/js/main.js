@@ -289,7 +289,7 @@ $(document).ready(function(){
 
       // oval is positioned abs to products seciton (full-width container)
       var calcOvalPosition = {
-        x: Math.floor(anchorCenterOffsetX - (ovalWidth / 2)),
+        x: Math.floor(anchorCenterOffsetX - (ovalWidth / 2) + 30),
         y: anchorOffsetY - 42
       }
 
@@ -309,7 +309,7 @@ $(document).ready(function(){
       var anchorBottomPosition = anchorOffsetY + (anchorHeight - triangleHeight)
 
       // triangle is also positioned abs to products seciton (full-width container)
-      var calcTriabglePosition = anchorBottomPosition - 105
+      var calcTriabglePosition = anchorBottomPosition - 100
 
       productsTriangle.css({
         'top': calcTriabglePosition,
