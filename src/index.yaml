@@ -2,7 +2,7 @@ ProjectTitle: Axur
 
 PageList:
 - file: homepage.html
-  ready: 60
+  ready: 70
 - file: digital-fraud.html
   ready: 0
 - file: sales-abuse.html

@@ -7,9 +7,9 @@ block content
   
   // HERO
   .hero
-    .container
-      .hero__wrapper
-        .hero__content.wow
+    .hero__wrapper
+      .hero__content.wow(js-layout-padding data-type="container-left")
+        .hero__content-wrapper
           h1.hero__title É possível ter uma <br/>
             | internet livre de <br/>
             span(js-typewriter data-type="perfis falsos;digital fraud;Sales Abuse;Partner Compliance;Threat Intelligence") perfis falsos
@@ -22,13 +22,13 @@ block content
             button(type="submit").btn.btn-primary 
               span conheça a plataforma
             
-          a(href="#").hero__play
+          a(href="https://www.youtube.com/watch?v=IJKjMIU55pE" js-popupVideo).hero__play
             +icon('ico-play')
             span Veja o que mais podemos fazer pela sua marca
           
-        .hero__image.wow
-          include ../inline-svg/animation-2.svg
-          //- iframe(frameborder="0" src='inline-animations/animation-2/homepage.html')
+      .hero__image.wow
+        include ../inline-svg/animation-2.svg
+        //- iframe(frameborder="0" src='inline-animations/animation-2/homepage.html')
           
   // PUBLICATIONS PROMO
   .publ.wow

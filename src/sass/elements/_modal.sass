@@ -10,30 +10,38 @@ html.mfp-helper
     height: 100%
     -webkit-transform: translateZ(0)
 
-#small-dialog
-  background: white
-  padding: 20px 30px
-  text-align: left
-  max-width: 600px
-  margin: 40px auto
-  position: relative
-
-
-// Fade-zoom animation for first dialog
-
 .popup-buble
-  .popup-dialog
+  .mfp-close
+    position: absolute
+    top: 10px
+    right: 10px
+    z-index: 10000
+    opacity: 1
+    width: auto
+    height: auto
+    font-size: 0px
+    padding: 10px
+    .ico
+      font-size: 20px
+      transition: .25s $ease
+      fill: white
+    &:hover
+      .ico
+        fill: $colorOrange
+  .popup-dialog, .mfp-content
     opacity: 0
     transition: all 0.2s ease-in-out
-    transform: scale(0.8)
-  &.mfp-ready .popup-dialog
-    opacity: 1
-    transform: scale(1)
-  &.mfp-removing .popup-dialog
-    transform: scale(0.8)
-    opacity: 0
+    transform: scale(0.8) translate3d(0,50%,0)
+  &.mfp-ready
+    .popup-dialog, .mfp-content
+      opacity: 1
+      transform: scale(1)
+  &.mfp-removing
+    .popup-dialog, .mfp-content
+      transform: scale(0.8) translate3d(0,-50%,0)
+      opacity: 0
   &.mfp-bg
-    background: $colorGreen
+    background: rgba(#231F20, .85)
     opacity: 0
     transition: opacity 0.3s $ease
   &.mfp-ready.mfp-bg
@@ -41,24 +49,16 @@ html.mfp-helper
   &.mfp-removing.mfp-bg
     opacity: 0
 
-
-
-// Fade-move animation
-.my-mfp-slide-bottom
-  .zoom-anim-dialog
-    opacity: 0
-    transition: all 0.2s ease-out
-    transform: translateY(-20px) perspective(600px) rotateX(10deg)
-  &.mfp-ready .zoom-anim-dialog
-    opacity: 1
-    transform: translateY(0) perspective(600px) rotateX(0)
-  &.mfp-removing .zoom-anim-dialog
-    opacity: 0
-    transform: translateY(-10px) perspective(600px) rotateX(10deg)
-  &.mfp-bg
-    opacity: 0
-    transition: opacity 0.3s ease-out
-  &.mfp-ready.mfp-bg
-    opacity: 0.8
-  &.mfp-removing.mfp-bg
-    opacity: 0
+.mfp-iframe-holder
+  position: relative
+  max-width: 1680px
+  padding-left: 50px
+  padding-right: 50px
+  .mfp-content
+    max-width: 100%
+    width: calc(100vw - 100px)
+    height: calc(56.25vw - 60px)
+    max-height: calc(100vh - 60px)
+    max-width: calc(177.78vh - 100px)
+    margin: auto
+    position: absolute 0

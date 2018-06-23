@@ -18,7 +18,7 @@ $(document).ready(function(){
     updateHeaderActiveClass(); // set is-active class for header nav
     // initHeaderScroll();
     adjustAsyncLayout(); // set padding-left|right for async layout
-    _window.on('resize', debounce(adjustAsyncLayout, 200));
+    _window.on('resize', debounce(adjustAsyncLayout, 100));
 
     // functional
     initSliders();
@@ -421,6 +421,38 @@ $(document).ready(function(){
   			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
   		}
   	});
+
+    $('[js-popupVideo]').magnificPopup({
+      // disableOn: 700,
+      type: 'iframe',
+      fixedContentPos: true,
+      fixedBgPos: true,
+      overflowY: 'auto',
+      closeBtnInside: false,
+      preloader: false,
+      midClick: true,
+      removalDelay: 300,
+      mainClass: 'popup-buble',
+      callbacks: {
+        beforeOpen: function() {
+          // startWindowScroll = _window.scrollTop();
+          // $('html').addClass('mfp-helper');
+        }
+      },
+      patterns: {
+        youtube: {
+          index: 'youtube.com/',
+          id: 'v=', // String that splits URL in a two parts, second part should be %id%
+          // Or null - full URL will be returned
+          // Or a function that should return %id%, for example:
+          // id: function(url) { return 'parsed id'; }
+
+          src: '//www.youtube.com/embed/%id%?autoplay=1&controls=0&showinfo=0' // URL that will be set as a source for iframe.
+        }
+      },
+      closeMarkup: '<button class="mfp-close"><svg class="ico ico-close"><use xlink:href="img/sprite.svg#ico-close"></use></svg></button>'
+    });
+
   }
 
   function closeMfp(){

@@ -11,6 +11,7 @@ button
   display: inline-block
   position: relative
   text-align: center
+  padding: 0
   transition: all $transitionSpeed ease-in-out
   &:focus, &:active
     outline: none
@@ -26,7 +27,7 @@ button
     letter-spacing: 0.01em
     border-radius: 4px
     color: $colorOrange
-    padding: 17px 25px 13px
+    padding: 17px 30px 13px
     text-transform: uppercase
     &:hover
       background-color: $colorOrange
@@ -35,6 +36,7 @@ button
   &-primary
     background: transparent
     transition: none
+    padding: 0
     span
       display: inline-block
       position: relative
@@ -46,7 +48,7 @@ button
       letter-spacing: 0.01em
       border-radius: 4px
       color: white
-      padding: 17px 25px 13px
+      padding: 14px 25px 16px
       text-transform: uppercase
       transition: .25s $ease
     &::before
