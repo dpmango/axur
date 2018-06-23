@@ -41,6 +41,13 @@ body, html
   margin-right: auto
   padding-left: 50px
   padding-right: 50px
+  &--narrow
+    max-width: 1190px
+    &.container--no-pad
+      max-width: 1090px
+  &--no-pad
+    padding-left: 0
+    padding-right: 0
 
 +r($mobile)
   .container

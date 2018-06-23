@@ -13,7 +13,7 @@ $(document).ready(function(){
   function pageReady(){
     // layout
     legacySupport();
-    // initTypograph();
+    initTypograph();
     closeAllActives(); // close all hamburgers, menus, etc.
     updateHeaderActiveClass(); // set is-active class for header nav
     // initHeaderScroll();
