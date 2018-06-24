@@ -2,13 +2,8 @@
 .footer
   background: white
   padding: 65px 0
-  // reveal footer
-  // bottom: 0
-  // left: 0
-  // right: 0
   &__wrapper
     display: flex
-    // flex-wrap: wrap
     margin-top: 65px
   &__logo
 
@@ -17,14 +12,16 @@
     display: flex
     margin-left: -15px
     margin-right: -15px
-    &-heading
-      margin-top: 0
     &-col
       flex: 0 1 33.3%
       max-width: 33.3%
       min-width: 1px
       min-height: 0
       padding: 0 15px
+  h4
+    margin-top: 0
+    &.mobile-only
+      display: none
   &__menu
     margin: 35px 0 20px
     padding: 0
@@ -53,7 +50,6 @@
         margin-top: 0
       &:last-child
         margin-bottom: 0
-
 
   &__bottom
     margin-top: 30px
@@ -90,3 +86,89 @@
       font-size: 17px
       &:hover
         color: $twitter
+
++r($desktop)
+  /* break contacts to line first
+  .footer
+    &__wrapper
+      flex-wrap: wrap
+    &__navi
+      flex-basis: calc(100% + 30px)
+    &__contacts
+      flex: 0 1 calc(100% + 30px)
+      padding-left: 0
+      display: flex
+      margin-left: -15px
+      margin-right: -15px
+      p
+        flex: 0 1 33.3%
+        max-width: 33.3%
+        min-width: 1px
+        padding: 0 15px
+        &:first-child
+          margin-top: 26px
+
++r($tablet)
+  .footer
+    &__navi
+      display: block
+      margin-left: 0
+      margin-right: 0
+      &-col
+        padding-left: 0
+        padding-right: 0
+        max-width: 100%
+        // padding-top: 20px
+        border-bottom: 1px solid $colorLightGray
+        &:first-child
+          border-top: 1px solid $colorLightGray
+    h4
+      margin: 0
+      padding: 1.33em 0
+      cursor: pointer
+      &.mobile-only
+        display: block
+    &__contacts
+      display: block
+      margin-left: 0
+      margin-right: 0
+      padding-top: 0
+      p
+        padding-left: 0
+        padding-right: 0
+        max-width: 100%
+    &__navi-col, &__contacts
+      position: relative
+      &::after
+        display: inline-block
+        content: ' '
+        position: absolute
+        +sprite(footer-nav-arrow)
+        right: 0
+        top: 30px
+        transition: .25s $ease
+        // transform: translateY(-50%)
+      &.is-active
+        padding-bottom: 25px
+        &::after
+          transform: rotate(180deg)
+    &__menu, &__contacts p
+      display: none
+
+    &__menu
+      margin: 0
+
+    &__contacts
+      border-bottom: 1px solid $colorLightGray
+      
+    &__bottom
+      flex-direction: column-reverse
+
+    &__socials
+      flex: 0 0 auto
+      padding-left: 0
+      margin-left: 0
+
+    &__copy
+      flex: 0 0 auto
+      margin-top: 40px

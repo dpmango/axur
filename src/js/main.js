@@ -13,6 +13,7 @@ $(document).ready(function(){
   function pageReady(){
     // layout
     legacySupport();
+    initTeleport(); // teleport first because might be a time-lag for next func
     // initTypograph();
     closeAllActives(); // close all hamburgers, menus, etc.
     updateHeaderActiveClass(); // set is-active class for header nav
@@ -38,7 +39,7 @@ $(document).ready(function(){
     // initPerfectScrollbar();
     initScrollMonitor();
     initValidations();
-    initTeleport();
+
 
     // development helper
     _window.on('resize', debounce(setBreakpoint, 200))
@@ -178,6 +179,27 @@ $(document).ready(function(){
     $('.page').removeClass('is-muted');
   }
 
+  // Footer mobile toggler controls
+  _document
+    .on('click', '[js-footer-mobile-toggler]', function(){
+      var menu = $(this).parent();
+      var menuElements = menu.find('.footer__menu, p')
+      menu.toggleClass('is-active');
+
+      menuElements.slideToggle();
+    })
+
+  // when going from mobile to desktop
+  // - reset all classes from toggler
+  function resetFooterNav(){
+    if ( _window.width() > 768 ){
+      var menuElements = $('.footer').find('.footer__menu, p');
+      menuElements.attr("style", " ");
+      $('.footer__navi-col, .footer__contacts').removeClass('is-active');
+    }
+  }
+  _window.on('resize', debounce(resetFooterNav, 100));
+
   // master function to close everything
   // specially usefull for barba page transitions
   function closeAllActives(){
@@ -286,6 +308,10 @@ $(document).ready(function(){
           }
         } else {
           $el.attr("style", "")
+          // $el.css({
+          //   'padding-left': 0,
+          //   'padding-right': 0
+          // })
         }
 
       })
@@ -868,6 +894,10 @@ $(document).ready(function(){
             self.html(objHtml)
             target.html("")
           }
+
+          // repeat some critical functions
+          initValidations();
+          initPopups();
         }
 
         teleport();

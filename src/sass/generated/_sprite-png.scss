@@ -1,11 +1,11 @@
 $sprite: (
-	logo: (
+	footer-nav-arrow: (
 		offset-x: 0px,
 		offset-y: 0px,
-		width: 300px,
-		height: 70px,
-		total-width: 300px,
-		total-height: 70px,
+		width: 14px,
+		height: 8px,
+		total-width: 14px,
+		total-height: 8px,
 		image: '../img/sprite.png'
 	),
 );
@@ -64,6 +64,6 @@ $sprite: (
 
 
 
-	.icon-logo {
-		@include sprite(logo)
+	.icon-footer-nav-arrow {
+		@include sprite(footer-nav-arrow)
 	}

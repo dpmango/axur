@@ -7,28 +7,31 @@ block content
   // HERO
   .hero
     .hero__wrapper
-      .hero__content.wow(js-layout-padding data-type="container-left")
-        .hero__content-wrapper
+      .hero__content(js-layout-padding data-type="container-left" data-stop="<992")
+        .hero__content-wrapper.wow
           h1.hero__title É possível ter uma <br/>
             | internet livre de <br/>
             span(js-typewriter data-type="perfis falsos;digital fraud;Sales Abuse;Partner Compliance;Threat Intelligence") perfis falsos
           p.t-p1 Usamos a força da Inteligência Artificial para encontrar e eliminar riscos para sua marca e seus clientes.
-          // signup form
-          form(action="#" js-validate-signup).signup-form.hero__form
-            .ui-input.ui-input--iconed
-              input(type="text" name="email" placeholder="Seu e-mail corporativo…")
-              +icon('ico-mail')
-            button(type="submit").btn.btn-primary 
-              span conheça a plataforma
-            
-          a(href="https://www.youtube.com/watch?v=IJKjMIU55pE" js-popupVideo).hero__play
-            +icon('ico-play')
-            span Veja o que mais podemos fazer pela sua marca
+          div(js-teleport data-teleport-to="hero-actionable" data-teleport-condition="<992")
+            // signup form
+            form(action="#" js-validate-signup).signup-form.hero__form
+              .ui-input.ui-input--iconed
+                input(type="text" name="email" placeholder="Seu e-mail corporativo…")
+                +icon('ico-mail')
+              button(type="submit").btn.btn-primary 
+                span conheça a plataforma
+              
+            a(data-mfp-src="https://www.youtube.com/watch?v=IJKjMIU55pE" js-popupVideo).hero__play
+              +icon('ico-play')
+              span Veja o que mais podemos fazer pela sua marca
           
       .hero__image.wow(data-animation-class="wowFadeRight")
         include ../inline-svg/animation-2.svg
         //- iframe(frameborder="0" src='inline-animations/animation-2/homepage.html')
-          
+      .hero__actionable(data-teleport-target="hero-actionable")
+        // mobile contents
+      
   // PUBLICATIONS PROMO
   .publ.wow
     .container
@@ -61,7 +64,7 @@ block content
         // info
         //.wow(data-animation-class="wowFadeLeft")
         .products__info
-          .products__info-wrapper(js-stick-in-parent)
+          .products__info-wrapper(js-stick-in-parent js-teleport data-teleport-to="products-info" data-teleport-condition="<860")
             +img("camRobot")
             p.t-p1 Não tem certeza de qual solução é a melhor para sua marca?
             a(href="#").btn.btn-primary 
@@ -75,7 +78,7 @@ block content
               // data-for is for correct position of background oval
               a.products-card.wow(href="#" data-id="1" data-for-prodcuts-oval)
                 h3 
-                  span Digital Fraud Discovery
+                  span Digital Fraud <br>Discovery
                 p.t-p2 Buscamos e removemos sites que usam sua marca em fraudes como phishing e infecção por malware.
                 .link-p2 Saiba mais
                 .products-card__price
@@ -86,7 +89,7 @@ block content
               // card
               a.products-card.wow(href="#" data-id="2")
                 h3 
-                  span Partner Compliance
+                  span Partner <br>Compliance
                 p.t-p2 Analisamos as atividades dos seus parceiros, além de identificar quem finge ter ligação com sua marca.
                 .link-p2 Saiba mais
                 .products-card__price
@@ -100,7 +103,7 @@ block content
               // card
               a.products-card.wow(href="#" data-id="3")
                 h3 
-                  span Digital Marketing Compliance
+                  span Digital Marketing <br>Compliance
                 p.t-p2 Procuramos apps falsos, perfis não oficiais e roubos de identidade que confundem seus clientes.
                 .link-p2 Saiba mais
                 .products-card__price
@@ -111,7 +114,7 @@ block content
               // card
               a.products-card.wow(href="#" data-id="4")
                 h3 
-                  span Data Leakage Discovery
+                  span Data Leakage <br>Discovery
                 p.t-p2 Monitoramos possíveis vazamentos de dados para agir rápido e reduzir o impacto do incidente.
                 .link-p2 Saiba mais
                 .products-card__price
@@ -125,7 +128,7 @@ block content
               // card
               a.products-card.wow(href="#" data-id="5")
                 h3 
-                  span Sales Abuse Discovery
+                  span Sales Abuse <br>Discovery
                 p.t-p2 Descobrimos e tiramos do ar vendas ilegais ou produtos piratas, que prejudicam sua imagem e seus resultados.
                 .link-p2 Saiba mais
                 .products-card__price
@@ -145,7 +148,8 @@ block content
                     span R$1.499
                     span /mês
           
-        
+          .products__info.products__info--mobile(data-teleport-target="products-info")
+          
           .products__benefits
             .products__col
               // card
