@@ -101,12 +101,19 @@
     &__hamburger
       display: block
 
-+r($tablet)
++r(860)
   .header
     &__menu
       display: none
+    &__cta
+      margin-left: auto
 
 +r($mobile)
   .header
+    padding-top: 40px
     &__logo
       font-size: 30px
+    &__cta
+      display: none
+    &__hamburger
+      margin-left: auto

@@ -11,7 +11,7 @@ header.header
         li
           a(href="#") Peça uma demonstração
       
-      ul.header__lang
+      ul.header__lang(js-teleport data-teleport-to="header-lang" data-teleport-condition="<992")
         li
           a(href="#") EN
         li
@@ -37,7 +37,7 @@ header.header
   .menu__wrapper
     .menu__close(js-close-menu)
       +icon('ico-close')
-    .menu__nav(js-layout-padding data-type="container-left")
+    .menu__nav(js-layout-padding data-type="container-left" data-stop="<860")
       ul.menu__nav-list
         li
           a(href="#")
@@ -66,8 +66,10 @@ header.header
             p.t-p3 Escaneie a deep web atrás de ataques, golpes e ameaças
     
     .menu__sidebar
-      .menu__sidebar-wrapper(js-layout-padding data-type="container-right")
+      .menu__sidebar-wrapper(js-layout-padding data-type="container-right" data-stop="<860")
         p.t-p1 Credential Protection
         .menu__sidebar-links
           a.link-p3(href="#") Hashcast™ Proteção de senha
           a.link-p3(href="#") Leakstream
+        ul.menu__lang.header__lang(data-teleport-target="header-lang")
+          

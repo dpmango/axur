@@ -14,7 +14,7 @@ $(document).ready(function(){
     // layout
     legacySupport();
     // initTypograph();
-    // closeAllActives(); // close all hamburgers, menus, etc.
+    closeAllActives(); // close all hamburgers, menus, etc.
     updateHeaderActiveClass(); // set is-active class for header nav
     // initHeaderScroll();
     adjustAsyncLayout(); // set padding-left|right for async layout
@@ -38,7 +38,7 @@ $(document).ready(function(){
     // initPerfectScrollbar();
     initScrollMonitor();
     initValidations();
-    // initTeleport();
+    initTeleport();
 
     // development helper
     _window.on('resize', debounce(setBreakpoint, 200))
@@ -144,15 +144,15 @@ $(document).ready(function(){
       var target = $(this).closest('.menu').data('menu')
       closeMenu(target);
     })
-    // .on('click', function(e){
-    //   var $target = $(e.target);
-    //   if (
-    //     !$target.closest('.menu').length > 0 &&
-    //     !$target.closest('.header').length > 0
-    //   ){
-    //     closeAllMenus();
-    //   }
-    // })
+    .on('click', function(e){
+      var $target = $(e.target);
+      if (
+        !$target.closest('.menu').length > 0 &&
+        !$target.closest('.header').length > 0
+      ){
+        closeAllMenus();
+      }
+    })
 
   function toggleMenu(name){
     var target = $('[data-menu="'+name+'"]');
@@ -262,25 +262,30 @@ $(document).ready(function(){
         var $el = $(el);
         var containerWidth = $el.data('container-width') || 1250
         var type = $el.data('type')
-        var setPaddingPx = 0
+        var stopWatching = $el.data('stop') ? mediaCondition($el.data('stop')) : null
+        var setPaddingPx = 0;
 
-        // calculate base container diff
-        var widthDiff = wWidth - containerWidth
+        if ( stopWatching === null || !stopWatching ){
+          // calculate base container diff
+          var widthDiff = wWidth - containerWidth
 
-        // if the diff within max-width: 1250 + pad - just add default padding
-        if ( widthDiff < containerPadding * 2 ){
-          setPaddingPx = containerPadding
+          // if the diff within max-width: 1250 + pad - just add default padding
+          if ( widthDiff < containerPadding * 2 ){
+            setPaddingPx = containerPadding
+          } else {
+            // get container diff with window size
+            var containerDiff = widthDiff - (containerPadding * 2)
+            setPaddingPx = containerPadding + (containerDiff / 2)
+          }
+
+          // set values
+          if ( type === "container-left" ){
+            $el.css({ 'padding-left': setPaddingPx })
+          } else if ( type === "container-right" ){
+            $el.css({ 'padding-right': setPaddingPx })
+          }
         } else {
-          // get container diff with window size
-          var containerDiff = widthDiff - (containerPadding * 2)
-          setPaddingPx = containerPadding + (containerDiff / 2)
-        }
-
-        // set values
-        if ( type === "container-left" ){
-          $el.css({ 'padding-left': setPaddingPx })
-        } else if ( type === "container-right" ){
-          $el.css({ 'padding-right': setPaddingPx })
+          $el.attr("style", "")
         }
 
       })

@@ -103,6 +103,14 @@
       a
         padding: 5px 0
 
+  &__lang
+    /* inherit class for .header__lang
+    /* to be used as a modifier
+    display: none
+    margin-left: 0
+    margin-top: 60px
+
+
 +r(1200)
   .menu
     &__nav
@@ -129,3 +137,56 @@
         margin: 35px -15px 25px
     &__sidebar
       padding-top: 30px
+
++r($desktop)
+  .menu
+    &__close
+      display: none
+    &__sidebar
+      flex: 0 0 300px
+      padding-left: 25px
+    &__lang
+      display: block
+
++r(860)
+  .menu
+    &__wrapper
+      display: block
+    &__menu
+      max-width: 100%
+    &__nav
+      padding-left: 50px
+      padding-right: 50px
+    &__sidebar
+      max-width: 100%
+      padding-left: 50px
+      padding-right: 50px
+
+
++r($tablet)
+  .menu
+
+
++r($mobile)
+  .menu
+    top: 90px
+    border: 0
+    &__nav
+      padding-left: 20px
+      padding-right: 20px
+      &-list
+        flex-direction: column
+        align-items: flex-start
+      li
+        flex: 0 0 auto
+        max-width: 100%
+        width: auto
+        margin-bottom: 10px
+        a
+          display: block
+          padding: 10px 0px
+          span
+            font-size: 16px
+
+    &__sidebar
+      padding: 40px 20px 60px
