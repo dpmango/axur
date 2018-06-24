@@ -14,7 +14,7 @@ $(document).ready(function(){
     // layout
     legacySupport();
     // initTypograph();
-    closeAllActives(); // close all hamburgers, menus, etc.
+    // closeAllActives(); // close all hamburgers, menus, etc.
     updateHeaderActiveClass(); // set is-active class for header nav
     // initHeaderScroll();
     adjustAsyncLayout(); // set padding-left|right for async layout
@@ -144,15 +144,15 @@ $(document).ready(function(){
       var target = $(this).closest('.menu').data('menu')
       closeMenu(target);
     })
-    .on('click', function(e){
-      var $target = $(e.target);
-      if (
-        !$target.closest('.menu').length > 0 &&
-        !$target.closest('.header').length > 0
-      ){
-        closeAllMenus();
-      }
-    })
+    // .on('click', function(e){
+    //   var $target = $(e.target);
+    //   if (
+    //     !$target.closest('.menu').length > 0 &&
+    //     !$target.closest('.header').length > 0
+    //   ){
+    //     closeAllMenus();
+    //   }
+    // })
 
   function toggleMenu(name){
     var target = $('[data-menu="'+name+'"]');
@@ -944,10 +944,7 @@ $(document).ready(function(){
   Barba.Pjax.start();
 
   Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container, newPageRawHTML) {
-
     pageReady();
-    closeMobileMenu();
-
   });
 
   // some plugins get bindings onNewPage only that way

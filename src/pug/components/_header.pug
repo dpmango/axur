@@ -25,7 +25,7 @@ header.header
 
       
       .header__hamburger
-        .hamburger.hamburger--squeeze(js-hamburger)
+        .hamburger.hamburger--squeeze(js-toggle-menu data-target-menu="solutions")
           .hamburger-box
             .hamburger-inner
         
@@ -33,36 +33,37 @@ header.header
 
 
 // MENU
-.menu(data-menu="solutions")
+.menu(data-menu="solutions").is-active
   .menu__wrapper
     .menu__close(js-close-menu)
       +icon('ico-close')
-    ul.menu__nav(js-layout-padding data-type="container-left")
-      li
-        a(href="#")
-          span Digital Fraud Discovery
-          p.t-p3 Identifique e remova ataques de phishing e malware
-      li
-        a(href="#")
-          span Sales Abuse Discovery
-          p.t-p3 Previna pirataria ou vendas não autorizadas em canais digitais
-      li
-        a(href="#")
-          span Data Leakage Discovery
-          p.t-p3 Monitore possíveis vazamentos de dados para agir rápido
+    .menu__nav(js-layout-padding data-type="container-left")
+      ul.menu__nav-list
+        li
+          a(href="#")
+            span Digital Fraud Discovery
+            p.t-p3 Identifique e remova ataques de phishing e malware
+        li
+          a(href="#")
+            span Sales Abuse Discovery
+            p.t-p3 Previna pirataria ou vendas não autorizadas em canais digitais
+        li
+          a(href="#")
+            span Data Leakage Discovery
+            p.t-p3 Monitore possíveis vazamentos de dados para agir rápido
 
-      li
-        a(href="#")
-          span Digital Marketing Compliance
-          p.t-p3 Certifique-se de que ninguém está usando sua marca sem autorização
-      li
-        a(href="#")
-          span Partner Compliance
-          p.t-p3 identifique parceiros usando sua marca indevidamente
-      li
-        a(href="#")
-          span Threat Intelligence
-          p.t-p3 Escaneie a deep web atrás de ataques, golpes e ameaças
+        li
+          a(href="#")
+            span Digital Marketing Compliance
+            p.t-p3 Certifique-se de que ninguém está usando sua marca sem autorização
+        li
+          a(href="#")
+            span Partner Compliance
+            p.t-p3 identifique parceiros usando sua marca indevidamente
+        li
+          a(href="#")
+            span Threat Intelligence
+            p.t-p3 Escaneie a deep web atrás de ataques, golpes e ameaças
     
     .menu__sidebar
       .menu__sidebar-wrapper(js-layout-padding data-type="container-right")

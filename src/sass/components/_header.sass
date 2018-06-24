@@ -84,19 +84,27 @@
     display: none
     padding-left: 20px
 
++r(1200)
+  .header
+    &__menu
+      li
+        margin-right: 35px
+    &__lang
+      margin-left: 40px
+    &__cta
+      margin-left: 40px
 
 +r($desktop)
   .header
-    &__cta
+    &__lang
       display: none
+    &__hamburger
+      display: block
 
 +r($tablet)
   .header
     &__menu
       display: none
-    &__hamburger
-      margin-left: auto
-      display: block
 
 +r($mobile)
   .header

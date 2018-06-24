@@ -34,23 +34,32 @@
     &:hover
       color: $colorOrange
   &__nav
-    display: flex
-    flex-wrap: wrap
-    margin: 65px -15px 55px
-    // padding: 0 15px
+    flex: 0 1 71%
+    padding-right: 30px
+    &-list
+      display: flex
+      flex-wrap: wrap
+      margin: 65px -15px 55px
+      padding: 0
+      // padding-right: 30px
+      // padding: 0 15px
 
     li
       flex: 0 1 33.3%
       max-width: 33.3%
       padding: 0px 15px
+      // padding-right: 30px
       min-width: 1px
       display: block
-      margin-bottom: 7px
+      margin-bottom: 15px
       a
         display: block
         padding: 20px 0px
         p
           margin-bottom: 0
+          margin-top: .2em
+          max-width: 240px
+          line-height: 1
         span
           position: relative
           display: inline-block
@@ -75,10 +84,10 @@
               opacity: 1
 
   &__sidebar
-    flex: 0 0 auto
+    flex: 0 1 29%
     border-left: 1px solid #EEEEEE
     background: #FAFAFA
-    padding: 65px 0 30px 40px
+    padding: 60px 0 30px 40px
     &-wrapper
       /* right padding will be set by js
       padding-top: 17px
@@ -97,6 +106,8 @@
 +r(1200)
   .menu
     &__nav
+      &-list
+        margin: 35px -15px 25px
       li
         flex-basis: 50%
         max-width: 50%
@@ -105,10 +116,8 @@
     &__close
       top: 15px
       right: 15px
-    &__nav
-      margin: 35px -15px 25px
     &__sidebar
-      padding-top: 35px
+      padding-top: 30px
 
 +rh(500)
   .menu
@@ -116,6 +125,7 @@
       top: 15px
       right: 15px
     &__nav
-      margin: 35px -15px 25px
+      &-list
+        margin: 35px -15px 25px
     &__sidebar
-      padding-top: 35px
+      padding-top: 30px
