@@ -41,6 +41,7 @@
     max-width: 290px
   h3
     margin-top: 0
+    padding-right: 20px
     line-height: 0.9
     span
       position: relative
@@ -58,4 +59,69 @@
 +r(1200)
   .features
     &__wrapper
-      margin-left: -15px
+
++r($desktop)
+  .features
+    margin-bottom: 70px
+    > .container
+      padding-top: 70px
+
+    &__wrapper
+      justify-content: center
+      flex-wrap: wrap
+      // max-width: 760px
+      // margin-left: auto
+      // margin-right: auto
+    &__col
+      flex: 0 1 50%
+      max-width: 50%
+      display: flex
+      &:nth-child(2)
+        .features-card
+          margin-left: auto
+      &:nth-child(3)
+        .features-card
+          margin-left: auto
+          margin-right: auto
+
+    &__image
+      padding-top: 60px
+
+
+  .features-card
+    margin-bottom: 50px
+
+
++r($tablet)
+  .features
+    &__image
+      &-wrapper
+        padding-right: 0
+        margin-left: -20px
+        margin-right: 0px
+
++r($mobile)
+  .features
+    > .container
+      &::after
+        left: 30px
+        right: 30px
+    &__wrapper
+      display: block
+      margin-left: 0
+      margin-right: 0
+    &__col
+      max-width: 100%
+      margin-left: 0
+      margin-right: 0
+      padding: 0
+      display: block
+    &__image
+      padding-top: 40px
+      &-wrapper
+        margin-left: 10px
+      img
+        min-width: 580px
+
+    .features-card
+      margin-bottom: 40px

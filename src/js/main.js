@@ -912,14 +912,14 @@ $(document).ready(function(){
           }
 
           // repeat some critical functions
-          initValidations();
-          initPopups();
-          initSliders();
-          initScrollMonitor();
+          // initValidations();
+          // initPopups();
+          // initSliders();
+          // initScrollMonitor();
         }
 
         teleport();
-        _window.on('resize', debounce(teleport, 100));
+        _window.on('resize', debounce(teleport, 200));
 
 
       }

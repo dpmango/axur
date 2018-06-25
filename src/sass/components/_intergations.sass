@@ -22,7 +22,7 @@
     max-width: 700px
 
   &__logo
-    flex: 0 0 auto
+    flex: 0 1 auto
     display: flex
     align-items: center
     justify-content: center
@@ -38,3 +38,22 @@
       padding-top: 4px
     img
       max-width: 100%
+
++r($desktop)
+  .integrations
+    margin: 80px 0 60px
+    &__wrapper
+      display: block
+      margin-left: 0
+      margin-right: 0
+    &__logos-grid
+      margin-top: 50px
+      margin-left: 0
+
++r($mobile)
+  .integrations
+    margin: 65px 0 60px
+    &__logos-grid
+      flex-wrap: wrap
+    &__logo
+      margin-bottom: 20px

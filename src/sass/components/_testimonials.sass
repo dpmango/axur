@@ -41,9 +41,6 @@
   &__slider
     position: relative
     height: 100%
-    // padding-left: 200px
-    // padding-right: 110px
-    // padding-bottom: 60px
 
   &__logos-grid
     position: relative
@@ -114,3 +111,52 @@
   .testimonials
     &__head
       margin-left: 30px
+
++r($desktop)
+  .testimonials
+    margin-top: 80px
+    &__wrapper
+      margin-top: 20px
+      padding-left: 120px
+      margin-bottom: 40px
+    &__head
+      padding-top: 50px
+      margin-left: 0
+      margin-right: 0
+      flex-direction: column
+      align-items: flex-start
+      &-image
+        padding: 0
+    &__title
+      padding: 0
+
++r(860)
+  .testimonials
+    &__logos-grid
+      flex-wrap: wrap
+      padding-top: 40px
+      justify-content: center
+
+    &__logo
+      flex: 0 1 150px
+      img
+        text-align: center
+        margin-left: auto
+        margin-right: auto
+
++r($tablet)
+  .testimoials
+    &__wrapper
+      padding-left: 0px
+      padding-right: 0
+
+
++r($mobile)
+  .testimoials
+    margin-top: 60px
+    > .container
+      &:first-child
+        position: relative
+        &::after
+          left: 30px
+          right: 30px

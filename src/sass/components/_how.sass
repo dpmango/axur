@@ -15,6 +15,8 @@
     // background: url('../img/howBg.png') no-repeat
     // background-position: -50px top
     // overflow: hidden
+    &--mobile
+      display: none
     &-wrapper
       display: flex
       flex-direction: column
@@ -26,6 +28,7 @@
         display: inline-block
         content: ' '
         position: absolute
+        z-index: 1
         left: -95px
         top: -10px
         size: 658px 510px
@@ -33,6 +36,8 @@
         background-position: left top
 
     svg
+      position: relative
+      z-index: 2
       width: 80%
       overflow: visible
       .social-icon
@@ -103,6 +108,46 @@
     padding: 0 10px
 
 
++r($desktop)
+
++r(860)
+  .how
+    &__wrapper
+      display: block
+
+    &__image
+      display: none
+      max-width: 100%
+      padding: 0
+      &--mobile
+        display: block
+
+    &__content
+      max-width: 100%
+      padding-top: 40px
+      padding-bottom: 40px
+
+    &__section
+      margin: 60px 0
+      &:first-child
+        margin-bottom: 0
+
+    &__facts-grid
+      margin-bottom: 0
+
+
++r($mobile)
+  .how
+    &__results-grid
+      flex-direction: column
+      margin-left: 0
+      margin-right: 0
+      padding-left: 50px
+    &__result
+      flex: 0 0 auto
+      max-width: 100%
+      p
+        max-width: 150px
 
 @keyframes animation1_Icon
   from

@@ -186,7 +186,7 @@ block content
       
       .how__wrapper
         .how__image
-          .how__image-wrapper(js-stick-in-parent)
+          .how__image-wrapper(js-stick-in-parent js-teleport data-teleport-to="how-image" data-teleport-condition="<860")
             .svg-animation-container(js-animation-1)
               include ../inline-svg/animation-1.svg
             //- iframe(frameborder="0" src='inline-animations/animation-1/demo.html')
@@ -206,7 +206,9 @@ block content
               .how__fact
                 .h2.c-orange +44 mi
                 p.t-p2 SMS analisados automaticamente através de algorítimos especializados.
-                
+          
+          .how__image.how__image--mobile(data-teleport-target="how-image")
+          
           .how__section.wow
             h2 Tudo isso com o poder da Inteligência Artificial
             p.t-p2 Para acompanhar a evolução das fraudes na web, combinamos Inteligência Artificial com as possibilidades infinitas do machine learning. Assim, nossos sistemas aprendem não só a detectar ameaças, mas a identificar mudanças na forma como elas são executadas.
