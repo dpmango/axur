@@ -28,6 +28,7 @@
 
   &__slider
     padding-left: 30px
+    // .swiper-wrapper
     &::before
       display: inline-block
       content: ' '
@@ -139,3 +140,63 @@
     padding-top: 10px
     padding-left: 10px
     padding-right: 10px
+
++r(1200)
+  .blog
+    &__slider
+      &::before
+        display: none
+    &__heading
+      &-wrapper
+        margin-left: 30px
+        margin-right: 30px
+    &__bg
+      right: -120px
+
++r($desktop)
+  .blog
+    padding: 80px 0
+    &__heading
+      &-wrapper
+        margin-left: 0px
+    &__bg
+      right: -150px
+
++r(860)
+  .blog
+    &__wrapper
+      display: block
+    &__heading
+      max-width: 100%
+      padding-left: 50px
+      padding-right: 50px
+      &-wrapper
+        padding-top: 0
+      h2
+        margin-bottom: 1em
+    &__content
+      max-width: 100%
+    &__slider
+      margin-top: 60px
+      padding-left: 40px
+    &__slide
+      flex: 0 0 350px
+      padding: 40px 10px 20px
+
++r($mobile)
+  .blog
+    &__heading
+      padding-left: 30px
+      padding-right: 30px
+    &__slider
+      padding-left: 25px
+    &__slide
+      flex: 0 0 310px
+      padding: 40px 5px 20px
+    &__nav
+      padding-right: 0
+      padding-left: 50px
+    &__navigation
+      display: none
+    &__progress
+      margin-right: 0

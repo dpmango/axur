@@ -40,7 +40,6 @@ $(document).ready(function(){
     initScrollMonitor();
     initValidations();
 
-
     // development helper
     _window.on('resize', debounce(setBreakpoint, 200))
 
@@ -912,10 +911,10 @@ $(document).ready(function(){
           }
 
           // repeat some critical functions
-          // initValidations();
-          // initPopups();
-          // initSliders();
-          // initScrollMonitor();
+          initValidations();
+          initPopups();
+          initSliders();
+          initScrollMonitor();
         }
 
         teleport();
