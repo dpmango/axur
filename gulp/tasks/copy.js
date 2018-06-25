@@ -33,7 +33,7 @@ gulp.task('copy:animations', function() {
 });
 
 gulp.task('copy', [
-  // 'copy:rootfiles',
+  'copy:rootfiles',
   'copy:animations',
   'copy:vendor',
   'copy:fonts'

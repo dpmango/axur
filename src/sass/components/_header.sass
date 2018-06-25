@@ -23,7 +23,8 @@
     margin: 0
     margin-left: auto
     padding: 0
-    padding-top: 5px
+    // padding-top: 5px
+    padding-bottom: 2px
     list-style: none
     li
       display: inline-block
@@ -32,13 +33,13 @@
         margin-right: 0
       &.is-active
         a
-          color: $colorOrange
+          color: $colorOrange2
     a
       display: inline-block
       color: $colorMuted
       transition: color .25s $ease
       &:hover, &.is-active
-        color: $colorOrange
+        color: $colorOrange2
 
   &__lang
     flex: 0 0 auto
@@ -63,6 +64,7 @@
       display: inline-block
       color: $colorMuted
       padding: 8px 5px
+      transition: color .25s $ease
       &::after
         display: inline-block
         content: ' '
@@ -74,8 +76,9 @@
         background: $colorOrange
         transition: .25s $ease
       &:hover
-        &::after
-          right: 0
+        color: $colorOrange2
+        // &::after
+        //   right: 0
 
   &__cta
     margin-left: 60px

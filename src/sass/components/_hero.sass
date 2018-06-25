@@ -74,7 +74,7 @@
       font-size: 15px
       span
         display: inline
-        border-bottom: 1px solid rgba($colorOrange,.2)
+        border-bottom: 1px solid transparent
         transition: border .25s $ease
         &::after
           // display: inline
@@ -86,10 +86,11 @@
           // height: 1px
           // background: rgba($colorOrange,.2)
           // transition: .25s $ease
-      &:hover
-        color: $colorOrange2
+    &:hover
+      color: $colorOrange2
+      > span
         span
-          border-color: transparent
+          border-color: rgba($colorOrange,.2)
           // &:after
           //   right: 100%
 
