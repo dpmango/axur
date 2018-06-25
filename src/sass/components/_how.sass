@@ -35,28 +35,13 @@
         background: url('../img/howBg.png') no-repeat
         background-position: left top
 
+    #include-anim-1
+      width: 80%
     svg
       position: relative
       z-index: 2
       width: 80%
       overflow: visible
-      .social-icon
-        // animation: animation1_Icon 2s linear infinite
-        // animation-iteration-count: infinite
-
-    iframe
-      // transform: scale(2)
-      // display: block
-      // width: 300%
-      // transform: translateX(-38%)
-      // height: 600px
-      // flex: 1 0 auto
-      // overflow: hidden
-      // border: 0
-      // box-shadow: none
-      // margin: 0 auto
-  		// transform-origin: 0 0
-      // outline: 1px solid $colorOrange
 
   &__content
     flex: 0 1 50%
@@ -109,16 +94,18 @@
 
 
 +r($desktop)
-
+  .how
+    margin: 80px 0 0
 +r(860)
   .how
+    margin-top: 50px
     &__wrapper
       display: block
 
     &__image
       display: none
       max-width: 100%
-      padding: 0
+      padding: 0 0 20px
       &--mobile
         display: block
 
@@ -128,33 +115,41 @@
       padding-bottom: 40px
 
     &__section
-      margin: 60px 0
+      margin: 70px 0
       &:first-child
         margin-bottom: 0
+      h2
+        margin-bottom: 1em
 
     &__facts-grid
       margin-bottom: 0
 
+    &__fact
+      margin-bottom: 25px
+
 
 +r($mobile)
   .how
+    &__image
+      .svg-animation-container
+        padding-top: 25px
+        &::before
+          background-size: 75%
+      #include-anim-1
+        width: 90%
+        margin-left: auto
+        margin-right: auto
+    &__content
+      padding-top: 30px
     &__results-grid
       flex-direction: column
       margin-left: 0
       margin-right: 0
+      padding-top: 20px
       padding-left: 50px
     &__result
       flex: 0 0 auto
       max-width: 100%
+      margin-bottom: 15px
       p
         max-width: 150px
-
-@keyframes animation1_Icon
-  from
-    transform: translate3d(0,0,0)
-  20%
-    transform: translate3d(-2.2%,0,0)
-  70%
-    transform: translate3d(3.8%, 0,0)
-  to
-    transform: translate3d(0,0,0)

@@ -370,9 +370,11 @@ $(document).ready(function(){
   //////////
   // SLIDERS
   //////////
+  var blogAPIDone = false;
   function initSliders(){
 
     // PRODUCTS MOBILE SWIPER
+    var productsSliderProgress = $('[js-set-products-progress]')
     var productsSliderMobile = new Swiper('[js-products-slider-mobile]', {
       wrapperClass: "swiper-wrapper",
       slideClass: "products__col-swiper",
@@ -385,6 +387,18 @@ $(document).ready(function(){
       normalizeSlideIndex: true,
       freeMode: true,
       slidesOffsetAfter: 50,
+      pagination: {
+        el: '.swiper-nav__fraction',
+        type: 'fraction',
+      },
+      on: {
+        progress: function(progress){
+          var reverseTransform = Math.floor(progress * 100) - 100
+          productsSliderProgress.css({
+            'transform': 'translate('+ reverseTransform + '%,0)'
+          })
+        }
+      }
       // effect: 'flip',
     })
 
@@ -416,7 +430,7 @@ $(document).ready(function(){
     // })
 
     // BLOG SWIPER
-    var blogSliderProgress = $('[js-set-swiper-progress]')
+    var blogSliderProgress = $('[js-set-blog-progress]')
     var blogSlider = new Swiper('[js-blog-slider]', {
       wrapperClass: "swiper-wrapper",
       slideClass: "blog__slide",
@@ -431,12 +445,12 @@ $(document).ready(function(){
       watchSlidesProgress: true,
       slidesOffsetAfter: 50,
       pagination: {
-        el: '.blog__nav-fraction',
+        el: '.swiper-nav__fraction',
         type: 'fraction',
       },
       navigation: {
-        nextEl: '.blog__navigation-next',
-        prevEl: '.blog__navigation-prev',
+        nextEl: '.swiper-nav__navigation-next',
+        prevEl: '.swiper-nav__navigation-prev',
       },
       on: {
         progress: function(progress){
@@ -456,19 +470,21 @@ $(document).ready(function(){
     var blogAPIEndpointMedia = "https://blog.axur.com/wp-json/wp/v2/media/";
 
     // get last 10 posts & media
-    $.get(blogAPIEndpointPosts, function(data){
-      $.each(data, function(index, post){
-        // get featured media element
-        try{
-          $.get(blogAPIEndpointMedia + post.featured_media, function(media){
-            addBlogSlides(index, post, media)
-          })
-        } catch(err){
-          console.log(err)
-        }
-
+    if ( !blogAPIDone ){
+      $.get(blogAPIEndpointPosts, function(data){
+        $.each(data, function(index, post){
+          // get featured media element
+          try{
+            $.get(blogAPIEndpointMedia + post.featured_media, function(media){
+              addBlogSlides(index, post, media);
+            })
+          } catch(err){
+            console.log(err)
+          }
+        })
       })
-    })
+      blogAPIDone = true;
+    }
 
     function addBlogSlides(index, post, media){
       // date convert
@@ -590,17 +606,73 @@ $(document).ready(function(){
     var easingSwing = [.02, .01, .47, 1]; // default jQuery easing for anime.js
 
     // first
-    var el = $('[js-animation-1] svg');
-    var socialIcons = el.get(0).querySelectorAll('.social-icon')
+    // var el = $('[js-animation-1] svg');
+    // var socialIcons = el.get(0).querySelectorAll('.social-icon')
+    //
+    // anime({
+    //   targets: socialIcons,
+    //   translateX: '4%',
+    //   direction: 'alternate',
+    //   loop: true,
+    //   easing: 'linear',
+    //   duration: 1000,
+    // })
 
-    anime({
-      targets: socialIcons,
-      translateX: '4%',
-      direction: 'alternate',
+    var animation_1 = lottie.loadAnimation({
+      container: document.getElementById('include-anim-1'),
+      renderer: 'svg',
       loop: true,
-      easing: 'linear',
-      duration: 1000,
+      autoplay: true,
+      path: '/animation-json/anima_1.json'
     })
+
+    // var animation_2 = lottie.loadAnimation({
+    //   container: document.getElementById('include-anim-2'),
+    //   renderer: 'svg',
+    //   loop: true,
+    //   autoplay: true,
+    //   path: '/animation-json/anima_2.json'
+    // })
+    //
+    // var animation_3 = lottie.loadAnimation({
+    //   container: document.getElementById('include-anim-3'),
+    //   renderer: 'svg',
+    //   loop: true,
+    //   autoplay: true,
+    //   path: '/animation-json/anima_3.json'
+    // })
+    //
+    // var animation_4 = lottie.loadAnimation({
+    //   container: document.getElementById('include-anim-4'),
+    //   renderer: 'svg',
+    //   loop: true,
+    //   autoplay: true,
+    //   path: '/animation-json/anima_4.json'
+    // })
+    //
+    // var animation_5 = lottie.loadAnimation({
+    //   container: document.getElementById('include-anim-5'),
+    //   renderer: 'svg',
+    //   loop: true,
+    //   autoplay: true,
+    //   path: '/animation-json/anima_5.json'
+    // })
+    //
+    // var animation_6 = lottie.loadAnimation({
+    //   container: document.getElementById('include-anim-6'),
+    //   renderer: 'svg',
+    //   loop: true,
+    //   autoplay: true,
+    //   path: '/animation-json/anima_6.json'
+    // })
+    //
+    // var animation_7 = lottie.loadAnimation({
+    //   container: document.getElementById('include-anim-7'),
+    //   renderer: 'svg',
+    //   loop: true,
+    //   autoplay: true,
+    //   path: '/animation-json/anima_7.json'
+    // })
 
   }
 
@@ -914,6 +986,7 @@ $(document).ready(function(){
           initValidations();
           initPopups();
           initSliders();
+          initSticky();
           initScrollMonitor();
         }
 

@@ -126,7 +126,7 @@
       flex-direction: column
       align-items: flex-start
       &-image
-        padding: 0
+        padding: 20px 0 0
     &__title
       padding: 0
 
@@ -145,18 +145,45 @@
         margin-right: auto
 
 +r($tablet)
-  .testimoials
+  .testimonials
     &__wrapper
       padding-left: 0px
       padding-right: 0
 
 
 +r($mobile)
-  .testimoials
-    margin-top: 60px
+  .testimonials
+    margin-top: 40px
     > .container
       &:first-child
         position: relative
         &::after
           left: 30px
           right: 30px
+    &__head
+      // padding-top: 35px
+      &-image
+        max-width: 140px
+        transform: translateX(40px)
+    &__title
+      h2
+        line-height: 1.1
+
+    &__slider
+      margin-top: -35px
+
+    &__logos-grid
+      // todo
+    &__logo
+      flex-basis: 100px
+      padding: 5px 5px
+      img
+        max-width: 80%
+
+  .testimonials-card
+    &__quotemark
+      font-size: 27px
+    &__content
+      padding-left: 0
+    &__logo
+      // margin-top: 5px

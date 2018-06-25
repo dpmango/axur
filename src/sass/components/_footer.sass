@@ -6,6 +6,8 @@
     display: flex
     margin-top: 65px
   &__logo
+    img
+      max-width: 100%
 
   &__navi
     flex: 0 1 calc(75% + 30px)
@@ -111,6 +113,14 @@
 
 +r($tablet)
   .footer
+    padding: 50px 0 30px
+    &__logo
+      img
+        width: 93px
+
+    &__wrapper
+      margin-top: 35px
+
     &__navi
       display: block
       margin-left: 0
@@ -149,7 +159,7 @@
         content: ' '
         position: absolute
         +sprite(footer-nav-arrow)
-        right: 0
+        right: 12px
         top: 30px
         transition: .25s $ease
         // transform: translateY(-50%)
@@ -167,6 +177,7 @@
       border-bottom: 1px solid $colorLightGray
 
     &__bottom
+      margin-top: 45px
       flex-direction: column-reverse
 
     &__socials
@@ -183,3 +194,9 @@
     &__menu
       a
         font-size: 13px
+    h4
+      padding: 1.5em 0
+    &__navi-col, &__contacts
+      position: relative
+      &::after
+        top: 28px

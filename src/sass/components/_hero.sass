@@ -11,8 +11,9 @@
 
   &__title
     margin-bottom: 0
-    span
+    > span
       color: $colorOrange
+      white-space: nowrap
 
   &__content
     position: relative
@@ -72,27 +73,16 @@
       position: relative
       margin-left: 10px
       font-size: 15px
+      line-height: 1.5
       span
         display: inline
         border-bottom: 1px solid transparent
         transition: border .25s $ease
-        &::after
-          // display: inline
-          // content: ' '
-          // position: absolute
-          // bottom: 0
-          // left: 0
-          // right: 0
-          // height: 1px
-          // background: rgba($colorOrange,.2)
-          // transition: .25s $ease
     &:hover
       color: $colorOrange2
       > span
         span
           border-color: rgba($colorOrange,.2)
-          // &:after
-          //   right: 100%
 
 +r(1200)
   .hero
@@ -130,9 +120,19 @@
     &__content
       &-wrapper
         margin-left: 30px
+
+    &__play
+      .ico
+        font-size: 36px
+      > span
+        font-size: 13px
     &__image
       padding-left: 30px
       padding-right: 0
+      margin-top: 30px
+      margin-right: -20px
+    &__form
+      margin-top: 50px
 
     &__actionable
       padding-left: 30px

@@ -155,7 +155,15 @@ block content
               .products__col-swiper(data-teleport-target="products-col-1")
               .products__col-swiper(data-teleport-target="products-col-2")
               .products__col-swiper(data-teleport-target="products-col-3")
-                      
+            
+            .swiper-nav.swiper-nav--orange
+              // handled by swiper API
+              .swiper-nav__fraction
+              // custom swiper API
+              .swiper-nav__progress
+                .swiper-nav__progress-fill(js-set-products-progress)
+                
+                
           .products__info.products__info--mobile(data-teleport-target="products-info")
           
           .products__benefits
@@ -188,7 +196,8 @@ block content
         .how__image
           .how__image-wrapper(js-stick-in-parent js-teleport data-teleport-to="how-image" data-teleport-condition="<860")
             .svg-animation-container(js-animation-1)
-              include ../inline-svg/animation-1.svg
+              //- include ../inline-svg/animation-1.svg
+              #include-anim-1
             //- iframe(frameborder="0" src='inline-animations/animation-1/demo.html')
           
         .how__content
@@ -424,15 +433,15 @@ block content
             //-     .blog-card__date.t-p3 20th March 2018
 
           // nav elements
-          .blog__nav
+          .swiper-nav
             // handled by swiper API
-            .blog__nav-fraction
+            .swiper-nav__fraction
             // custom swiper API
-            .blog__progress
-              .blog__progress-fill(js-set-swiper-progress)
+            .swiper-nav__progress
+              .swiper-nav__progress-fill(js-set-blog-progress)
                 
-            .blog__navigation
-              .blog__navigation-prev
+            .swiper-nav__navigation
+              .swiper-nav__navigation-prev
                 +icon('ico-nav-arrow-left')
-              .blog__navigation-next
+              .swiper-nav__navigation-next
                 +icon('ico-nav-arrow-right')

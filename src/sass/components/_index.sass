@@ -7,3 +7,73 @@
     margin-bottom: 1.1em
   p
     max-width: 530px
+
+
+/* swieper nav
+.swiper-nav
+  max-width: 500px
+  margin-left: auto
+  display: flex
+  align-items: center
+  justify-content: flex-end
+  padding-right: 50px
+  padding-top: 20px
+  color: white
+
+  &__fraction
+    flex: 0 0 auto
+    width: auto
+    font-size: 15px
+    color: white
+
+  &__progress
+    flex: 1 1 auto
+    position: relative
+    background: rgba(white, .3)
+    height: 1px
+    margin: 0 40px
+    width: 270px
+    overflow: hidden
+    &-fill
+      display: inline-block
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      height: 1px
+      background: white
+      transition: transform .1s linear
+
+  &__navigation
+    flex: 0 0 auto
+    display: flex
+    align-items: center
+
+  &__navigation-prev, &__navigation-next
+    padding: 8px 12px
+    cursor: pointer
+    transition: .25s $ease
+    .ico
+      font-size: 12px
+
+  &--orange
+    color: $colorOrange
+    transform: translateX(30px)
+    .swiper-nav
+      &__fraction
+        color: $colorOrange
+      &__progress
+        background-color: rgba($colorOrange, .4)
+        &-fill
+          background-color: $colorOrange
+
++r($mobile)
+  .swiper-nav
+    padding-right: 0
+    padding-left: 50px
+    &__fraction
+      font-size: 13px
+    &__navigation
+      display: none
+    &__progress
+      margin-right: 0

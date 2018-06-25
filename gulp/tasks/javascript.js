@@ -21,6 +21,7 @@ gulp.task('javascript:vendor', function() {
       path.resolve('bower_components', 'barba.js/dist/barba.min.js'),
       path.resolve('bower_components', 'jquery-lazy/jquery.lazy.min.js'),
       path.resolve('bower_components', 'animejs/anime.min.js'),
+      path.resolve('node_modules', 'lottie-web/build/player/lottie.min.js'),
       path.resolve('node_modules', 'typograf/dist/typograf.min.js'),
       config.src.js + '/vendor/**/*.js'
      ])

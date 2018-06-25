@@ -29,10 +29,9 @@ body, html
   &__content
     // used for sticky footer (flexbox way)
     flex: 1 0 auto
-    // display: flex
-    // flex-direction: column
-    // header offset ex
     padding-top: 115px
+    +r($mobile)
+      padding-top: 80px
 
 .container
   max-width: 1350px
