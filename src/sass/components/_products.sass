@@ -36,6 +36,8 @@
     display: flex
     margin-left: -15px
     margin-right: -15px
+    &--mobile
+      display: none
     .products__col
       &:nth-child(1)
         margin-top: 85px
@@ -103,6 +105,43 @@
       &--mobile
         display: block
 
++r($mobile)
+  .products
+    &__grid
+      display: none
+      &--mobile
+        display: block
+        margin-left: 0
+        margin-right: 0
+
+      .products__col
+        &:nth-child(1)
+          margin-top: 0px
+        &:nth-child(2)
+          margin-top: 0px
+        &:nth-child(3)
+          margin-top: 0px
+      .products__col
+        &:last-child
+          display: block
+          .products-card
+            &:last-child
+              margin-top: 0px
+    &__col
+      flex-basis: 100%
+      max-width: 100%
+      &-swiper
+        flex: 0 0 540px
+        // padding: 0 15px
+        display: flex
+
+    &-bg
+      &__triangle
+        display: none
+
+
+
+/* card
 .products-card
   position: relative
   display: inline-block
@@ -194,3 +233,10 @@
     padding: 50px 25px 30px
 
 +r(860)
+
++r($mobile)
+  .products-card
+    flex: 0 0 260px
+    padding: 70px 40px 40px
+    margin-bottom: 20px
+    margin-right: 10px

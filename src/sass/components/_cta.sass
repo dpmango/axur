@@ -1,5 +1,5 @@
 .cta
-  padding: 130px 0 160px
+  padding: 130px 0px 160px
   /* should be sticked to the left side
   background: white url('../img/ctaBg.png') no-repeat left bottom
   // > .container
@@ -30,9 +30,29 @@
     flex-direction: column
     align-items: center
     text-align: center
-    padding: 60px 0
+    padding: 60px 25px
     h3
       margin-top: 0
 
   &__form
     // margin-top: 25px
+
++r($desktop)
+  .cta
+    padding-top: 100px
+    padding-bottom: 120px
+
++r($tablet)
+  .cta
+    &__wrapper
+      // text-align: left
+
++r($mobile)
+  .cta
+    padding-top: 60px
+    padding-bottom: 60px
+    background-position: -20% bottom
+    background-size: 50%
+    &__wrapper
+      padding: 40px 25px
+      text-align: left

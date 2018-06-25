@@ -123,9 +123,13 @@
         &:first-child
           border-top: 1px solid $colorLightGray
     h4
+      position: relative
       margin: 0
       padding: 1.33em 0
       cursor: pointer
+      transition: .25s $ease
+      &:hover
+        color: $colorOrange
       &.mobile-only
         display: block
     &__contacts
@@ -160,7 +164,7 @@
 
     &__contacts
       border-bottom: 1px solid $colorLightGray
-      
+
     &__bottom
       flex-direction: column-reverse
 

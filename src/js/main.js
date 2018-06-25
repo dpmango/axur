@@ -373,7 +373,23 @@ $(document).ready(function(){
   //////////
   function initSliders(){
 
-    // EXAMPLE SWIPER
+    // PRODUCTS MOBILE SWIPER
+    var productsSliderMobile = new Swiper('[js-products-slider-mobile]', {
+      wrapperClass: "swiper-wrapper",
+      slideClass: "products__col-swiper",
+      direction: 'horizontal',
+      loop: false,
+      watchOverflow: true,
+      setWrapperSize: false,
+      spaceBetween: 0,
+      slidesPerView: 'auto',
+      normalizeSlideIndex: true,
+      freeMode: true,
+      slidesOffsetAfter: 50,
+      // effect: 'flip',
+    })
+
+    // TESTIMONIALS SWIPER
     var testimonialsSlider = new Swiper('[js-testimonials-slider]', {
       wrapperClass: "swiper-wrapper",
       slideClass: "testimonials-card",
@@ -898,6 +914,8 @@ $(document).ready(function(){
           // repeat some critical functions
           initValidations();
           initPopups();
+          initSliders();
+          initScrollMonitor();
         }
 
         teleport();

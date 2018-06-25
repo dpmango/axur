@@ -67,24 +67,31 @@
     color: $colorOrange
     .ico
       font-size: 24px
-    span
+    > span
       display: inline-block
       position: relative
       margin-left: 10px
       font-size: 15px
-      &::after
-        display: inline-block
-        content: ' '
-        position: absolute
-        bottom: 0
-        left: 0
-        right: 0
-        height: 1px
-        background: rgba($colorOrange,.2)
-        transition: .25s $ease
+      span
+        display: inline
+        border-bottom: 1px solid rgba($colorOrange,.2)
+        transition: border .25s $ease
+        &::after
+          // display: inline
+          // content: ' '
+          // position: absolute
+          // bottom: 0
+          // left: 0
+          // right: 0
+          // height: 1px
+          // background: rgba($colorOrange,.2)
+          // transition: .25s $ease
       &:hover
-        &:after
-          right: 100%
+        color: $colorOrange2
+        span
+          border-color: transparent
+          // &:after
+          //   right: 100%
 
 +r(1200)
   .hero
@@ -121,11 +128,11 @@
 
     &__content
       &-wrapper
-        margin-left: 20px
+        margin-left: 30px
     &__image
-      padding-left: 20px
+      padding-left: 30px
       padding-right: 0
 
     &__actionable
-      padding-left: 20px
-      padding-right: 20px
+      padding-left: 30px
+      padding-right: 30px

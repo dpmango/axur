@@ -24,7 +24,8 @@ block content
               
             a(data-mfp-src="https://www.youtube.com/watch?v=IJKjMIU55pE" js-popupVideo).hero__play
               +icon('ico-play')
-              span Veja o que mais podemos fazer pela sua marca
+              span 
+                span Veja o que mais podemos fazer pela sua marca
           
       .hero__image.wow(data-animation-class="wowFadeRight")
         include ../inline-svg/animation-2.svg
@@ -73,7 +74,7 @@ block content
         .products__content
           .products__grid(js-diminish-hover-cards data-for-prodcuts-triangle)
             // col
-            .products__col
+            .products__col(js-teleport data-teleport-to="products-col-1" data-teleport-condition="<568")
               // card
               // data-for is for correct position of background oval
               a.products-card.wow(href="#" data-id="1" data-for-prodcuts-oval)
@@ -99,7 +100,7 @@ block content
                     span /mês
             
             // col
-            .products__col
+            .products__col(js-teleport data-teleport-to="products-col-2" data-teleport-condition="<568")
               // card
               a.products-card.wow(href="#" data-id="3")
                 h3 
@@ -124,7 +125,7 @@ block content
                     span /mês
             
             // col
-            .products__col
+            .products__col(js-teleport data-teleport-to="products-col-3" data-teleport-condition="<568")
               // card
               a.products-card.wow(href="#" data-id="5")
                 h3 
@@ -148,6 +149,13 @@ block content
                     span R$1.499
                     span /mês
           
+          // mobile grid (swipable)
+          .products__grid.products__grid--mobile(js-products-slider-mobile).swiper-containter
+            .swiper-wrapper
+              .products__col-swiper(data-teleport-target="products-col-1")
+              .products__col-swiper(data-teleport-target="products-col-2")
+              .products__col-swiper(data-teleport-target="products-col-3")
+                      
           .products__info.products__info--mobile(data-teleport-target="products-info")
           
           .products__benefits
