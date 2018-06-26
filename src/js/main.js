@@ -124,15 +124,11 @@ $(document).ready(function(){
     .on('click', '[href="#"]', function(e) {
       e.preventDefault();
     })
-    .on('click', '[js-hamburger]', function(){
-      $(this).toggleClass('is-active');
-      $('.mobile-navi').toggleClass('is-active');
-    })
+    .on('click', '[data-href]', function(e) {
+      e.preventDefault();
 
-  function closeMobileMenu(){
-    $('[js-hamburger]').removeClass('is-active');
-    $('.mobile-navi').removeClass('is-active');
-  }
+      window.location.href = $(this).data('href')
+    })
 
   // Menu controls
   _document
@@ -160,6 +156,7 @@ $(document).ready(function(){
       $('[data-target-menu]').toggleClass('is-active');
       target.toggleClass('is-active');
       $('.page').toggleClass('is-muted');
+      $('.header').toggleClass('is-menu-opened');
     }
   }
 
@@ -169,6 +166,7 @@ $(document).ready(function(){
       $('[data-target-menu]').toggleClass('is-active');
       target.toggleClass('is-active');
       $('.page').removeClass('is-muted');
+      $('.header').removeClass('is-menu-opened');
     }
   }
 
@@ -176,6 +174,7 @@ $(document).ready(function(){
     $('[data-target-menu]').removeClass('is-active');
     $('[data-menu]').removeClass('is-active');
     $('.page').removeClass('is-muted');
+    $('.header').removeClass('is-menu-opened');
   }
 
   // Footer mobile toggler controls
@@ -202,7 +201,6 @@ $(document).ready(function(){
   // master function to close everything
   // specially usefull for barba page transitions
   function closeAllActives(){
-    closeMobileMenu();
     closeAllMenus();
   }
 

@@ -11,6 +11,7 @@
     display: flex
     align-items: center
   &__logo
+    position: relative
     flex: 0 0 auto
     font-size: 0
     padding-right: 30px
@@ -84,6 +85,17 @@
 
   &__cta
     margin-left: 60px
+    &--mobile
+      display: none
+      position: absolute
+      top: 50%
+      left: 0
+      opacity: 0
+      margin-left: 0
+      white-space: nowrap
+      pointer-events: none
+      transform: translate(-15px, -50%)
+      transition: .25s $ease
 
   &__hamburger
     display: none
@@ -118,8 +130,23 @@
     padding-top: 40px
     &__logo
       img
+        transition: .25s $ease
         width: 93px
     &__cta
       display: none
+      &--mobile
+        display: block
     &__hamburger
       margin-left: auto
+
+    &.is-menu-opened
+      .header
+        &__logo
+          img
+            opacity: 0
+            transform: translate(-10px,0%)
+        &__cta
+          &--mobile
+            transform: translate(0,-50%)
+            pointer-events: all
+            opacity: 1

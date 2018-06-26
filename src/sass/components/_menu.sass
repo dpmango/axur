@@ -110,6 +110,14 @@
     margin-left: 0
     margin-top: 60px
 
+  &__link-mobile
+    display: none
+    margin-top: 50px
+    font-size: 16px
+    color: $colorMuted
+    transition: .25s $ease
+    &:hover
+      color: $colorOrange2
 
 +r(1200)
   .menu
@@ -162,6 +170,8 @@
       padding-left: 50px
       padding-right: 50px
 
+    &__link-mobile
+      display: inline-block
 
 +r($tablet)
   .menu
