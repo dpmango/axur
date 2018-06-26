@@ -220,7 +220,6 @@ $(document).ready(function(){
       });
     })
     .on('mouseleave', '[js-diminish-hover-cards] .products-card', function(){
-      console.log('leave')
       $('.products-card').removeClass('is-muted')
     })
 
@@ -602,7 +601,9 @@ $(document).ready(function(){
   // SVG animations with anime.js
   /////////
 
-  function initSvgAnimations(){
+  var animation_1, animation_1_mobile, animation_2, animation_3, animation_4, animation_5, animation_6, animation_7
+
+  function initSvgAnimations(teleportable){
     var easingSwing = [.02, .01, .47, 1]; // default jQuery easing for anime.js
 
     // first
@@ -618,7 +619,15 @@ $(document).ready(function(){
     //   duration: 1000,
     // })
 
-    var animation_1 = lottie.loadAnimation({
+    animation_2 = lottie.loadAnimation({
+      container: document.getElementById('include-anim-2'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: '/animation-json/anima_2.json'
+    })
+
+    animation_1 = lottie.loadAnimation({
       container: document.getElementById('include-anim-1'),
       renderer: 'svg',
       loop: true,
@@ -626,14 +635,14 @@ $(document).ready(function(){
       path: '/animation-json/anima_1.json'
     })
 
-    // var animation_2 = lottie.loadAnimation({
-    //   container: document.getElementById('include-anim-2'),
-    //   renderer: 'svg',
-    //   loop: true,
-    //   autoplay: true,
-    //   path: '/animation-json/anima_2.json'
-    // })
-    //
+    animation_1_mobile = lottie.loadAnimation({
+      container: document.getElementById('include-anim-1-mobile'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: '/animation-json/anima_1.json'
+    })
+
     // var animation_3 = lottie.loadAnimation({
     //   container: document.getElementById('include-anim-3'),
     //   renderer: 'svg',
@@ -956,48 +965,71 @@ $(document).ready(function(){
   // TELEPORT PLUGIN
   ////////////
   function initTeleport(){
-    $('[js-teleport]').each(function (i, val) {
-      var self = $(val)
-      var objHtml = $(val).html();
-      var target = $('[data-teleport-target=' + $(val).data('teleport-to') + ']');
-      var conditionMedia = $(val).data('teleport-condition').substring(1);
-      var conditionPosition = $(val).data('teleport-condition').substring(0, 1);
+    $('[js-teleport]').each(function (i, el) {
+      var $origin = $(el)
+      var originHtml = $origin.html();
+      var $target = $('[data-teleport-target=' + $origin.data('teleport-to') + ']');
+      var condition = $origin.data('teleport-condition');
 
-      if (target && objHtml && conditionPosition) {
+      if ($target && originHtml && condition) {
 
         function teleport() {
-          var condition;
+          if ( mediaCondition(condition) ) {
+            // when should be teleported
+            // if (!$.contains(document.documentElement, $origin[0])) {
+            //   console.log('$origin already detached')
+            //   return; // '$origin already detached'
+            // }
 
-          if (conditionPosition === "<") {
-            condition = _window.width() < conditionMedia;
-          } else if (conditionPosition === ">") {
-            condition = _window.width() > conditionMedia;
-          }
+            if ( $target.html().length > 0 ){
+              return
+            }
 
-          if (condition) {
-            target.html(objHtml)
-            self.html('')
+            // $origin.detach();
+            // $target.append(originHtml)
+
+            // old method
+            $target.html(originHtml)
+            $origin.html("")
+
+            reInit();
           } else {
-            self.html(objHtml)
-            target.html("")
+            // when back to original place
+            // if ($.contains(document.documentElement, $origin[0])) {
+            //   console.log('$origin already attached')
+            //   return; // '$origin already attached'
+            // }
+            if ( $origin.html().length > 0 ){
+              return
+            }
+
+            // $target.detach();
+            // $target.prependTo($origin)
+
+            // old method
+            $origin.html(originHtml)
+            $target.html("")
+
+            reInit();
           }
 
           // repeat some critical functions
-          initValidations();
-          initPopups();
-          initSliders();
-          initSticky();
-          initScrollMonitor();
+          function reInit(){
+            initValidations();
+            initPopups();
+            initSliders();
+            initSticky();
+            initScrollMonitor();
+            // initSvgAnimations(true);
+          }
         }
 
         teleport();
         _window.on('resize', debounce(teleport, 200));
 
-
       }
     })
   }
-
 
   //////////
   // BARBA PJAX

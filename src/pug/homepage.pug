@@ -28,10 +28,10 @@ block content
                 span Veja o que mais podemos fazer pela sua marca
           
       .hero__image.wow(data-animation-class="wowFadeRight")
-        include ../inline-svg/animation-2.svg
+        #include-anim-2
+        //- include ../inline-svg/animation-2.svg
         //- iframe(frameborder="0" src='inline-animations/animation-2/homepage.html')
       .hero__actionable(data-teleport-target="hero-actionable")
-        // mobile contents
       
   // PUBLICATIONS PROMO
   .publ.wow
@@ -194,12 +194,10 @@ block content
       
       .how__wrapper
         .how__image
-          .how__image-wrapper(js-stick-in-parent js-teleport data-teleport-to="how-image" data-teleport-condition="<860")
-            .svg-animation-container(js-animation-1)
-              //- include ../inline-svg/animation-1.svg
+          .how__image-wrapper(js-stick-in-parent)
+            .svg-animation-container
               #include-anim-1
-            //- iframe(frameborder="0" src='inline-animations/animation-1/demo.html')
-          
+
         .how__content
           .how__section.wow
             .how__facts-grid
@@ -216,8 +214,10 @@ block content
                 .h2.c-orange +44 mi
                 p.t-p2 SMS analisados automaticamente através de algorítimos especializados.
           
-          .how__image.how__image--mobile(data-teleport-target="how-image")
-          
+          .how__image.how__image--mobile
+            .svg-animation-container
+              #include-anim-1-mobile
+                
           .how__section.wow
             h2 Tudo isso com o poder da Inteligência Artificial
             p.t-p2 Para acompanhar a evolução das fraudes na web, combinamos Inteligência Artificial com as possibilidades infinitas do machine learning. Assim, nossos sistemas aprendem não só a detectar ameaças, mas a identificar mudanças na forma como elas são executadas.
