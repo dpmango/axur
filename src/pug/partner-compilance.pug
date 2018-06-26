@@ -1,0 +1,43 @@
+---
+title: Partner compilance
+---
+extends shared/_layout
+block content
+  
+  // HERO
+  .hero.hero--no-bg
+    .hero__wrapper
+      .hero__content(js-layout-padding data-type="container-left" data-stop="<992")
+        .hero__content-wrapper.wow
+          h1.hero__title Digital Fraud<br>Discovery
+          p.t-p1 Sua marca pode ser usada como isca para <strong>phishing</strong> e infecção por <strong>malware</strong>. Essa solução ajuda você a encontrar e remover sites que prejudicam seus clientes e sua imagem.
+          div(js-teleport data-teleport-to="hero-actionable" data-teleport-condition="<992")
+            // signup form
+            form(action="#" js-validate-signup).signup-form.hero__form
+              .ui-input.ui-input--iconed
+                input(type="text" name="email" placeholder="Seu e-mail corporativo…")
+                +icon('ico-mail')
+              button(type="submit").btn.btn-primary 
+                span conheça a plataforma
+              
+
+      .hero__image.wow(data-animation-class="wowFadeRight")
+        #include-anim-2
+      .hero__actionable(data-teleport-target="hero-actionable")
+      
+
+
+  // CTA
+  .cta.wow
+    .container
+      .cta__wrapper
+        h3 Escolha uma internet mais segura para sua marca e seus clientes
+        
+        // signup form
+        form(action="#" js-validate-signup).signup-form.cta__form
+          .ui-input.ui-input--iconed
+            input(type="text" name="email" placeholder="Seu e-mail corporativo…")
+            +icon('ico-mail')
+          button(type="submit").btn.btn-primary 
+            span conheça a plataforma
+  

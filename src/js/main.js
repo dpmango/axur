@@ -337,7 +337,7 @@ $(document).ready(function(){
     var productsOval = $('[js-sticky-products-oval]');
     var productsTriangle = $('[js-sticky-products-triangle]');
 
-    if (productsOval){
+    if (productsOval.length > 0){
       var anchor = $('.products-card[data-for-prodcuts-oval]');
       var anchorOffsetX = Math.floor(anchor.offset().left);
       var anchorOffsetY = Math.floor( Math.abs( $('.products').offset().top - anchor.offset().top ));
@@ -362,7 +362,7 @@ $(document).ready(function(){
     }
 
     // logic for the triagle
-    if (productsTriangle){
+    if (productsTriangle.length > 0){
       var anchor = $('[data-for-prodcuts-triangle]');
       var anchorOffsetY = Math.floor( Math.abs( $('.products').offset().top - anchor.offset().top ) );
       // get values to do it as a sticky to the bottom
@@ -648,7 +648,7 @@ $(document).ready(function(){
       renderer: 'svg',
       loop: true,
       autoplay: true,
-      path: '/animation-json/anima_7.json'
+      path: '/animation-json/anima_1.json'
     })
 
     animation_1_mobile = lottie.loadAnimation({
@@ -659,45 +659,45 @@ $(document).ready(function(){
       path: '/animation-json/anima_1.json'
     })
 
-    // var animation_3 = lottie.loadAnimation({
-    //   container: document.getElementById('include-anim-3'),
-    //   renderer: 'svg',
-    //   loop: true,
-    //   autoplay: true,
-    //   path: '/animation-json/anima_3.json'
-    // })
-    //
-    // var animation_4 = lottie.loadAnimation({
-    //   container: document.getElementById('include-anim-4'),
-    //   renderer: 'svg',
-    //   loop: true,
-    //   autoplay: true,
-    //   path: '/animation-json/anima_4.json'
-    // })
-    //
-    // var animation_5 = lottie.loadAnimation({
-    //   container: document.getElementById('include-anim-5'),
-    //   renderer: 'svg',
-    //   loop: true,
-    //   autoplay: true,
-    //   path: '/animation-json/anima_5.json'
-    // })
-    //
-    // var animation_6 = lottie.loadAnimation({
-    //   container: document.getElementById('include-anim-6'),
-    //   renderer: 'svg',
-    //   loop: true,
-    //   autoplay: true,
-    //   path: '/animation-json/anima_6.json'
-    // })
-    //
-    // var animation_7 = lottie.loadAnimation({
-    //   container: document.getElementById('include-anim-7'),
-    //   renderer: 'svg',
-    //   loop: true,
-    //   autoplay: true,
-    //   path: '/animation-json/anima_7.json'
-    // })
+    var animation_3 = lottie.loadAnimation({
+      container: document.getElementById('include-anim-3'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: '/animation-json/anima_3.json'
+    })
+
+    var animation_4 = lottie.loadAnimation({
+      container: document.getElementById('include-anim-4'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: '/animation-json/anima_4.json'
+    })
+
+    var animation_5 = lottie.loadAnimation({
+      container: document.getElementById('include-anim-5'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: '/animation-json/anima_5.json'
+    })
+
+    var animation_6 = lottie.loadAnimation({
+      container: document.getElementById('include-anim-6'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: '/animation-json/anima_6.json'
+    })
+
+    var animation_7 = lottie.loadAnimation({
+      container: document.getElementById('include-anim-7'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: '/animation-json/anima_7.json'
+    })
 
   }
 
