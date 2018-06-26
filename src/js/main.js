@@ -648,7 +648,7 @@ $(document).ready(function(){
       renderer: 'svg',
       loop: true,
       autoplay: true,
-      path: '/animation-json/anima_1.json'
+      path: '/animation-json/anima_7.json'
     })
 
     animation_1_mobile = lottie.loadAnimation({
@@ -1087,6 +1087,7 @@ $(document).ready(function(){
             initSliders();
             initSticky();
             initScrollMonitor();
+            stickyBgElements();
             // initSvgAnimations(true);
           }
         }
