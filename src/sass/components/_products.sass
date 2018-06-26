@@ -164,7 +164,7 @@
   padding: 70px 40px 40px
   margin-bottom: 40px
   cursor: pointer
-  transition: box-shadow .25s $ease
+  // transition: box-shadow .25s $ease
   &::before
     display: inline-block
     content: ' '
@@ -181,13 +181,17 @@
     box-shadow: 0 10px 16px 0 rgba(0,0,0,0.05)
     border-radius: 4px
   &:hover
-    box-shadow: 0 15px 26px 0 rgba(0,0,0,0.1)
+    // box-shadow: 0 15px 26px 0 rgba(0,0,0,0.1)
     &::before
+      box-shadow: 0 15px 26px 0 rgba(0,0,0,0.1)
       transform: translate(-50%,-50%) scale(1.02)
     .link-p2
       color: $colorOrange2
+      border-color: rgba($colorOrange2, .2)
   &.is-muted
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.05)
+    // box-shadow: 0 5px 10px 0 rgba(0,0,0,0.05)
+    &::before
+      // box-shadow: none
 
   > h3, > p, > div
     position: relative

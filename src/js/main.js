@@ -126,6 +126,7 @@ $(document).ready(function(){
     })
     .on('click', '[data-href]', function(e) {
       e.preventDefault();
+      e.stopPropogation();
 
       window.location.href = $(this).data('href')
     })
@@ -203,6 +204,23 @@ $(document).ready(function(){
   function closeAllActives(){
     closeAllMenus();
   }
+
+  // header lang mouseover
+  _document
+    .on('mouseenter', '.header__lang a', function(){
+      var siblings = $(this).parent().siblings()
+      var $this = $(this)
+
+      $.each(siblings, function(i,el){
+        if ( $(el).data('lang') !== $this.parent().data('lang') ){
+          $(el).addClass('is-muted')
+        }
+      });
+    })
+    .on('mouseleave', '.header__lang a', function(){
+      $('.header__lang li').removeClass('is-muted')
+    })
+
 
 
   // Product cards
@@ -937,26 +955,77 @@ $(document).ready(function(){
     /////////////////////
     // REGISTRATION FORM
     ////////////////////
-    $("[js-validate-signup]").validate({
-      errorPlacement: validateErrorPlacement,
-      highlight: validateHighlight,
-      unhighlight: validateUnhighlight,
-      submitHandler: validateSubmitHandler,
-      rules: {
-        last_name: "required",
-        first_name: "required",
-        email: {
-          required: true,
-          email: true
-        },
-      },
-      messages: {
-        email: {
-            required: "Preencha este campo",
-            email: "Ops! Veja se está tudo certo com seu e-mail."
-        },
-      }
-    });
+    // $("[js-validate-signup]").validate({
+    //   errorPlacement: validateErrorPlacement,
+    //   highlight: validateHighlight,
+    //   unhighlight: validateUnhighlight,
+    //   submitHandler: validateSubmitHandler,
+    //   rules: {
+    //     email: {
+    //       email: true
+    //     },
+    //   },
+    //   messages: {
+    //     email: {
+    //         email: "Ops! Veja se está tudo certo com seu e-mail."
+    //     },
+    //   }
+    // });
+
+
+    var emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    // BETTER CUSTOM VALIDATOR FOR SIMPLE EMAIL ONLY VALIDATION
+    if ( $("[js-validate-signup]").length > 0 ){
+      $("[js-validate-signup]").each(function(i, form){
+
+        var $form = $(this);
+        var email = $form.find("input[name=email]");
+        var emailContainer = email.parent();
+
+        $form.on('submit', function(e){
+          e.stopPropagation();
+          e.preventDefault();
+
+          var emailVal = $(email).val();
+          var emailIsValid = emailRegex.test(emailVal);
+          var validationMessage = "";
+
+          if ( emailVal == "" ){
+            $form.addClass('is-shaking');
+            setTimeout(function(){
+              $form.removeClass('is-shaking');
+            }, 1000)
+          } else if ( !emailIsValid ){
+            validationMessage = "Ops! Veja se está tudo certo com seu e-mail."
+          } else {
+            // sucess
+            // to some ajax stuff
+            clearValidation();
+            alert('form is valid. write some ajax stuff here');
+
+            // erase input
+            email.val("");
+          }
+
+          // validation message
+          if ( validationMessage !== "" ){
+            emailContainer.addClass('has-error')
+            emailContainer.append('<div class="ui-input__validation">'+validationMessage+'</div>')
+          }
+        })
+
+        // clear validation
+        email.focusin(clearValidation);
+
+        function clearValidation(){
+          emailContainer.removeClass('has-error');
+          emailContainer.find(".ui-input__validation").remove();
+        }
+
+      })
+    }
+
   }
 
   ////////////

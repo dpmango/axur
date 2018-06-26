@@ -3,10 +3,12 @@
   display: flex
   align-items: center
   max-width: 580px
-
   button
     flex: 0 0 auto
     margin-left: 8px
+  &.is-shaking
+    .ui-input
+      animation: inputShake 1s linear
 
 +r($tablet)
   .signup-form
@@ -21,3 +23,22 @@
       width: 100%
       span
         display: block
+
+
+@keyframes inputShake
+  from,
+  to
+    transform: translate3d(0, 0, 0)
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90%
+    transform: translate3d(-7px, 0, 0)
+
+  20%,
+  40%,
+  60%,
+  80%
+    transform: translate3d(7px, 0, 0)

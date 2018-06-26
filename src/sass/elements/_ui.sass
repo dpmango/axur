@@ -42,7 +42,7 @@
     &:placeholder
       color: $colorMuted
     &:focus
-      border-color: $colorOrange
+      border-color: $colorOrange2
 
   &--iconed
     .ico
@@ -56,14 +56,16 @@
   &.has-error
     // padding-bottom: 30px
     input
-      border-color: $colorOrange
+      border-color: rgba($colorRed, .4)
 
 .ui-input__validation
   position: absolute
   bottom: -30px
   display: inline-block
   margin-top: 20px
-  color: $colorOrange
+  font-weight: 500
+  color: $colorRed
+  line-height: 1
   font-size: 13px
 
 

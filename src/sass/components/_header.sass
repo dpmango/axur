@@ -56,12 +56,17 @@
     li
       display: inline-block
       margin-right: 20px
+      transition: opacity .25s $ease
       &:last-child
         margin-right: 0
       &.is-active
         a
+          pointer-events: none
           &::after
             right: 0
+      &.is-muted
+        opacity: .5
+
     a
       position: relative
       display: inline-block

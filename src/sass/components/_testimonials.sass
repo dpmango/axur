@@ -66,6 +66,13 @@
     align-items: center
     img
       max-width: 100%
+      filter: saturate(0)
+      opacity: .5
+      transition: .25s $ease
+    &:hover
+      img
+        filter: none
+        opacity: 1
 
 .testimonials-card
   position: relative
@@ -97,9 +104,12 @@
     margin-top: 5px
     font-size: 13px
     color: $colorOrange
-    transition: color .25s $ease
+    line-height: 1
+    border-bottom: 1px solid transparent
+    transition: color .25s $ease, border .25s $ease
     &:hover
       color: $colorOrange2
+      border-color: rgba($colorOrange2, .2)
 
   &__logo
     margin-top: 20px
