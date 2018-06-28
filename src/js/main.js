@@ -159,6 +159,12 @@ $(document).ready(function(){
       $('.page').toggleClass('is-muted');
       $('.header').toggleClass('is-menu-opened');
     }
+
+    var $fixer = $('a[js-toggle-menu]');
+    var fixPos = $fixer.offset().left + ($fixer.width() / 2)
+    $('[js-triangle-fix]').css({
+      'left': fixPos
+    })
   }
 
   function closeMenu(name){
@@ -418,25 +424,25 @@ $(document).ready(function(){
     })
 
     // TESTIMONIALS SWIPER
-    var testimonialsSlider = new Swiper('[js-testimonials-slider]', {
-      wrapperClass: "swiper-wrapper",
-      slideClass: "testimonials-card",
-      direction: 'horizontal',
-      loop: false,
-      watchOverflow: true,
-      setWrapperSize: false,
-      spaceBetween: 30,
-      slidesPerView: 2,
-      normalizeSlideIndex: true,
-      freeMode: false,
-      // effect: 'flip',
-      breakpoints: {
-        // when window width is <= 992px
-        992: {
-          slidesPerView: 1,
-        }
-      }
-    })
+    // var testimonialsSlider = new Swiper('[js-testimonials-slider]', {
+    //   wrapperClass: "swiper-wrapper",
+    //   slideClass: "testimonials-card",
+    //   direction: 'horizontal',
+    //   loop: false,
+    //   watchOverflow: true,
+    //   setWrapperSize: false,
+    //   spaceBetween: 30,
+    //   slidesPerView: 2,
+    //   normalizeSlideIndex: true,
+    //   freeMode: false,
+    //   // effect: 'flip',
+    //   breakpoints: {
+    //     // when window width is <= 992px
+    //     992: {
+    //       slidesPerView: 1,
+    //     }
+    //   }
+    // })
 
     // custom nav
     // _document.on('click', '[js-testimonials-slider-nav] .testimonials__logo', function(){
@@ -456,7 +462,7 @@ $(document).ready(function(){
       spaceBetween: 0,
       slidesPerView: 'auto',
       normalizeSlideIndex: true,
-      freeMode: true,
+      freeMode: false,
       watchSlidesProgress: true,
       slidesOffsetAfter: 50,
       pagination: {
@@ -1010,7 +1016,8 @@ $(document).ready(function(){
 
           // validation message
           if ( validationMessage !== "" ){
-            emailContainer.addClass('has-error')
+            emailContainer.addClass('has-error');
+            $form.addClass('validation-spacing');
             emailContainer.append('<div class="ui-input__validation">'+validationMessage+'</div>')
           }
         })
@@ -1020,6 +1027,7 @@ $(document).ready(function(){
 
         function clearValidation(){
           emailContainer.removeClass('has-error');
+          $form.removeClass('validation-spacing');
           emailContainer.find(".ui-input__validation").remove();
         }
 

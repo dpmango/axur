@@ -30,6 +30,7 @@
     padding-bottom: 2px
     list-style: none
     li
+      position: relative
       display: inline-block
       margin-right: 65px
       &:last-child
@@ -37,12 +38,36 @@
       &.is-active
         a
           color: $colorOrange2
+          &::after
+            opacity: 1
+            transform: translate(0%,0px) rotate(45deg)
+
     a
       display: inline-block
       color: $colorMuted
       transition: color .25s $ease
+      &::after
+        /* triangle
+        display: inline-block
+        content: ' '
+        position: absolute
+        left: 50%
+        bottom: -36px
+        transform: rotate(45deg) translate(10px, 10px)
+        size: 16px
+        margin-left: -8px
+        background: white
+        pointer-events: none
+        opacity: 0
+        border: 1px solid #EEEEEE
+        transform-origin: center center
+        transition: all .25s $ease
       &:hover, &.is-active
         color: $colorOrange2
+      &.is-active
+        &::after
+          opacity: 1
+          transform: translate(0%,0px) rotate(45deg)
 
   &__lang
     flex: 0 0 auto
