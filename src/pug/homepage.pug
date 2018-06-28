@@ -74,7 +74,8 @@ block content
         .products__content
           .products__grid(js-diminish-hover-cards data-for-prodcuts-triangle)
             // col
-            .products__col(js-teleport data-teleport-to="products-col-1" data-teleport-condition="<568")
+            // (js-teleport data-teleport-to="products-col-1" data-teleport-condition="<568")
+            .products__col
               // card
               // data-for is for correct position of background oval
               a.products-card.wow(href="#" data-id="1" data-for-prodcuts-oval)
@@ -100,7 +101,8 @@ block content
                     span /mês
             
             // col
-            .products__col(js-teleport data-teleport-to="products-col-2" data-teleport-condition="<568")
+            // (js-teleport data-teleport-to="products-col-2" data-teleport-condition="<568")
+            .products__col
               // card
               a.products-card.wow(href="#" data-id="3")
                 h3 
@@ -125,7 +127,8 @@ block content
                     span /mês
             
             // col
-            .products__col(js-teleport data-teleport-to="products-col-3" data-teleport-condition="<568")
+            // (js-teleport data-teleport-to="products-col-3" data-teleport-condition="<568")
+            .products__col
               // card
               a.products-card.wow(href="#" data-id="5")
                 h3 
@@ -152,10 +155,81 @@ block content
           // mobile grid (swipable)
           .products__grid.products__grid--mobile(js-products-slider-mobile).swiper-containter
             .swiper-wrapper
-              .products__col-swiper(data-teleport-target="products-col-1")
-              .products__col-swiper(data-teleport-target="products-col-2")
-              .products__col-swiper(data-teleport-target="products-col-3")
-            
+              //- .products__col-swiper(data-teleport-target="products-col-1")
+              //- .products__col-swiper(data-teleport-target="products-col-2")
+              //- .products__col-swiper(data-teleport-target="products-col-3")
+              // fractions nav is not working - just copy paste for mobile
+              
+              // data-for is for correct position of background oval
+              a.products-card.wow(href="#" data-id="1" data-for-prodcuts-oval-mobile)
+                h3 
+                  span Digital Fraud <br>Discovery
+                p.t-p2 Buscamos e removemos sites que usam sua marca em fraudes como phishing e infecção por malware.
+                .link-p2 Saiba mais
+                .products-card__price
+                  span A PARTIR DE
+                  .products-card__price-num
+                    span R$1.499
+                    span /mês
+              // card
+              a.products-card.wow(href="#" data-id="2")
+                h3 
+                  span Partner <br>Compliance
+                p.t-p2 Analisamos as atividades dos seus parceiros, além de identificar quem finge ter ligação com sua marca.
+                .link-p2 Saiba mais
+                .products-card__price
+                  span A PARTIR DE
+                  .products-card__price-num
+                    span R$1.499
+                    span /mês
+                  
+              // card
+              a.products-card.wow(href="#" data-id="3")
+                h3 
+                  span Digital Marketing <br>Compliance
+                p.t-p2 Procuramos apps falsos, perfis não oficiais e roubos de identidade que confundem seus clientes.
+                .link-p2 Saiba mais
+                .products-card__price
+                  span A PARTIR DE
+                  .products-card__price-num
+                    span R$1.499
+                    span /mês
+              // card
+              a.products-card.wow(href="#" data-id="4")
+                h3 
+                  span Data Leakage <br>Discovery
+                p.t-p2 Monitoramos possíveis vazamentos de dados para agir rápido e reduzir o impacto do incidente.
+                .link-p2 Saiba mais
+                .products-card__price
+                  span A PARTIR DE
+                  .products-card__price-num
+                    span R$1.999
+                    span /mês
+              
+              // card
+              a.products-card.wow(href="#" data-id="5")
+                h3 
+                  span Sales Abuse <br>Discovery
+                p.t-p2 Descobrimos e tiramos do ar vendas ilegais ou produtos piratas, que prejudicam sua imagem e seus resultados.
+                .link-p2 Saiba mais
+                .products-card__price
+                  span A PARTIR DE
+                  .products-card__price-num
+                    span R$1.499
+                    span /mês
+              // card
+              a.products-card.wow(href="#" data-id="6")
+                h3 
+                  span Threat <br>Intelligence
+                p.t-p2 Escaneamos a deep web atrás de ataques, golpes e esquemas que ameaçam sua marca e seus clientes. 
+                .link-p2 Saiba mais
+                .products-card__price
+                  span A PARTIR DE
+                  .products-card__price-num
+                    span R$1.499
+                    span /mês
+                    
+                            
             .swiper-nav.swiper-nav--orange
               // handled by swiper API
               .swiper-nav__fraction

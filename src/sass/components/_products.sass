@@ -157,6 +157,7 @@
 /* card
 .products-card
   position: relative
+  z-index: 1
   display: inline-block
   // background: white
   // box-shadow: 0 10px 16px 0 rgba(0,0,0,0.05)
@@ -176,7 +177,7 @@
     z-index: 1
     transition: .25s $ease
     background: white
-    transform: translate(-50%,-50%)
+    transform: translate3d(-50%,-50%,0)
     will-change: transform
     box-shadow: 0 10px 16px 0 rgba(0,0,0,0.05)
     border-radius: 4px
@@ -184,7 +185,7 @@
     // box-shadow: 0 15px 26px 0 rgba(0,0,0,0.1)
     &::before
       box-shadow: 0 15px 26px 0 rgba(0,0,0,0.1)
-      transform: translate(-50%,-50%) scale(1.02)
+      transform: translate3d(-50%,-50%,0) scale(1.02)
     .link-p2
       color: $colorOrange2
       border-color: rgba($colorOrange2, .2)
@@ -259,8 +260,20 @@
     padding: 70px 40px 35px
     margin-bottom: 20px
     margin-right: 10px
+    background: white
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.05)
+    border-radius: 4px
+    transition: .25s $ease
+    &::before
+      display: none
+    &:hover
+      box-shadow: 0 15px 26px 0 rgba(0,0,0,0.1)
     &--no-bg
       padding: 0
+      background: transparent
+      box-shadow: none
+      &:hover
+        box-shadow: none
 
     &__price
       margin-top: 20px

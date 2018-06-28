@@ -344,7 +344,7 @@ $(document).ready(function(){
     var productsTriangle = $('[js-sticky-products-triangle]');
 
     if (productsOval.length > 0){
-      var anchor = $('.products-card[data-for-prodcuts-oval]');
+      var anchor = _window.width() > 568 ? $('.products-card[data-for-prodcuts-oval]') : $('.products-card[data-for-prodcuts-oval-mobile]');
       var anchorOffsetX = Math.floor(anchor.offset().left);
       var anchorOffsetY = Math.floor( Math.abs( $('.products').offset().top - anchor.offset().top ));
       // will be position X by the center of a card - so, need width of oval and anchor
@@ -398,7 +398,8 @@ $(document).ready(function(){
     var productsSliderProgress = $('[js-set-products-progress]')
     var productsSliderMobile = new Swiper('[js-products-slider-mobile]', {
       wrapperClass: "swiper-wrapper",
-      slideClass: "products__col-swiper",
+      // slideClass: "products__col-swiper",
+      slideClass: "products-card",
       direction: 'horizontal',
       loop: false,
       watchOverflow: true,
