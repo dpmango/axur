@@ -30,17 +30,17 @@
     // padding-left: 30px
     // .swiper-wrapper
     &::before
-      display: inline-block
-      content: ' '
-      position: absolute
-      bottom: -30px
-      top: -30px
-      left: -50px
-      z-index: 2
-      width: 100px
-      background: #FAFAFA
-      pointer-events: none
-      filter: blur(10px)
+      // display: inline-block
+      // content: ' '
+      // position: absolute
+      // bottom: -30px
+      // top: -30px
+      // left: -50px
+      // z-index: 2
+      // width: 100px
+      // background: #FAFAFA
+      // pointer-events: none
+      // filter: blur(10px)
 
   &__slide
     flex: 0 0 400px
@@ -55,7 +55,8 @@
     position: absolute
     bottom: 0px
     /* because images are smaller than in design
-    right: -70px
+    // right: -70px
+    right: 0
 
 .blog-card
   flex: 1 0 auto
@@ -84,10 +85,16 @@
     min-height: 100px
     display: flex
     flex-direction: column
+    padding-bottom: 80%
     transition: transform .25s $ease
     img
       /* make aspect ratio 1,2 ?
-      width: 100%
+      position: absolute
+      left: 50%
+      top: 50%
+      height: 100%
+      // width: 120%
+      transform: translate(-50%, -50%)
 
   &__title
     margin-top: -8px
@@ -109,7 +116,7 @@
         margin-left: 30px
         margin-right: 30px
     &__bg
-      right: -120px
+      // right: -120px
 
 +r($desktop)
   .blog
@@ -118,7 +125,8 @@
       &-wrapper
         margin-left: 0px
     &__bg
-      right: -150px
+      // right: -150px
+      right: -40px
 
 +r(860)
   .blog
