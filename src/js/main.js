@@ -407,8 +407,9 @@ $(document).ready(function(){
       spaceBetween: 0,
       slidesPerView: 'auto',
       normalizeSlideIndex: true,
-      freeMode: true,
+      freeMode: false,
       slidesOffsetAfter: 50,
+      // slidesOffsetBefore: 30,
       pagination: {
         el: '.swiper-nav__fraction',
         type: 'fraction',
