@@ -1,0 +1,73 @@
+.faq
+  padding: 35px 0 80px
+  border-bottom: 1px solid #EEEEEE
+
+  &__wrapper
+    margin-top: 30px
+
+  &__panel
+    border-top: 1px solid $colorLightGray
+    &:last-of-type
+      border-bottom: 1px solid $colorLightGray
+    &.is-active
+      .faq
+        &__heading
+          &::after
+            transform: rotate(180deg)
+        &__content
+          display: block
+          p
+            display: block
+
+  &__heading
+    position: relative
+    display: flex
+    align-items: center
+    padding: 40px 0 35px 0
+    cursor: pointer
+    transition: color .25s $ease
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      +sprite(footer-nav-arrow)
+      right: 15px
+      top: 48px
+      transition: .25s $ease
+      // transform: translateY(-50%)
+    &:hover
+      color: $colorOrange2
+
+  &__name
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    h3
+      margin: 0
+
+
+  &__tag
+    display: inline-block
+    margin-left: 8px
+    font-size: 10px
+    font-weight: 500
+    color: white
+    border-radius: 2px
+    text-transform: uppercase
+    padding: 6px 8px 4px
+    line-height: 1
+    letter-spacing: 0.01em
+    &--popular
+      background: $colorOrange
+
+  &__content
+    display: none
+    padding-bottom: 40px
+    p
+      /* for jquery slide animation
+      // display: none
+      &:first-child
+        margin-top: 0
+
+  &__info
+    margin-top: 40px

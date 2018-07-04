@@ -211,6 +211,22 @@ $(document).ready(function(){
     closeAllMenus();
   }
 
+
+  // faq toggler
+  _document
+    .on('click', '[js-faq-toggler]', function(){
+      var panel = $(this).parent();
+      var panelContent = panel.find('.faq__content');
+      if ( panel.is('.is-active') ){
+        panel.removeClass('is-active');
+        panelContent.fadeOut();
+      } else {
+        panel.addClass('is-active');
+        panelContent.fadeIn();
+      }
+    })
+
+
   // header lang mouseover
   _document
     .on('mouseenter', '.header__lang a', function(){
@@ -226,7 +242,6 @@ $(document).ready(function(){
     .on('mouseleave', '.header__lang a', function(){
       $('.header__lang li').removeClass('is-muted')
     })
-
 
 
   // Product cards
@@ -493,7 +508,7 @@ $(document).ready(function(){
     var blogAPIEndpointMedia = "https://blog.axur.com/wp-json/wp/v2/media/";
 
     // get last 10 posts & media
-    if ( !blogAPIDone ){
+    if ( !blogAPIDone && $('[js-blog-slider]').length > 0 ){
       $.get(blogAPIEndpointPosts, function(data){
         $.each(data, function(index, post){
           // get featured media element
@@ -643,69 +658,85 @@ $(document).ready(function(){
     //   duration: 1000,
     // })
 
-    animation_2 = lottie.loadAnimation({
-      container: document.getElementById('include-anim-2'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: '/animation-json/anima_2.json'
-    })
+    if ( $('#include-anim-2').length > 0 ) {
+      animation_2 = lottie.loadAnimation({
+        container: document.getElementById('include-anim-2'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '/animation-json/anima_2.json'
+      })
+    }
 
-    animation_1 = lottie.loadAnimation({
-      container: document.getElementById('include-anim-1'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: '/animation-json/anima_1.json'
-    })
+    if ( $('#include-anim-1').length > 0 ) {
+      animation_1 = lottie.loadAnimation({
+        container: document.getElementById('include-anim-1'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '/animation-json/anima_1.json'
+      })
+    }
 
-    animation_1_mobile = lottie.loadAnimation({
-      container: document.getElementById('include-anim-1-mobile'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: '/animation-json/anima_1.json'
-    })
+    if ( $('#include-anim-1-mobile').length > 0 ) {
+      animation_1_mobile = lottie.loadAnimation({
+        container: document.getElementById('include-anim-1-mobile'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '/animation-json/anima_1.json'
+      })
+    }
 
-    var animation_3 = lottie.loadAnimation({
-      container: document.getElementById('include-anim-3'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: '/animation-json/anima_3.json'
-    })
+    if ( $('#include-anim-3').length > 0 ) {
+      var animation_3 = lottie.loadAnimation({
+        container: document.getElementById('include-anim-3'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '/animation-json/anima_3.json'
+      })
+    }
 
-    var animation_4 = lottie.loadAnimation({
-      container: document.getElementById('include-anim-4'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: '/animation-json/anima_4.json'
-    })
+    if ( $('#include-anim-4').length > 0 ) {
+      var animation_4 = lottie.loadAnimation({
+        container: document.getElementById('include-anim-4'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '/animation-json/anima_4.json'
+      })
+    }
 
-    var animation_5 = lottie.loadAnimation({
-      container: document.getElementById('include-anim-5'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: '/animation-json/anima_5.json'
-    })
+    if ( $('#include-anim-5').length > 0 ) {
+      var animation_5 = lottie.loadAnimation({
+        container: document.getElementById('include-anim-5'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '/animation-json/anima_5.json'
+      })
+    }
 
-    var animation_6 = lottie.loadAnimation({
-      container: document.getElementById('include-anim-6'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: '/animation-json/anima_6.json'
-    })
+    if ( $('#include-anim-6').length > 0 ) {
+      var animation_6 = lottie.loadAnimation({
+        container: document.getElementById('include-anim-6'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '/animation-json/anima_6.json'
+      })
+    }
 
-    var animation_7 = lottie.loadAnimation({
-      container: document.getElementById('include-anim-7'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: '/animation-json/anima_7.json'
-    })
+    if ( $('#include-anim-7').length > 0 ) {
+      var animation_7 = lottie.loadAnimation({
+        container: document.getElementById('include-anim-7'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '/animation-json/anima_7.json'
+      })
+    }
 
   }
 
