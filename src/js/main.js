@@ -216,13 +216,13 @@ $(document).ready(function(){
   _document
     .on('click', '[js-faq-toggler]', function(){
       var panel = $(this).parent();
-      var panelContent = panel.find('.faq__content');
+      var panelContent = panel.find('.panel__content');
       if ( panel.is('.is-active') ){
-        panel.removeClass('is-active');
         panelContent.fadeOut();
+        panel.removeClass('is-active');
       } else {
-        panel.addClass('is-active');
         panelContent.fadeIn();
+        panel.addClass('is-active');
       }
     })
 

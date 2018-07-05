@@ -1,0 +1,42 @@
+.functions
+  background-image: linear-gradient(-180deg, #FFFFFF 0%, #FAFAFA 29%)
+  &__wrapper
+    display: flex
+    padding-top: 80px
+
+  &__content
+    flex: 0 1 50%
+    max-width: 50%
+    min-width: 1px
+    padding-right: 30px
+    padding-bottom: 40px
+    h2
+      max-width: 450px
+
+  &__tabs
+    margin-left: 80px
+    max-width: 450px
+    .panel
+      &:first-child
+        border-top: 0
+
+  &__list
+    margin-left: 25px
+    max-width: 500px
+  &__image
+    display: flex
+    flex-direction: column
+    flex: 0 1 50%
+    max-width: 50%
+    min-width: 1px
+    font-size: 0
+    img
+      margin-top: auto
+      display: block
+      width: 125%
+      margin-right: -25%
+
++r(1200)
+  .functions
+    &__tabs
+      margin-left: 20px
