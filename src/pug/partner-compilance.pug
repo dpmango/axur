@@ -30,6 +30,64 @@ block content
   
   include components/_service-numbers
   
+  // Featured product      
+  .f-product
+
+    // featured product benefits
+    .f-products-benefits
+      .f-products-benefits__bg
+        img(src='img/svg/featureProductBg-triangle.svg')
+      .container
+        .f-products-benefits__wrapper
+          .f-products-benefits__left.wow
+            h2 Sua parceria, suas regras
+          .f-products-benefits__right
+            .f-products-benefits__list
+              .f-products-benefits__col.wow
+                h4 
+                  span Garanta a qualidade das relações
+                t.t-p2 Mantenha toda sua rede de parceiros atuando sob as mesmas regras. Isso ajuda a criar um padrão de atendimento que deixa seus clientes mais satisfeitos.
+                
+              .f-products-benefits__col.wow
+                h4 
+                  span Valorize quem está com você
+                t.t-p2 Não permitir o uso indevido da sua marca também é uma forma de mostrar o quanto seus parceiros são importantes para seu negócio.
+
+  // USE CASES
+  .use-cases
+    .container.container--narrow
+      h2 O Partner Compliance protege sua marca contra:
+      .use-cases__wrapper
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".1s")
+            h3 Infração de compliance
+            t.t-p2 Regras de compliance existem para que todos que falam em nome da sua marca o façam da mesma forma. Isso passa para o usuário a segurança de que se trata de uma parceria oficial. O descumprimento dessas regras coloca em risco a relação com seus clientes.
+            .label.label--blue saiba mais
+            a(href="#").link-p2 Perfis falsos no Instagram? Evite páginas fake
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".2s")
+            h3 Parceiros não autorizados
+            t.t-p2 Quando uma empresa diz ter uma parceria ou outro tipo de relação com sua marca, mas na verdade não tem. Essa prática retira os usuários do fluxo de compra correto, afetando suas taxas de conversão.
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".3s")
+            h3 Apropriação de identidade
+            t.t-p2 Parceiros (autorizados ou não) que assumem sua identidade e se fazem passar pela sua marca confundem o usuário. Nesses casos, seus clientes não conseguem diferenciar o site de um parceiro do site oficial, gerando mal-entendidos.
+  
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".1s")
+            h3 E-mails de parceiros não autorizados
+            t.t-p2 É muito fácil para parceiros não autorizados assumirem a identidade da sua marca na hora de enviar e-mails. Essa prática afeta a confiança dos usuários nos e-mails que você envia, prejudicando sua relação com clientes.
+            
+        // image
+        .use-cases__img.wow(data-animation-class="wowFadeRight")
+          img(src='img/svg/useCases-img.svg')
+                              
+                                            
+                
   include components/_cta
   
   include components/_service-faq

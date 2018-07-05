@@ -1,0 +1,68 @@
+.plans
+  padding: 100px 0 50px
+  background-image: linear-gradient(-180deg, #FFFFFF 0%, #FAFAFA 29%);
+
+  &__head
+    text-align: center
+    h2
+      margin-top: .5em
+      margin-bottom: .5em
+
+  &__switch
+    display: flex
+    align-items: center
+    justify-content: center
+    .label
+      margin-left: 8px
+
+    &-select
+      display: flex
+      align-items: center
+    &-toggle
+      position: relative
+      background: rgba($colorGreen, .2)
+      border-radius: 32px
+      size: 41px 24px
+      margin-left: 16px
+      margin-right: 16px
+      cursor: pointer
+      &::after
+        display: inline-block
+        content: ' '
+        position: absolute
+        left: 2px
+        top: 50%
+        size: 20px
+        background: $colorGreen
+        border-radius: 50%
+        transform: translate(0,-50%)
+        cursor: pointer
+        transition: .25s $ease
+      &.move-left
+        /* no need to change. left is a default state
+        background: rgba(#999999, .2)
+        &::after
+          background: #666666
+      &.move-right
+        &::after
+          transform: translate(17px, -50%)
+
+    label
+      flex: 0 0 auto
+      color: rgba($colorMuted, .6)
+      line-height: 1.55
+      font-size: 13px
+      transition: color .25s $ease
+      cursor: pointer
+      &:hover, &.is-active
+        color: $colorMuted
+
+  &__slider
+
+  &__col
+    flex: 0 1 25%
+    padding: 0 15px
+
+.plan-card
+  background: whtie
+  padding: 30px

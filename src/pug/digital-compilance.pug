@@ -30,6 +30,98 @@ block content
 
   include components/_service-numbers
   
+  // Featured product      
+  .f-product
+    .container.container--narrow
+      .f-product-box
+        .f-product-box__wrapper
+          .f-product-box__left.wow
+            h2.c-orange OneShot Takedown
+            p.t-p1 Enviamos notificações automatizadas aos servidores que hospedam ofertas não autorizadas.
+            .f-product-box__pixel-img.wow
+              +img('onePixel')
+              
+          .f-product-box__right.wow
+            p.t-p2 Com atuação em larga escala, você tem a melhor relação custo-benefício entre a retirada de conteúdo não autorizado e o tempo da sua equipe. Conte com o OneShot Takedown para:
+            // TODO LIST
+            ul
+              li Remoção de ofertas irregulares em marketplaces.
+              li Correção de informações de produtos vendidos em outros sites.
+
+            p.t-p1 <span class="c-green">88%</span> dos casos resolvidos em até 2 notificações.
+            p.t-p3 O OneShot Takedown possui eficiência máxima em plataformas que tratam incidentes de apropriação de identidade em lotes.
+            
+    // featured product benefits
+    .f-products-benefits
+      .f-products-benefits__bg
+        img(src='img/svg/featureProductBg-triangle.svg')
+      .container
+        .f-products-benefits__wrapper
+          .f-products-benefits__left.wow
+            h2 Cuidar da imagem da sua marca é proteger seu maior ativo
+          .f-products-benefits__right
+            .f-products-benefits__list
+              .f-products-benefits__col.wow
+                h4 
+                  span Comunicação sem ruídos
+                t.t-p2 Cuide para que seus clientes encontrem exatamente o que procuram sobre a sua marca. Controlando seu conteúdo, você garante uma experiência positiva.
+                
+              .f-products-benefits__col.wow
+                h4 
+                  span Assuma o controle da conversa
+                t.t-p2 Tirando do ar as páginas que se fazem passar por canais oficiais da sua marca, você se torna o protagonista das conversas com seus clientes.
+                
+
+  // USE CASES
+  .use-cases
+    .container.container--narrow
+      h2 O Digital Brand Compliance protege sua marca contra:
+      .use-cases__wrapper
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".1s")
+            h3 Abuso de marca
+            t.t-p2 Pessoas não autorizadas usando sua marca para se aproveitar da credibilidade que que ela tem com o público. Incidentes como esse afetam a imagem e a reputação da sua marca, afastando clientes e gerando prejuízos para seu negócio.
+            .label.label--blue saiba mais
+            a(href="#").link-p2 Perfis falsos no Instagram? Evite páginas fake
+            
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".2s")
+            h3 Domínios similares 
+            t.t-p2 Criminosos podem registrar domínios parecidos com sua marca (por exemplo, com erros de digitação ou letras em posições trocadas) com dois objetivos: vendê-los a você ou usá-los em ações para enganar e roubar dados dos seus clientes.
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".3s")
+            h3 Aplicativos fraudulentos
+            t.t-p2 Um aplicativo não oficial usa sua marca para atrair seus clientes e roubar dados, divulgar informações enganosas ou vender produtos falsos. Independentemente do objetivo, esse tipo de ação compromete a confiança do usuário nos seus aplicativos oficiais.
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".1s")
+            h3 Perfis falsos em redes sociais
+            t.t-p2 Com poucos recursos (a logo e o nome da sua empresa), qualquer pessoa pode criar um perfil falso em uma rede social e se fazer passar pela sua marca. Esse tipo de apropriação de identidade faz com que você perca o controle sobre as infomações divulgadas e as interações com seus clientes.
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".2s")
+            h3 Abuso de marca em e-mails
+            t.t-p2 Assim como nas redes sociais, assumir a identidade da sua marca na hora de enviar e-mails é bastante simples. Muito usada por spammers, essa prática afeta a confiança dos usuários nos e-mails que você envia, prejudicando sua relação com clientes.
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".3s")
+            h3 Indicação falsa no Google Maps
+            t.t-p2 Endereços falsos associados à sua marca atraem pessoas para os locais errados no mundo físico. Isso pode gerar, no mínimo, uma frustação do cliente em potencial, prejudicando sua reputação e seu faturamento.
+            
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".1s")
+            h3 Uso indevido em busca paga
+            t.t-p2 Sua marca pode ser usada em anúncios falsos que aparecem em sites de busca. Ao pesquisar por termos relacionados à sua empresa, seu cliente será exposto a esse conteúdo já na primeira página do buscador, podendo ser enganado e afastado da jornada de compra.
+        
+        // image
+        .use-cases__img.wow(data-animation-class="wowFadeRight")
+          img(src='img/svg/useCases-img.svg')
+    
+                  
   include components/_cta
   
   include components/_service-faq

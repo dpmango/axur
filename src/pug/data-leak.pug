@@ -29,6 +29,57 @@ block content
 
   include components/_service-numbers
 
+  // Featured product      
+  .f-product
+
+    // featured product benefits
+    .f-products-benefits
+      .f-products-benefits__bg
+        img(src='img/svg/featureProductBg-triangle.svg')
+      .container
+        .f-products-benefits__wrapper
+          .f-products-benefits__left.wow
+            h2 As informações da sua marca merecem toda a segurança
+          .f-products-benefits__right
+            .f-products-benefits__list
+              .f-products-benefits__col.wow
+                h4 
+                  span Saiba antes de todo mundo
+                t.t-p2 Nossa plataforma monitora riscos constantemente, para você tomar as ações necessárias e proteger seus clientes. E tudo isso antes de o problema virar notícia.
+                
+              .f-products-benefits__col.wow
+                h4 
+                  span Churn sob controle
+                t.t-p2 Dados sempre protegidos e um plano bem definido para resolver incidentes. Isso garante a segurança que seus clientes precisam para permanecer na sua base.
+                
+  
+  // USE CASES
+  .use-cases
+    .container.container--narrow
+      h2 O Data Leakage Discovery protege sua marca contra:
+      .use-cases__wrapper.use-cases__wrapper--give-space-img
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".1s")
+            h3 Vazamento de informações
+            t.t-p2 Quando dados confidenciais ou documentos da sua empresa são disponibilizados sem autorização na internet. Isso afeta a reputação da sua marca, já que passa uma imagem de vulnerabilidade dos seus sistemas de segurança.
+            .label.label--blue saiba mais
+            a(href="#").link-p2 Perfis falsos no Instagram? Evite páginas fake
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".2s")
+            h3 Divulgação de vulnerabilidades
+            t.t-p2 Falhas de segurança, quando descobertas e divulgadas, afetam a credibilidade da sua marca. Usuários desconfiados não voltam a fazer negócios e fica muito mais difícil convencer novos clientes.
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".3s")
+            h3 Vazamento de dados de clientes 
+            t.t-p2 A divulgação de dados confidenciais dos clientes da sua base pode ser desastrosa para a credibilidade da sua marca. Esse tipo de incidente deve ser corrigido o mais rápido possível para minimizar os danos à sua imagem.
+  
+        // image
+        .use-cases__img.wow(data-animation-class="wowFadeRight")
+          img(src='img/svg/useCases-img.svg')
+                                        
   include components/_cta
   
   include components/_service-faq

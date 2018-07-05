@@ -29,6 +29,82 @@ block content
   
   include components/_service-numbers
   
+  // Featured product      
+  .f-product
+    .container.container--narrow
+      .f-product-box
+        .f-product-box__wrapper
+          .f-product-box__left.wow
+            h2.c-orange OneShot Takedown
+            p.t-p1 Enviamos notificações automatizadas aos servidores que hospedam ofertas não autorizadas.
+            .f-product-box__pixel-img.wow
+              +img('onePixel')
+              
+          .f-product-box__right.wow
+            p.t-p2 Com atuação em larga escala, você tem a melhor relação custo-benefício entre a retirada de conteúdo não autorizado e o tempo da sua equipe. Conte com o OneShot Takedown para:
+            // TODO LIST
+            ul
+              li Remoção de ofertas irregulares em marketplaces.
+              li Correção de informações de produtos vendidos em outros sites.
+
+            p.t-p1 <span class="c-green">88%</span> dos casos resolvidos em até 2 notificações.
+            p.t-p3 O OneShot Takedown possui eficiência máxima em plataformas que tratam incidentes de apropriação de identidade em lotes.
+            
+    // featured product benefits
+    .f-products-benefits
+      .f-products-benefits__bg
+        img(src='img/svg/featureProductBg-triangle.svg')
+      .container
+        .f-products-benefits__wrapper
+          .f-products-benefits__left.wow
+            h2 Cuide das suas vendas e fortaleça sua imagem e seu faturamento
+          .f-products-benefits__right
+            .f-products-benefits__list
+              .f-products-benefits__col.wow
+                h4 
+                  span Aumente sua conversão
+                t.t-p2 Garantindo que seus canais oficiais são os únicos a vender seu produtos, você tem controle total sobre a jornada de compra dos seus clientes.
+              
+              .f-products-benefits__col.wow
+                h4 
+                  span Mantenha sua credibilidade
+                t.t-p2 Controlando as vendas não autorizadas, você evita que seus clientes tenham experiências ruins, seja no processo de compra ou no uso do produto.
+    
+  // USE CASES
+  .use-cases
+    .container.container--narrow
+      h2 Sales Abuse Discovery protege sua marca contra:
+      .use-cases__wrapper
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".1s")
+            h3 Falsificações
+            t.t-p2 O comércio de produtos falsificados está entre as maiores causas de prejuízo para as empresas de varejo, tanto em faturamento quanto em imagem. Produtos piratas usam sua marca para oferecer aos seus consumidores mercadorias de baixa qualidade e, em muitos casos, perigosas.
+            .label.label--blue saiba mais
+            a(href="#").link-p2 Perfis falsos no Instagram? Evite páginas fake
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".2s")
+            h3 Venda não autorizada 
+            t.t-p2 Esta prática envolve produtos verdadeiros sendo comercilizados em canais não oficiais, como nas redes sociais, por exemplo. O problema aqui é que a procedência não é garantida, podendo ser fruto roubo de carga ou contrabando.
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".3s")
+            h3 Mercado paralelo
+            t.t-p2 A venda de produtos por canais ou pessoas não autorizados alimenta o mercado paralelo. Isso gera toda uma rede de comércio informal, que não paga  imposto, não dá garantias ao consumidor e muitas vezes ajuda a financiar outros tipos de crime.
+  
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".1s")
+            h3 Pirataria digital
+            t.t-p2 É a distribuição ilegal de conteúdo protegido por direitos autorais, como livros, filmes, músicas e obras de arte em geral. Esse conteúdo normalmente é disponibilizado em sites de compartilhamento de arquivos sem a autorização da marca, gerando perdas de faturamento.
+            
+        // image
+        .use-cases__img.wow(data-animation-class="wowFadeRight")
+          img(src='img/svg/useCases-img.svg')
+              
+              
+    
   include components/_cta
   
   include components/_service-faq

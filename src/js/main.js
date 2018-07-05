@@ -226,6 +226,64 @@ $(document).ready(function(){
       }
     })
 
+  // plans toggler
+  _document
+    .on('click', '[js-select-plan] label, [js-select-plan] .plans__switch-toggle', function(){
+      var $this = $(this);
+      var $plansContainer = $this.closest('[js-plans-container]');
+      var $relatedCards = $plansContainer.find('.plan-card');
+      var $switchSelect = $this.closest('[js-select-plan]');
+      var $toggle = $switchSelect.find('.plans__switch-toggle');
+      var $labels = $switchSelect.find('label');
+      var discountPerYear = 15;
+      var dataAllowed = $switchSelect.data('allowed').split(';');
+
+      // dynamic variables
+      var inputValue, moveDirection;
+
+      if ( $this.is('label') ){
+        if ( $this.index() == 1 ){
+          moveDirection = "left"
+        } else if ( $this.index() == 3 ){
+          moveDirection = "right"
+        }
+      } else {
+        if ( $toggle.is('.move-right') ){
+          moveDirection = "left"
+        } else {
+          moveDirection = "right"
+        }
+      }
+
+      // update toggle
+      if ( moveDirection === "left" ){
+        $toggle.removeClass('move-right');
+
+        $($labels[0]).addClass('is-active');
+        $($labels[1]).removeClass('is-active');
+
+        $switchSelect.find('input[type="hidden"]').val(dataAllowed[0]);
+
+      } else if ( moveDirection === "right" ){
+        $toggle.removeClass('move-left').addClass('move-right');
+
+        $($labels[0]).removeClass('is-active');
+        $($labels[1]).addClass('is-active');
+
+        $switchSelect.find('input[type="hidden"]').val(dataAllowed[1]);
+      }
+
+
+
+
+      // change price on the cards
+      $relatedCards.each(function(i, card){
+        // var $card = $(card);
+        //
+        // $card.find('.price').val('')
+      })
+    })
+
 
   // header lang mouseover
   _document

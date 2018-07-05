@@ -29,7 +29,136 @@ block content
   include components/_service-functions-panels
   
   include components/_service-numbers
+  
+  // Service features
+  .service-features
+    .container.container--narrow
+      h2.wow Fazemos muito mais pela sua presença digital
+      .service-features__wrapper
+        ul.list-num.list-num--row(data-cols="3")
+          li.wow(data-animation-delay=".1s")
+            h4 Análise de UA
+            p.t-p2 Usamos user agents para simular acessos em diversos aparelhos e identificar ações de phishing mobile.
+          li.wow(data-animation-delay=".2s")
+            h4 Filtro de IP
+            p.t-p2 Nossa plataforma faz simulações para identificar com facilidade riscos de atuação regional.
+          li.wow(data-animation-delay=".3s")
+            h4 Domínios Unicode
+            p.t-p2 Monitoramos domínios registrados com caracteres unicode para simular sites oficiais e enganar usuários.
+  
+  // Featured product      
+  .f-product
+    .container.container--narrow
+      .f-product-box
+        .f-product-box__wrapper
+          .f-product-box__left.wow
+            h2.c-orange OnePixel
+            p.t-p1 Proteção contra Phishing acessível a todos.
+            .f-product-box__pixel-img.wow
+              +img('onePixel')
+              
+          .f-product-box__right.wow
+            p.t-p2 Nossa tecnologia exclusiva monitora suas páginas oficiais e identifica se um fraudador tentar copiar seu conteúdo. O OnePixel faz a leitura do caso e avisa você na hora em que o phishing ainda está sendo criado.
+            h4 <span class="c-green">Grátis</span> para todos os planos de Digital Fraud Discovery.
+    
+    // featured product benefits
+    .f-products-benefits
+      .f-products-benefits__bg
+        img(src='img/svg/featureProductBg-triangle.svg')
+      .container
+        .f-products-benefits__wrapper
+          .f-products-benefits__left.wow
+            h2 Ataques de phishing e malware são sofisticados e persistentes
+          .f-products-benefits__right
+            .f-products-benefits__list
+              .f-products-benefits__col.wow
+                h4 
+                  span Saiba antes de todo mundo
+                t.t-p2 Nossa plataforma monitora riscos constantemente, para você tomar as ações necessárias e proteger seus clientes. E tudo isso antes de o problema virar notícia.
+              
+              .f-products-benefits__col.wow
+                h4 
+                  span Previna também prejuízos
+                t.t-p2 Fraudes geram perdas não só para a imagem da sua marca, mas também para seu faturamento. Protegendo sua marca, você reduz riscos e melhora seus resultados.
+            
 
+  // USE CASES
+  .use-cases
+    .container.container--narrow
+      h2 Digital Fraud Discovery protege sua marca contra:
+      .use-cases__wrapper
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".1s")
+            h3 Phishing
+            t.t-p2 Uma das técnicas de fraude mais usadas na internet, esquemas de phishing enviam mensagens (geralmente em nome de marcas estabelecidas no mercado) para redirecionar o usuário a um site falso. Lá, ele é induzido a revelar dados pessoais, como senhas bancárias e números de cartões de crédito.
+            .label.label--blue saiba mais
+            a(href="#").link-p2 Phishing pode se esconder atrás do HTTPS
+            
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".2s")
+            h3 Malware
+            t.t-p2 São softwares desenvolvidos para causar danos ou roubar dados dos usuários. Eles transitam pela internet disfarçados ou associados a arquivos não maliciosos, com objetivo de se instalar em computadores, tablets ou celulares para cumprir sua missão.
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".3s")
+            h3 DNS Poisoning
+            t.t-p2 Ataque realizado nos servidores DNS, os sistemas responsáveis por apontar as informações que serão mostradas quando um usuário acessa um domínio. No DNS Poisoning, os criminosos invadem e alteram as configurações do servidor, fazendo o usuário acessar, sem saber, um site malicioso que simula o verdadeiro.
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".1s")
+            h3 PAC (Proxy Auto-Config)
+            t.t-p2 Outro recurso que não é uma ameaça em si, mas uma configuração dos navegadores para escolha do melhor proxy para buscar um site. O problema está nos ataques que modificam o PAC para usar um proxy malicioso e, então redirecionar o usuário para uma página de phishing. 
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".2s")
+            h3 Comand Control (C&C)
+            t.t-p2 O computador, tablet ou smartphone do usuário é infectado por um malware que recebe ordens de uma central de comando maliciosa. O roubo de dados é o principal objetivo, mas o maior problema é a persistência do C&C, que poderá continuar disseminando malwares.
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".3s")
+            h3 Proxy Scam 
+            t.t-p2 Nesse esquema de fraude, malwares infectam o computador do usuário para que ele passe a usar um proxy malicioso. Assim, toda vez que for acessar um site, o navegador vai acionar esse proxy e o usuário será redireciondo para sites falsos.
+            
+        // col
+        .use-cases__col
+          .use-case.wow(data-animation-delay=".1s")
+            h3 Redirect
+            t.t-p2 Esse recurso não representa uma ameaça por si só, mas muitos ataques fazem uso dele para camuflar páginas de phishing e enganar os usuários. Normalmente, o que acontece é que os ataques criam uma cadeia de redirecionamento para sites maliciosos, que simulam páginas oficiais.
+        
+        // image
+        .use-cases__img.wow(data-animation-class="wowFadeRight")
+          img(src='img/svg/useCases-img.svg')
+  
+  // PLANS
+  .plans(js-plans-container)
+    .container
+      .plans__head.wow
+        .t-label.c-orange digital fraud discovery
+        h2 Estimate your cost
+        .plans__switch
+          .plans__switch-select(js-select-plan data-allowed="monthly;yearly")
+            input(type="hidden" name="selected-plan" value="yearly")
+            label Cobrança mensal
+            .plans__switch-toggle.move-right
+            label.is-active Cobrança anual
+            
+          .label.label--green 15% de desconto
+          
+    // slider
+    .plans__slider
+      .plans__slider-container.container(js-plans-slider)
+        .swiper-wrapper
+          .plans__col
+            .plan-card.wow
+          .plans__col
+            .plan-card.wow
+          .plans__col
+            .plan-card.wow  
+          .plans__col
+            .plan-card.wow
+                
   include components/_cta
   
   include components/_service-faq
