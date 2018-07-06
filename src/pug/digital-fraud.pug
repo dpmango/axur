@@ -148,16 +148,78 @@ block content
           
     // slider
     .plans__slider
+      .plans__slider-bg
+        +img('plansBg')
       .plans__slider-container.container(js-plans-slider)
         .swiper-wrapper
-          .plans__col
-            .plan-card.wow
-          .plans__col
-            .plan-card.wow
-          .plans__col
-            .plan-card.wow  
-          .plans__col
-            .plan-card.wow
+          // col
+          .plans__col.wow
+            .plan-card
+              h3 Startup
+              ul.list-mark
+                li OnePixel
+                li Phishing & SMShing
+              .plan-card__price
+                .plan-card__price-num
+                  span R$1.200
+                  span /mês
+                span ATÉ 2 USUÁRIOS
+              .plan-card__cta
+                a(href="#").btn.btn-primary.btn--block
+                  span veja em ação
+          // col
+          .plans__col.wow
+            .plan-card
+              h3 Professional
+              ul.list-mark
+                li OnePixel
+                li Phishing & SMShing
+                li Malwere & CC
+              .plan-card__price
+                .plan-card__price-num
+                  span R$2.000
+                  span /mês
+                span ATÉ 5 USUÁRIOS
+              .plan-card__cta
+                a(href="#").btn.btn-primary.btn--block
+                  span veja em ação
+          // col
+          .plans__col.wow 
+            .plan-card
+              h3 Corporate
+              ul.list-mark
+                li OnePixel
+                li Phishing & SMShing
+                li Malwere & CC
+                li Pharming
+                li DNS Poisoning
+              .plan-card__price
+                .plan-card__price-num
+                  span R$4.000
+                  span /mês
+                span usuários ilimitados
+              .plan-card__cta
+                a(href="#").btn.btn-primary.btn--block
+                  span veja em ação
+          // col
+          .plans__col.wow
+            .plan-card
+              h3 Enterprise
+              ul.list-mark
+                li OnePixel
+                li Phishing & SMShing
+                li Malwere & CC
+                li Pharming
+                li DNS Poisoning
+                li API & Integrações
+              .plan-card__price
+                .plan-card__price-num
+                  span R$12.000
+                  span /mês
+                span usuários ilimitados
+              .plan-card__cta
+                a(href="#").btn.btn-primary.btn--block
+                  span veja em ação
                 
   include components/_cta
   

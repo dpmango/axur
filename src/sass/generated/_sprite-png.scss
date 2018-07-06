@@ -1,11 +1,20 @@
 $sprite: (
+	check: (
+		offset-x: 0px,
+		offset-y: -18px,
+		width: 11px,
+		height: 9px,
+		total-width: 14px,
+		total-height: 27px,
+		image: '../img/sprite.png'
+	),
 	footer-nav-arrow: (
 		offset-x: 0px,
 		offset-y: 0px,
 		width: 14px,
 		height: 8px,
 		total-width: 14px,
-		total-height: 8px,
+		total-height: 27px,
 		image: '../img/sprite.png'
 	),
 );
@@ -64,6 +73,9 @@ $sprite: (
 
 
 
+	.icon-check {
+		@include sprite(check)
+	}
 	.icon-footer-nav-arrow {
 		@include sprite(footer-nav-arrow)
 	}
