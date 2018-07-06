@@ -40,6 +40,8 @@ $(document).ready(function(){
     initScrollMonitor();
     initValidations();
 
+    initMap();
+
     // development helper
     _window.on('resize', debounce(setBreakpoint, 200))
 
@@ -1198,6 +1200,15 @@ $(document).ready(function(){
     })
   }
 
+
+
+  //////////
+  // MAP INITIALIZATION
+  //////////
+  function initMap(){
+
+  }
+
   //////////
   // BARBA PJAX
   //////////
@@ -1318,6 +1329,51 @@ $(document).ready(function(){
 
 });
 
+
+// When the window has finished loading create our google map below
+google.maps.event.addDomListener(window, 'load', init);
+
+if ( $('#google-map').length > 0 ){
+
+}
+
+function init() {
+
+  var mapOptions = {
+    zoom: 3,
+    center: new google.maps.LatLng(-5.655688, -80.521547),
+    styles: [{"featureType":"all","elementType":"geometry.fill","stylers":[{"weight":"2.00"}]},{"featureType":"all","elementType":"geometry.stroke","stylers":[{"color":"#9c9c9c"}]},{"featureType":"all","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#eeeeee"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#7b7b7b"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#c8d7d4"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#070707"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]}]
+  };
+
+  var mapElement = document.getElementById('google-map');
+  var map = new google.maps.Map(mapElement, mapOptions);
+
+  // markers
+  var markers = [
+    {
+      position: new google.maps.LatLng(-30.006795, -51.198727),
+      title: 'Porto Alegri'
+    },
+    {
+      position: new google.maps.LatLng(-23.574160, -46.656552),
+      title: 'San Paulu'
+    },
+    {
+      position: new google.maps.LatLng(37.740718, -122.428274),
+      title: 'San Francisco'
+    }
+  ]
+
+  markers.forEach(function(marker) {
+    new google.maps.Marker({
+      position: marker.position,
+      icon: '/img/pin.png',
+      map: map,
+      title: marker.title
+    });
+  });
+
+}
 
 // Propotyes
 Date.prototype.renderDate = function() {
