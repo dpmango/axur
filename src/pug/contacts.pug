@@ -4,3 +4,54 @@ title: Contacts
 extends shared/_layout
 block content
   
+  // CONTACTS
+  .contacts
+    .contacts__wrapper
+      .contacts__content(js-layout-padding data-type="container-left" data-stop="<992")
+        h1 Como podemos ajudar?
+        form.contacts__form(action="#" js-validate-contact-form)
+          .ui-group
+            input(type="text" name="name" placeholder="Nome completo")
+          .ui-group
+            input(type="email" name="email" placeholder="E-mail de contato")
+          .ui-group
+            input(type="text" name="empresa" placeholder="Empresa")
+          .ui-group.ui-group--short
+            label país
+            select(name="country" js-selectric)
+              option(value="Brazil") Brazil
+              option(value="Brazil") Brazil
+              option(value="Brazil") Brazil
+              option(value="Brazil") Brazil
+              option(value="Brazil") Brazil
+              option(value="Brazil") Brazil
+              option(value="Brazil") Brazil
+          .ui-group.ui-group--short
+            label telefone
+            input(type="tel" js-mask-phone placeholder="+55")
+          .ui-group
+            label assunto
+            select(name="country" js-selectric)
+              option(value="Informações sobre produtos") Informações sobre produtos
+              option(value="Informações sobre produtos") Informações sobre produtos
+          .ui-group
+            label produto
+            select(name="country" js-selectric)
+              option(value="Digital Fraud Discovery") Digital Fraud Discovery
+              option(value="Digital Fraud Discovery") Digital Fraud Discovery
+                    
+          .ui-group
+            label mensagem
+            textarea(type="text" placeholder="Conte-nos como podemos ajudar." rows="4" data-min-rows="4")
+          
+          .ui-group
+            .ui-checkbox
+              input(type="checkbox" name="agree")
+              label(for="agree") Agendar uma demonstração da plataforma  
+          
+          .contacts__form-cta
+            button(type="submit").btn.btn-primary
+              span enviar
+                
+      .contacts__map
+        #google-map

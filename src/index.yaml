@@ -16,6 +16,6 @@ PageList:
 - file: threat-discovery.html
   ready: 50
 - file: contacts.html
-  ready: 5
+  ready: 30
 - file: solicitar.html
   ready: 5

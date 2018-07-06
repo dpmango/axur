@@ -4,21 +4,44 @@
 // WORKS KIND OF bootstrap - group have label and input
 .ui-group
   position: relative
-  margin-bottom: 20px
-  label
+  margin-bottom: 30px
+  &--short
+    max-width: 210px
+  > label:not(.ui-input__validation)
     display: block
-    margin-bottom: 10px
+    line-height: 1
+    color: $colorMuted
+    font-size: 10px
+    text-transform: uppercase
+    letter-spacing: 0.1em
+    margin-bottom: 5px
+
   input, textarea
     display: block
     width: 100%
     -webkit-appearance: none
     background: white
-    color: $grayColor
-    border: 1px solid $borderColor
+    color: $fontColor
+    border: 1px solid $colorLightGray
+    font-size: 15px
+    line-height: 1.5
     border-radius: 4px
-    padding: 12px 15px
+    // padding: 14px 15px 10px 45px
+    padding: 13px 14px 11px 24px
+    // box-shadow: 0 10px 16px 0 rgba(0,0,0,0.05)
+    border-radius: 4px
+    transition: color .25s $ease, border .25s $ease
+    &:placeholder
+      color: $colorMuted
+    &:focus
+      border-color: $colorOrange2
   textarea
     resize: vertical
+
+  &.has-error
+    // padding-bottom: 30px
+    input
+      border-color: rgba($colorRed, .4)
 
 /* input as separate componenet
 .ui-input
@@ -68,6 +91,11 @@
   line-height: 1
   font-size: 13px
 
+
++r($mobile)
+  .ui-group
+    &--short
+      max-width: 100%
 
 // Checkbox
 .ui-checkbox

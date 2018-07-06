@@ -31,8 +31,8 @@ $(document).ready(function(){
     initTypewriter(); // typewriter (i.e hero section)
 
     // ui
-    // initMasks();
-    // initSelectric();
+    initMasks();
+    initSelectric();
 
     // extra stuff
     // initLazyLoad();
@@ -858,12 +858,12 @@ $(document).ready(function(){
   // Masked input
   function initMasks(){
     $("[js-dateMask]").mask("99.99.99",{placeholder:"ДД.ММ.ГГ"});
-    $("input[type='tel']").mask("+7 (000) 000-0000", {placeholder: "+7 (___) ___-____"});
+    $("[js-mask-phone]").mask("+7 (000) 000-0000", {placeholder: "+7 (___) ___-____"});
   }
 
   // selectric
   function initSelectric(){
-    $('select').selectric({
+    $('[js-selectric]').selectric({
       maxHeight: 300,
       arrowButtonMarkup: '<b class="button"><svg class="ico ico-select-down"><use xlink:href="img/sprite.svg#ico-select-down"></use></svg></b>',
 
