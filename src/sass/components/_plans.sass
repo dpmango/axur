@@ -14,6 +14,8 @@
     justify-content: center
     .label
       margin-left: 8px
+      opacity: .3
+      transition: .25s $ease
 
     &-select
       display: flex
@@ -57,8 +59,13 @@
       &:hover, &.is-active
         color: $colorMuted
 
+    &.is-active
+      .label
+        opacity: 1
+
   &__slider
     margin-top: 70px
+    padding-top: 20px
     position: relative
     .swiper-wrapper
       display: flex
@@ -86,7 +93,9 @@
   border-radius: 4px
   h3
     margin-top: 0
+    margin-bottom: 10px
   ul
+    margin-top: 25px
     margin-bottom: 70px
   &__price
     margin-top: auto

@@ -234,6 +234,7 @@ $(document).ready(function(){
       var $this = $(this);
       var $plansContainer = $this.closest('[js-plans-container]');
       var $relatedCards = $plansContainer.find('.plan-card');
+      var $switch = $plansContainer.find('.plans__switch');
       var $switchSelect = $this.closest('[js-select-plan]');
       var $toggle = $switchSelect.find('.plans__switch-toggle');
       var $labels = $switchSelect.find('label');
@@ -264,6 +265,7 @@ $(document).ready(function(){
         $($labels[0]).addClass('is-active');
         $($labels[1]).removeClass('is-active');
 
+        $switch.removeClass('is-active');
         $switchSelect.find('input[type="hidden"]').val(dataAllowed[0]);
 
       } else if ( moveDirection === "right" ){
@@ -272,17 +274,24 @@ $(document).ready(function(){
         $($labels[0]).removeClass('is-active');
         $($labels[1]).addClass('is-active');
 
+        $switch.addClass('is-active');
         $switchSelect.find('input[type="hidden"]').val(dataAllowed[1]);
       }
 
-
-
-
       // change price on the cards
       $relatedCards.each(function(i, card){
-        // var $card = $(card);
-        //
-        // $card.find('.price').val('')
+        var $card = $(card);
+        var $price = $card.find('.plan-card__price-num');
+        var $priceVal = $price.find('span:first-child');
+        // var $pricePer = $price.find('span:last-child');
+
+        // R$1.200
+        if ( moveDirection === "left" ){
+          $priceVal.html( $priceVal.data('per-month')  )
+        } else if ( moveDirection == "right" ){
+          $priceVal.html( $priceVal.data('per-year')  )
+        }
+
       })
     })
 
@@ -860,7 +869,7 @@ $(document).ready(function(){
   // Masked input
   function initMasks(){
     $("[js-dateMask]").mask("99.99.99",{placeholder:"ДД.ММ.ГГ"});
-    $("[js-mask-phone]").mask("+7 (000) 000-0000", {placeholder: "+7 (___) ___-____"});
+    $("[js-mask-phone]").mask("+65 (000) 000-0000", {placeholder: "+65"});
   }
 
   // selectric

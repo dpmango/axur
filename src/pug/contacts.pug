@@ -8,17 +8,17 @@ block content
   .contacts
     .contacts__wrapper
       .contacts__content(js-layout-padding data-type="container-left" data-stop="<992")
-        h1 Como podemos ajudar?
+        h1.wow Como podemos ajudar?
         form.contacts__form(action="#" js-validate-contact-form)
-          .ui-group
+          .ui-group.wow
             input(type="text" name="name" placeholder="Nome completo")
-          .ui-group
+          .ui-group.wow
             input(type="email" name="email" placeholder="E-mail de contato")
-          .ui-group
+          .ui-group.wow
             input(type="text" name="empresa" placeholder="Empresa")
-          .ui-group.ui-group--short
+          .ui-group.ui-group--short.wow
             label país
-            select(name="country" js-selectric)
+            select(name="country" js-selectric placeholder="Select country")
               option(value="Brazil") Brazil
               option(value="Brazil") Brazil
               option(value="Brazil") Brazil
@@ -26,33 +26,34 @@ block content
               option(value="Brazil") Brazil
               option(value="Brazil") Brazil
               option(value="Brazil") Brazil
-          .ui-group.ui-group--short
+          .ui-group.ui-group--short.wow
             label telefone
             input(type="tel" js-mask-phone placeholder="+55")
-          .ui-group
+          .ui-group.wow
             label assunto
             select(name="country" js-selectric)
               option(value="Informações sobre produtos") Informações sobre produtos
               option(value="Informações sobre produtos") Informações sobre produtos
-          .ui-group
+          .ui-group.wow
             label produto
             select(name="country" js-selectric)
               option(value="Digital Fraud Discovery") Digital Fraud Discovery
               option(value="Digital Fraud Discovery") Digital Fraud Discovery
                     
-          .ui-group
+          .ui-group.wow
             label mensagem
             textarea(type="text" placeholder="Conte-nos como podemos ajudar." rows="4" data-min-rows="4")
           
-          .ui-group
+          .ui-group.wow
             .ui-checkbox
-              input(type="checkbox" name="agree")
-              label(for="agree") Agendar uma demonstração da plataforma  
+              input(type="checkbox" name="agree" id="agree")
+              label(for="agree") 
+                span Agendar uma demonstração da plataforma  
           
-          .contacts__form-cta
+          .contacts__form-cta.wow
             button(type="submit").btn.btn-primary
               span enviar
                 
-      .contacts__map
+      .contacts__map.wow(data-animation-class="wowFadeRight")
         script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9JAi68gF-tibx7N11TMlIkLitQ7gQv4A")
         #google-map

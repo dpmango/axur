@@ -137,13 +137,13 @@ block content
       .plans__head.wow
         .t-label.c-orange digital fraud discovery
         h2 Estimate your cost
-        .plans__switch
+        // is-active is for the label state
+        .plans__switch.is-active
           .plans__switch-select(js-select-plan data-allowed="monthly;yearly")
             input(type="hidden" name="selected-plan" value="yearly")
             label Cobrança mensal
             .plans__switch-toggle.move-right
             label.is-active Cobrança anual
-            
           .label.label--green 15% de desconto
           
     // slider
@@ -161,7 +161,10 @@ block content
                 li Phishing & SMShing
               .plan-card__price
                 .plan-card__price-num
-                  span R$1.200
+                  span(
+                    data-per-month="R$1.380"
+                    data-per-year="R$1.200"
+                  ) R$1.200
                   span /mês
                 span ATÉ 2 USUÁRIOS
               .plan-card__cta
@@ -171,13 +174,17 @@ block content
           .plans__col.wow
             .plan-card
               h3 Professional
+              .t-label.c-orange most popular
               ul.list-mark
                 li OnePixel
                 li Phishing & SMShing
                 li Malwere & CC
               .plan-card__price
                 .plan-card__price-num
-                  span R$2.000
+                  span(
+                    data-per-month="R$2.300"
+                    data-per-year="R$2.000"
+                  ) R$2.000
                   span /mês
                 span ATÉ 5 USUÁRIOS
               .plan-card__cta
@@ -195,7 +202,10 @@ block content
                 li DNS Poisoning
               .plan-card__price
                 .plan-card__price-num
-                  span R$4.000
+                  span(
+                    data-per-month="R$4.600"
+                    data-per-year="R$4.000"
+                  ) R$4.000
                   span /mês
                 span usuários ilimitados
               .plan-card__cta
@@ -214,7 +224,10 @@ block content
                 li API & Integrações
               .plan-card__price
                 .plan-card__price-num
-                  span R$12.000
+                  span(
+                    data-per-month="R$13.800"
+                    data-per-year="R$12.000"
+                  ) R$12.000
                   span /mês
                 span usuários ilimitados
               .plan-card__cta
