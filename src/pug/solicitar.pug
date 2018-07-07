@@ -4,3 +4,81 @@ title: Solicitar
 extends shared/_layout
 block content
   
+  // APPLY
+  .apply
+    .apply__wrapper
+      .apply__content(js-layout-padding data-type="container-left" data-stop="<992")
+        h1 Veja o que podemos fazer pela sua marca
+        p.t-p1 Preencha seus dados para nossos consultores agendarem uma demonstração completa da nossa plataforma.
+        
+        form.apply__form(action="#" js-validate-apply-form)
+          .ui-group.wow
+            input(type="email" name="email" placeholder="E-mail de contato")
+          .ui-group.wow
+            input(type="text" name="name" placeholder="Nome completo")
+          .ui-group.wow
+            input(type="text" name="empresa" placeholder="Empresa")
+          .ui-group.ui-group--short.wow
+            label país
+            select(name="country" js-selectric placeholder="Select country")
+              option(value="Brazil") Brazil
+              option(value="Brazil") Brazil
+              option(value="Brazil") Brazil
+              option(value="Brazil") Brazil
+              option(value="Brazil") Brazil
+              option(value="Brazil") Brazil
+              option(value="Brazil") Brazil
+          .ui-group.ui-group--short.wow
+            label telefone
+            input(type="tel" js-mask-phone placeholder="+55")
+          
+          .apply__form-cta.wow
+            button(type="submit").btn.btn-primary
+              span peça sua demonstração
+              
+      .apply__image.wow(data-animation-class="wowFadeRight")
+        +img('functionsImage')
+        
+  
+  // APPLY INFO
+  .apply-info
+    .container.container--narrow
+      .apply-info__wrapper
+        .apply-info__col
+          h3 Em poucos minutos, você vai conhecer tudo sobre nossa plataforma
+          ul.list-mark.list-mark--boxed
+            li Inteligência Artificial e Machine Learning a serviço da segurança da sua marca.
+            li Identificação e remoção de ameaças, como phishing, malware, proxy scams e outras.
+            li Acompanhamento das práticas de parceiros e representantes na internet.
+            li Monitoramento constante de ações de criminosos na deep web.
+            li Takedown automático ou assistido para remover os riscos com mais velocidade.
+            
+        .apply-info__col
+          h3 Ajudamos centenas de empresas ao redor do mundo
+          .testimonials-card
+            .testimonials-card__quotemark
+              +icon('ico-quotemark')
+            .testimonials-card__content
+              p.t-p2 A Axur possui profissinais de elevado conhecimento que estão comprometidos e engajados com os últimos assuntos relacionados à segurança e estabilidade de DNS em nível global.
+              .testimonials-card__author <span>Daniel Fink</span>, Engagement Sr Manager
+              a(href="#" target="_blank").testimonials-card__link www.icann.org
+              .testimonials-card__logo
+                +img("logo-icann")
+
+    .holder              
+      .testimonials__logos-grid
+        .testimonials__logo.wow(data-animation-delay=".1s")
+          +img("logo-marisa")
+        .testimonials__logo.wow(data-animation-delay=".15s")
+          +img("logo-mercado")
+        .testimonials__logo.wow(data-animation-delay=".2s")
+          +img("logo-foxbit")
+        .testimonials__logo.wow(data-animation-delay=".25s")
+          +img("logo-sorocred")
+        .testimonials__logo.wow(data-animation-delay=".3s")
+          +img("logo-rico")
+        .testimonials__logo.wow(data-animation-delay=".35s")
+          +img("logo-ferratum")
+        .testimonials__logo.wow(data-animation-delay=".4s")
+          +img("logo-spc")
+          
