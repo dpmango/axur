@@ -15,9 +15,6 @@ button
   transition: all $transitionSpeed ease-in-out
   &:focus, &:active
     outline: none
-  &--block
-    display: block
-    width: 100%
 
   &-outline
     border: 2px solid $colorOrange
@@ -78,3 +75,8 @@ button
         // transform: translateY(5px)
         filter: blur(7px)
         // opacity: 0
+  &--block
+    width: 100%
+    span
+      display: block
+      width: 100%

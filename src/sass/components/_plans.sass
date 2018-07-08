@@ -1,6 +1,18 @@
 .plans
-  padding: 100px 0 50px
+  padding: 0px 0 50px
   background-image: linear-gradient(-180deg, #FFFFFF 0%, #FAFAFA 29%);
+  > .container
+    position: relative
+    padding-top: 100px
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      top: 0
+      left: 50px
+      right: 50px
+      height: 1px
+      background: #DDDDDD
 
   &__head
     text-align: center
@@ -59,28 +71,50 @@
       &:hover, &.is-active
         color: $colorMuted
 
-    &.is-active
-      .label
-        opacity: 1
+      &.is-active
+        .label
+          opacity: 1
 
   &__slider
     margin-top: 70px
-    padding-top: 20px
+    padding-top: 50px
     position: relative
     .swiper-wrapper
+      z-index: 2
       display: flex
+      padding-bottom: 25px
+      justify-content: center
     &-bg
       position: absolute
       top: 0
       bottom: 0
       left: 0
+      z-index: 1
+      pointer-events: none
       img
         width: 100%
+    &-info
+      text-align: center
+
   &__col
+    position: relative
+    z-index: 2
     flex: 0 1 25%
+    max-width: 320px
     display: flex
     flex-direction: column
     padding: 15px
+    &--single
+      flex: 0 1 auto
+      max-width: 800px
+      margin-left: auto
+      margin-right: auto
+      margin-bottom: 25px
+
++r(1200)
+  .plans
+    &__col
+      padding: 15px 7px
 
 /* Plan card
 .plan-card
@@ -94,6 +128,14 @@
   h3
     margin-top: 0
     margin-bottom: 10px
+  .t-label
+    margin-bottom: 13px
+  .t-p2
+    margin-top: 25px
+    margin-bottom: 0
+    padding-left: 25px
+    + ul
+      margin-top: 10px
   ul
     margin-top: 25px
     margin-bottom: 70px
@@ -118,3 +160,33 @@
 
   &__cta
     margin-top: 20px
+
+  &--popular
+    margin-top: -25px
+    padding-top: 45px
+    h3
+      margin-bottom: 7px
+
+  &--single
+    // display: flex
+    flex-direction: row
+    max-width: 770px
+    // margin-left: auto
+    // margin-right: auto
+    padding: 40px 40px 25px
+    .plan-card
+      &__price
+        margin-top: 5px
+
+  &__col
+    flex: 1 1 auto
+    min-width: 1px
+    &:last-child
+      max-width: 240px
+      padding-left: 30px
+      margin-left: auto
+
++r(1200)
+  .plan-card
+    padding-left: 25px
+    padding-right: 25px

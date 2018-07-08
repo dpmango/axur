@@ -9,8 +9,8 @@ block content
     .hero__wrapper
       .hero__content(js-layout-padding data-type="container-left" data-stop="<992")
         .hero__content-wrapper.wow
-          h1.hero__title Digital Fraud<br>Discovery
-          p.t-p1 Sua marca pode ser usada como isca para <strong>phishing</strong> e infecção por <strong>malware</strong>. Essa solução ajuda você a encontrar e remover sites que prejudicam seus clientes e sua imagem.
+          h1.hero__title Digital Brand <br/>Compliance
+          p.t-p1 Preserve a imagem da sua marca na web. Nós escaneamos a rede atrás de <strong>aplicativos falsos, perfis que se passam pela sua empresa</strong> e outros casos de <strong>apropriação de identidade.</strong>
           div(js-teleport data-teleport-to="hero-actionable" data-teleport-condition="<992")
             // signup form
             form(action="#" js-validate-signup).signup-form.hero__form
@@ -22,7 +22,7 @@ block content
               
 
       .hero__image.wow(data-animation-class="wowFadeRight")
-        #include-anim-2
+        #include-anim-3
       .hero__actionable(data-teleport-target="hero-actionable")
       
         
@@ -74,7 +74,7 @@ block content
   // USE CASES
   .use-cases
     .container.container--narrow
-      h2 O Digital Brand Compliance protege sua marca contra:
+      h2.wow O Digital Brand Compliance protege sua marca contra:
       .use-cases__wrapper
         // col
         .use-cases__col
@@ -120,7 +120,92 @@ block content
         .use-cases__img.wow(data-animation-class="wowFadeRight")
           img(src='img/svg/useCases-img.svg')
     
-                  
+      
+  // PLANS
+  .plans(js-plans-container)
+    .container
+      .plans__head.wow
+        .t-label.c-orange digital brand compliance
+        h2 Estimate your cost
+        // is-active is for the label state
+        .plans__switch
+          .plans__switch-select(js-select-plan data-allowed="monthly;yearly")
+            input(type="hidden" name="selected-plan" value="yearly")
+            label Cobrança mensal
+            .plans__switch-toggle.move-right
+            label.is-active Cobrança anual
+              .label.label--green 15% de desconto
+          
+    // slider
+    .plans__slider
+      .plans__slider-bg
+        +img('plansBg')
+      .plans__slider-container.container(js-plans-slider)
+        .swiper-wrapper
+          // col
+          .plans__col.wow
+            .plan-card
+              h3 Startup
+              ul.list-mark
+                li Domínios Similares
+                li Perfis falsos em redes sociais
+              .plan-card__price
+                .plan-card__price-num
+                  span(
+                    data-per-month="R$1.149"
+                    data-per-year="R$999"
+                  ) R$999
+                  span /mês
+                span ATÉ 5 USUÁRIOS
+              .plan-card__cta
+                a(href="#").btn.btn-primary.btn--block
+                  span veja em ação
+          // col
+          .plans__col.wow
+            .plan-card.plan-card--popular
+              h3 Professional
+              .t-label.c-orange most popular
+              ul.list-mark
+                li Domínios Similares
+                li Perfis falsos em redes sociais
+                li Aplicativos fraudulentos
+              .plan-card__price
+                .plan-card__price-num
+                  span(
+                    data-per-month="R$2.299"
+                    data-per-year="R$1.999"
+                  ) R$1.999
+                  span /mês
+                span ATÉ 5 USUÁRIOS
+              .plan-card__cta
+                a(href="#").btn.btn-primary.btn--block
+                  span veja em ação
+          // col
+          .plans__col.wow 
+            .plan-card
+              h3 Corporate
+              ul.list-mark
+                li Domínios Similares
+                li Perfis falsos em redes sociais
+                li Aplicativos fraudulentos
+                li Uso abusivo de marca
+              .plan-card__price
+                .plan-card__price-num
+                  span(
+                    data-per-month="R$3.449"
+                    data-per-year="R$2.999"
+                  ) R$2.999
+                  span /mês
+                span usuários ilimitados
+              .plan-card__cta
+                a(href="#").btn.btn-primary.btn--block
+                  span veja em ação
+
+      
+      .plans__slider-info.wow
+        a(href="#").link-p2 Fale com um de nossos consultores    
+                          
+                        
   include components/_cta
   
   include components/_service-faq

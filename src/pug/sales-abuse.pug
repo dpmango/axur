@@ -9,8 +9,8 @@ block content
     .hero__wrapper
       .hero__content(js-layout-padding data-type="container-left" data-stop="<992")
         .hero__content-wrapper.wow
-          h1.hero__title Digital Fraud<br>Discovery
-          p.t-p1 Sua marca pode ser usada como isca para <strong>phishing</strong> e infecção por <strong>malware</strong>. Essa solução ajuda você a encontrar e remover sites que prejudicam seus clientes e sua imagem.
+          h1.hero__title Sales Abuse <br/>Discovery
+          p.t-p1 Proteja sua reputação, seus clientes e seu faturamento contra <strong>vendas não autorizadas e produtos piratas</strong>. Não deixe que sua marca seja usada indevidamente em ofertas na internet. 
           div(js-teleport data-teleport-to="hero-actionable" data-teleport-condition="<992")
             // signup form
             form(action="#" js-validate-signup).signup-form.hero__form
@@ -21,7 +21,7 @@ block content
                 span conheça a plataforma
               
       .hero__image.wow(data-animation-class="wowFadeRight")
-        #include-anim-2
+        #include-anim-6
       .hero__actionable(data-teleport-target="hero-actionable")
       
 
@@ -72,7 +72,7 @@ block content
   // USE CASES
   .use-cases
     .container.container--narrow
-      h2 Sales Abuse Discovery protege sua marca contra:
+      h2.wow Sales Abuse Discovery protege sua marca contra:
       .use-cases__wrapper
         // col
         .use-cases__col
@@ -103,7 +103,94 @@ block content
           img(src='img/svg/useCases-img.svg')
               
               
-    
+  // PLANS
+  .plans(js-plans-container)
+    .container
+      .plans__head.wow
+        .t-label.c-orange sales abuse discovery
+        h2 Estimate your cost
+        // is-active is for the label state
+        .plans__switch
+          .plans__switch-select(js-select-plan data-allowed="monthly;yearly")
+            input(type="hidden" name="selected-plan" value="monthly")
+            label.is-active Cobrança mensal
+            .plans__switch-toggle.move-left
+            label Cobrança anual
+              .label.label--green 15% de desconto
+          
+    // slider
+    .plans__slider
+      .plans__slider-bg
+        +img('plansBg')
+      .plans__slider-container.container(js-plans-slider)
+        .swiper-wrapper
+          // col
+          .plans__col.wow
+            .plan-card
+              h3 Startup
+              p.t-p2 
+                strong Vendas abusivas em
+              ul.list-mark
+                li Canais de venda
+              .plan-card__price
+                .plan-card__price-num
+                  span(
+                    data-per-month="R$1.149"
+                    data-per-year="R$999"
+                  ) R$1.149
+                  span /mês
+                span ATÉ 5 USUÁRIOS
+              .plan-card__cta
+                a(href="#").btn.btn-primary.btn--block
+                  span veja em ação
+          // col
+          .plans__col.wow
+            .plan-card.plan-card--popular
+              h3 Professional
+              .t-label.c-orange most popular
+              p.t-p2 
+                strong Vendas abusivas em
+              ul.list-mark
+                li Canais de venda
+                li Webshops
+              .plan-card__price
+                .plan-card__price-num
+                  span(
+                    data-per-month="R$2.299"
+                    data-per-year="R$1.999"
+                  ) R$2.299
+                  span /mês
+                span ATÉ 5 USUÁRIOS
+              .plan-card__cta
+                a(href="#").btn.btn-primary.btn--block
+                  span veja em ação
+          // col
+          .plans__col.wow 
+            .plan-card
+              h3 Corporate
+              p.t-p2 
+                strong Vendas abusivas em
+              ul.list-mark
+                li Canais de venda
+                li Webshops
+                li Redes sociais
+              .plan-card__price
+                .plan-card__price-num
+                  span(
+                    data-per-month="R$2.875"
+                    data-per-year="R$2.499"
+                  ) R$2.875
+                  span /mês
+                span usuários ilimitados
+              .plan-card__cta
+                a(href="#").btn.btn-primary.btn--block
+                  span veja em ação
+
+      
+      .plans__slider-info.wow
+        a(href="#").link-p2 Fale com um de nossos consultores    
+                
+                            
   include components/_cta
   
   include components/_service-faq

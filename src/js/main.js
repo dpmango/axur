@@ -234,7 +234,6 @@ $(document).ready(function(){
       var $this = $(this);
       var $plansContainer = $this.closest('[js-plans-container]');
       var $relatedCards = $plansContainer.find('.plan-card');
-      var $switch = $plansContainer.find('.plans__switch');
       var $switchSelect = $this.closest('[js-select-plan]');
       var $toggle = $switchSelect.find('.plans__switch-toggle');
       var $labels = $switchSelect.find('label');
@@ -265,7 +264,6 @@ $(document).ready(function(){
         $($labels[0]).addClass('is-active');
         $($labels[1]).removeClass('is-active');
 
-        $switch.removeClass('is-active');
         $switchSelect.find('input[type="hidden"]').val(dataAllowed[0]);
 
       } else if ( moveDirection === "right" ){
@@ -274,7 +272,6 @@ $(document).ready(function(){
         $($labels[0]).removeClass('is-active');
         $($labels[1]).addClass('is-active');
 
-        $switch.addClass('is-active');
         $switchSelect.find('input[type="hidden"]').val(dataAllowed[1]);
       }
 

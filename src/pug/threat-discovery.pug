@@ -9,8 +9,8 @@ block content
     .hero__wrapper
       .hero__content(js-layout-padding data-type="container-left" data-stop="<992")
         .hero__content-wrapper.wow
-          h1.hero__title Digital Fraud<br>Discovery
-          p.t-p1 Sua marca pode ser usada como isca para <strong>phishing</strong> e infecção por <strong>malware</strong>. Essa solução ajuda você a encontrar e remover sites que prejudicam seus clientes e sua imagem.
+          h1.hero__title Threat Intelligence<br> Discovery
+          p.t-p1 Escaneamos a <strong>deep web</strong> atrás de indícios de venda de bancos de dados e cartões de crédito, serviços ilegais e planejamento de ataques. Usamos Inteligência Artificial para acelerar a análise e dminuir ao máximo o tempo de reação quando uma ameaça é identificada.
           div(js-teleport data-teleport-to="hero-actionable" data-teleport-condition="<992")
             // signup form
             form(action="#" js-validate-signup).signup-form.hero__form
@@ -22,7 +22,7 @@ block content
               
 
       .hero__image.wow(data-animation-class="wowFadeRight")
-        #include-anim-2
+        #include-anim-6
       .hero__actionable(data-teleport-target="hero-actionable")
       
   include components/_service-functions-panels
@@ -56,7 +56,7 @@ block content
   // USE CASES
   .use-cases
     .container.container--narrow
-      h2 O Threat Intelligence Discovery protege sua marca contra:
+      h2.wow O Threat Intelligence Discovery protege sua marca contra:
       .use-cases__wrapper
         // col
         .use-cases__col
@@ -100,7 +100,51 @@ block content
         // image
         .use-cases__img.wow(data-animation-class="wowFadeRight")
           img(src='img/svg/useCases-img.svg')
-                                
+  
+  // PLANS
+  .plans(js-plans-container)
+    .container
+      .plans__head.wow
+        .t-label.c-orange Threat Intelligence Discovery
+        h2 Estimate your cost
+        // is-active is for the label state
+        .plans__switch
+          .plans__switch-select(js-select-plan data-allowed="monthly;yearly")
+            input(type="hidden" name="selected-plan" value="yearly")
+            label Cobrança mensal
+            .plans__switch-toggle.move-right
+            label.is-active Cobrança anual
+              .label.label--green 15% de desconto
+          
+    // slider
+    .plans__slider
+      .plans__slider-bg
+        +img('plansBg')
+      .plans__slider-container.container
+        // col
+        .plans__col.plans__col--single.wow
+          .plan-card.plan-card--single
+            .plan-card__col
+              h3 Threat Intelligence Discovery
+              ul.list-mark
+                li Escaneamento de ameaças da deep wep
+            .plan-card__col
+              .plan-card__price
+                .plan-card__price-num
+                  span(
+                    data-per-month="R$2.299"
+                    data-per-year="R$1.999"
+                  ) R$1.999
+                  span /mês
+                span usuários ilimitados
+              .plan-card__cta
+                a(href="#").btn.btn-primary.btn--block
+                  span veja em ação
+
+      .plans__slider-info.wow
+        a(href="#").link-p2 Fale com um de nossos consultores    
+                                                
+                                                          
   include components/_cta
   
   include components/_service-faq

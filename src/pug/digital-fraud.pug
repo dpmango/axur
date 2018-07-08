@@ -85,7 +85,7 @@ block content
   // USE CASES
   .use-cases
     .container.container--narrow
-      h2 Digital Fraud Discovery protege sua marca contra:
+      h2.wow Digital Fraud Discovery protege sua marca contra:
       .use-cases__wrapper
         // col
         .use-cases__col
@@ -138,13 +138,13 @@ block content
         .t-label.c-orange digital fraud discovery
         h2 Estimate your cost
         // is-active is for the label state
-        .plans__switch.is-active
+        .plans__switch
           .plans__switch-select(js-select-plan data-allowed="monthly;yearly")
             input(type="hidden" name="selected-plan" value="yearly")
             label Cobrança mensal
             .plans__switch-toggle.move-right
             label.is-active Cobrança anual
-          .label.label--green 15% de desconto
+              .label.label--green 15% de desconto
           
     // slider
     .plans__slider
@@ -172,7 +172,7 @@ block content
                   span veja em ação
           // col
           .plans__col.wow
-            .plan-card
+            .plan-card.plan-card--popular
               h3 Professional
               .t-label.c-orange most popular
               ul.list-mark
@@ -233,6 +233,9 @@ block content
               .plan-card__cta
                 a(href="#").btn.btn-primary.btn--block
                   span veja em ação
+      
+      .plans__slider-info.wow
+        a(href="#").link-p2 Fale com um de nossos consultores    
                 
   include components/_cta
   
