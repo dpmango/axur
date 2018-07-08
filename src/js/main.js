@@ -866,7 +866,7 @@ $(document).ready(function(){
   // Masked input
   function initMasks(){
     $("[js-dateMask]").mask("99.99.99",{placeholder:"ДД.ММ.ГГ"});
-    $("[js-mask-phone]").mask("+65 (000) 000-0000", {placeholder: "+65"});
+    $("[js-mask-phone]").mask("+65 9999-9999", {placeholder: "+65 ____-____"});
   }
 
   // selectric
@@ -1042,14 +1042,14 @@ $(document).ready(function(){
     var validatePhone = {
       required: true,
       normalizer: function(value) {
-          var PHONE_MASK = '+X (XXX) XXX-XXXX';
-          if (!value || value === PHONE_MASK) {
-              return value;
-          } else {
-              return value.replace(/[^\d]/g, '');
-          }
+        var PHONE_MASK = '+XX XXXX-XXXX';
+        if (!value || value === PHONE_MASK) {
+          return value;
+        } else {
+          return value.replace(/[^\d]/g, '');
+        }
       },
-      minlength: 11,
+      minlength: 10,
       digits: true
     }
 
@@ -1060,22 +1060,58 @@ $(document).ready(function(){
     /////////////////////
     // REGISTRATION FORM
     ////////////////////
-    // $("[js-validate-signup]").validate({
-    //   errorPlacement: validateErrorPlacement,
-    //   highlight: validateHighlight,
-    //   unhighlight: validateUnhighlight,
-    //   submitHandler: validateSubmitHandler,
-    //   rules: {
-    //     email: {
-    //       email: true
-    //     },
-    //   },
-    //   messages: {
-    //     email: {
-    //         email: "Ops! Veja se está tudo certo com seu e-mail."
-    //     },
-    //   }
-    // });
+    $("[js-validate-contact-form]").validate({
+      errorPlacement: validateErrorPlacement,
+      highlight: validateHighlight,
+      unhighlight: validateUnhighlight,
+      submitHandler: validateSubmitHandler,
+      rules: {
+        name: "required",
+        email: {
+          required: true,
+          email: true
+        },
+        phone: validatePhone
+      },
+      messages: {
+        name: "Preencha este campo",
+        email: {
+          required: "Preencha este campo",
+          email: "Ops! Veja se está tudo certo com seu e-mail."
+        },
+        phone: {
+          required: "Preencha este campo",
+          minlength: "Digite o telefone correto"
+        }
+      }
+    });
+
+
+    $("[js-validate-apply-form]").validate({
+      errorPlacement: validateErrorPlacement,
+      highlight: validateHighlight,
+      unhighlight: validateUnhighlight,
+      submitHandler: validateSubmitHandler,
+      rules: {
+        name: "required",
+        email: {
+          required: true,
+          email: true
+        },
+        phone: validatePhone
+      },
+      messages: {
+        name: "Preencha este campo",
+        email: {
+          required: "Preencha este campo",
+          email: "Ops! Veja se está tudo certo com seu e-mail."
+        },
+        phone: {
+          required: "Preencha este campo",
+          minlength: "Digite o telefone correto"
+        }
+      }
+    });
 
 
     var emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

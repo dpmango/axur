@@ -8,12 +8,12 @@ block content
   .apply
     .apply__wrapper
       .apply__content(js-layout-padding data-type="container-left" data-stop="<992")
-        h1 Veja o que podemos fazer pela sua marca
-        p.t-p1 Preencha seus dados para nossos consultores agendarem uma demonstração completa da nossa plataforma.
+        h1.wow Veja o que podemos fazer pela sua marca
+        p.t-p1.wow Preencha seus dados para nossos consultores agendarem uma demonstração completa da nossa plataforma.
         
         form.apply__form(action="#" js-validate-apply-form)
           .ui-group.wow
-            input(type="email" name="email" placeholder="E-mail de contato")
+            input(type="text" name="email" placeholder="E-mail de contato")
           .ui-group.wow
             input(type="text" name="name" placeholder="Nome completo")
           .ui-group.wow
@@ -30,7 +30,7 @@ block content
               option(value="Brazil") Brazil
           .ui-group.ui-group--short.wow
             label telefone
-            input(type="tel" js-mask-phone placeholder="+55")
+            input(type="tel" name="phone" js-mask-phone placeholder="+55")
           
           .apply__form-cta.wow
             button(type="submit").btn.btn-primary
@@ -44,7 +44,7 @@ block content
   .apply-info
     .container.container--narrow
       .apply-info__wrapper
-        .apply-info__col
+        .apply-info__col.wow
           h3 Em poucos minutos, você vai conhecer tudo sobre nossa plataforma
           ul.list-mark.list-mark--boxed
             li Inteligência Artificial e Machine Learning a serviço da segurança da sua marca.
@@ -53,7 +53,7 @@ block content
             li Monitoramento constante de ações de criminosos na deep web.
             li Takedown automático ou assistido para remover os riscos com mais velocidade.
             
-        .apply-info__col
+        .apply-info__col.wow(data-animation-delay=".1s")
           h3 Ajudamos centenas de empresas ao redor do mundo
           .testimonials-card
             .testimonials-card__quotemark
