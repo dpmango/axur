@@ -21,7 +21,7 @@ block content
                 span conheça a plataforma
               
 
-      .hero__image.wow(data-animation-class="wowFadeRight")
+      .hero__image.hero__image--for3.wow(data-animation-class="wowFadeRight")
         #include-anim-3
       .hero__actionable(data-teleport-target="hero-actionable")
       
@@ -35,7 +35,7 @@ block content
     .container.container--narrow
       h2.wow Fazemos muito mais pela sua presença digital
       .service-features__wrapper
-        ul.list-num.list-num--row(data-cols="3")
+        ul.list-mark.list-mark--boxed.list-mark--row(data-cols="3")
           li.wow(data-animation-delay=".1s")
             h4 Análise de UA
             p.t-p2 Usamos user agents para simular acessos em diversos aparelhos e identificar ações de phishing mobile.
@@ -150,7 +150,7 @@ block content
     .plans__slider
       .plans__slider-bg
         +img('plansBg')
-      .plans__slider-container.container(js-plans-slider)
+      .plans__slider-container.container.swiper-container(js-plans-slider)
         .swiper-wrapper
           // col
           .plans__col.wow
@@ -237,6 +237,6 @@ block content
       .plans__slider-info.wow
         a(href="#").link-p2 Fale com um de nossos consultores    
                 
-  include components/_cta
+  include components/_cta-product
   
   include components/_service-faq

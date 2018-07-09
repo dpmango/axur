@@ -18,6 +18,7 @@
         &::after
           transform: rotate(180deg)
       &__content
+        margin-top: -10px
         display: block
         p
           display: block
@@ -49,7 +50,7 @@
       margin: 0
   .label
     margin-left: 8px
-    
+
 
   &__content
     display: none
@@ -57,10 +58,13 @@
     p
       /* for jquery slide animation
       // display: none
+      max-width: 690px
       &:first-child
         margin-top: 0
 
   &--smaller
+    &:last-of-type
+      border-bottom: 0
     .panel
       &__heading
         padding: 25px 0 25px 0
@@ -68,3 +72,5 @@
           top: 30px
       &__content
         padding-bottom: 10px
+        p
+          max-width: 370px
