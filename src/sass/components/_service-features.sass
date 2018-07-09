@@ -31,7 +31,7 @@
     margin-right: -15px
 
   &__left, &__right
-    position: relative
+    // position: relative
     flex: 0 1 50%
     max-width: 50%
     min-width: 1px
@@ -60,6 +60,7 @@
     position: absolute
     bottom: -140px
     right: 15px
+    pointer-events: none
     img
       max-width: 100%
 
@@ -75,8 +76,6 @@
     left: 0
     bottom: 0
     font-size: 0
-
-
   &__wrapper
     display: flex
     margin-left: -15px
@@ -137,8 +136,59 @@
   .service-features
     padding-top: 100px
 
+  .f-product
+    padding-top: 80px
+    &--more-pad
+      padding-top: 110px
+
+
++r(850)
+  .f-product-box
+    position: relative
+    padding: 55px 50px 80px
+    &__wrapper
+      // position: relative
+      display: block
+      margin-left: 0
+      margin-right: 0
+    &__left, &__right
+      position: static
+      max-width: 100%
+      padding-left: 0
+      padding-right: 0f
+    &__left
+      padding-bottom: 0px
+    &__right
+      padding-top: 0px
+      padding-bottom: 0px
+    &__pixel-img
+      display: none
+      &--mobile
+        display: block
+
+      bottom: auto
+      right: 40px
+      bottom: -95px
+      // t
+      text-align: right
+      img
+        max-width: 80%
+
 +r($mobile)
   .service-features
     padding-top: 80px
     h2
       text-align: left
+
+  .f-product
+    padding-top: 50px
+    &--more-pad
+      padding-top: 70px
+
+  .f-product-box
+    padding: 40px 25px 60px
+    &__pixel-img
+      bottom: -65px
+      right: 15px
+      img
+        max-width: 55%
