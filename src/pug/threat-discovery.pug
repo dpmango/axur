@@ -55,52 +55,61 @@ block content
                 
   // USE CASES
   .use-cases
+    .use-cases__img.use-cases__img--mobile.wow(data-teleport-target="use-cases-img")
     .container.container--narrow
       h2.wow O Threat Intelligence Discovery protege sua marca contra:
-      .use-cases__wrapper
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".1s")
-            h3 Contas fraudadas
-            p.t-p2 De contas de e-commerce a contas bancárias, esquemas de phishing roubam suas informações para comercializá-las na deep web, com objetivo de tirar vantagem em fraudes.
-            .label.label--blue saiba mais
-            a(href="#").link-p2 Saiba tudo sobre ameaças da Deep Web
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".2s")
-            h3 Telas falsas para phishing
-            p.t-p2 Comercialização de telas prontas que simulam páginas de grandes empresas, como bancos. Essas telas são usadas para enganar usuários em esquemas de phishing.
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".3s")
-            h3 Comércio de cartões de crédito
-            p.t-p2 Números e senhas de cartões de crédito, roubados através de fraudes na internet, são vendidos para serem usados ilegalmente e sem o conhecimento dos seus donos.
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".1s")
-            h3 Pagamento de boletos e contas
-            p.t-p2 Serviços de pagamento ilegais que usam dinheiro de contas roubadas. Em troca, quem utiliza o serviço repassa uma porcentagem do valor pago aos operadores do esquema.
+      .use-cases__slider(js-usecases-slider)
+        .use-cases__wrapper
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".1s")
+              h3 Contas fraudadas
+              p.t-p2 De contas de e-commerce a contas bancárias, esquemas de phishing roubam suas informações para comercializá-las na deep web, com objetivo de tirar vantagem em fraudes.
+              .label.label--blue saiba mais
+              a(href="#").link-p2 Saiba tudo sobre ameaças da Deep Web
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".2s")
+              h3 Telas falsas para phishing
+              p.t-p2 Comercialização de telas prontas que simulam páginas de grandes empresas, como bancos. Essas telas são usadas para enganar usuários em esquemas de phishing.
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".3s")
+              h3 Comércio de cartões de crédito
+              p.t-p2 Números e senhas de cartões de crédito, roubados através de fraudes na internet, são vendidos para serem usados ilegalmente e sem o conhecimento dos seus donos.
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".1s")
+              h3 Pagamento de boletos e contas
+              p.t-p2 Serviços de pagamento ilegais que usam dinheiro de contas roubadas. Em troca, quem utiliza o serviço repassa uma porcentagem do valor pago aos operadores do esquema.
 
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".2s")
-            h3 Aprovações de compras ilegais
-            p.t-p2 Serviço ilegal que oferece na deep web contas roubadas para aprovação de compras. Isso é feito sem consentimento do dono da conta, que dificilmente desconfia que ela foi comprometida.
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".3s")
-            h3 Validação de contas e cc
-            p.t-p2 Criação e disponibilização de softwares específicos para validar contas de e-commerce ou cartões de crédito roubados."
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".3s")
-            h3 Acessos não autorizados a sistemas
-            p.t-p2 Uso de senhas roubadas ou exploração de falhas de segurança e vulnerabilidades para acessar sem autorização sistemas de empresas.
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".2s")
+              h3 Aprovações de compras ilegais
+              p.t-p2 Serviço ilegal que oferece na deep web contas roubadas para aprovação de compras. Isso é feito sem consentimento do dono da conta, que dificilmente desconfia que ela foi comprometida.
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".3s")
+              h3 Validação de contas e cc
+              p.t-p2 Criação e disponibilização de softwares específicos para validar contas de e-commerce ou cartões de crédito roubados."
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".3s")
+              h3 Acessos não autorizados a sistemas
+              p.t-p2 Uso de senhas roubadas ou exploração de falhas de segurança e vulnerabilidades para acessar sem autorização sistemas de empresas.
 
-        // image
-        .use-cases__img.wow(data-animation-class="wowFadeRight")
-          img(src='img/svg/useCases-img.svg')
-  
+          // image
+          .use-cases__img.wow(data-animation-class="wowFadeRight" js-teleport data-teleport-condition="<992" data-teleport-to="use-cases-img")
+            img(src='img/svg/useCases-img.svg')
+    
+        .swiper-nav.swiper-nav--orange
+          // handled by swiper API
+          .swiper-nav__fraction
+          // custom swiper API
+          .swiper-nav__progress
+            .swiper-nav__progress-fill(js-set-usecases-progress)
+                    
   // PLANS
   .plans(js-plans-container)
     .container

@@ -73,37 +73,46 @@ block content
     
   // USE CASES
   .use-cases
+    .use-cases__img.use-cases__img--mobile.wow(data-teleport-target="use-cases-img")
     .container.container--narrow
       h2.wow Sales Abuse Discovery protege sua marca contra:
-      .use-cases__wrapper
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".1s")
-            h3 Falsificações
-            p.t-p2 O comércio de produtos falsificados está entre as maiores causas de prejuízo para as empresas de varejo, tanto em faturamento quanto em imagem. Produtos piratas usam sua marca para oferecer aos seus consumidores mercadorias de baixa qualidade e, em muitos casos, perigosas.
-            .label.label--blue saiba mais
-            a(href="#").link-p2 Perfis falsos no Instagram? Evite páginas fake
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".2s")
-            h3 Venda não autorizada 
-            p.t-p2 Esta prática envolve produtos verdadeiros sendo comercilizados em canais não oficiais, como nas redes sociais, por exemplo. O problema aqui é que a procedência não é garantida, podendo ser fruto roubo de carga ou contrabando.
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".3s")
-            h3 Mercado paralelo
-            p.t-p2 A venda de produtos por canais ou pessoas não autorizados alimenta o mercado paralelo. Isso gera toda uma rede de comércio informal, que não paga  imposto, não dá garantias ao consumidor e muitas vezes ajuda a financiar outros tipos de crime.
-  
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".1s")
-            h3 Pirataria digital
-            p.t-p2 É a distribuição ilegal de conteúdo protegido por direitos autorais, como livros, filmes, músicas e obras de arte em geral. Esse conteúdo normalmente é disponibilizado em sites de compartilhamento de arquivos sem a autorização da marca, gerando perdas de faturamento.
-            
-        // image
-        .use-cases__img.wow(data-animation-class="wowFadeRight")
-          img(src='img/svg/useCases-img.svg')
+      .use-cases__slider(js-usecases-slider)
+        .use-cases__wrapper
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".1s")
+              h3 Falsificações
+              p.t-p2 O comércio de produtos falsificados está entre as maiores causas de prejuízo para as empresas de varejo, tanto em faturamento quanto em imagem. Produtos piratas usam sua marca para oferecer aos seus consumidores mercadorias de baixa qualidade e, em muitos casos, perigosas.
+              .label.label--blue saiba mais
+              a(href="#").link-p2 Perfis falsos no Instagram? Evite páginas fake
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".2s")
+              h3 Venda não autorizada 
+              p.t-p2 Esta prática envolve produtos verdadeiros sendo comercilizados em canais não oficiais, como nas redes sociais, por exemplo. O problema aqui é que a procedência não é garantida, podendo ser fruto roubo de carga ou contrabando.
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".3s")
+              h3 Mercado paralelo
+              p.t-p2 A venda de produtos por canais ou pessoas não autorizados alimenta o mercado paralelo. Isso gera toda uma rede de comércio informal, que não paga  imposto, não dá garantias ao consumidor e muitas vezes ajuda a financiar outros tipos de crime.
+    
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".1s")
+              h3 Pirataria digital
+              p.t-p2 É a distribuição ilegal de conteúdo protegido por direitos autorais, como livros, filmes, músicas e obras de arte em geral. Esse conteúdo normalmente é disponibilizado em sites de compartilhamento de arquivos sem a autorização da marca, gerando perdas de faturamento.
               
+          // image
+          .use-cases__img.wow(data-animation-class="wowFadeRight" js-teleport data-teleport-condition="<992" data-teleport-to="use-cases-img")
+            img(src='img/svg/useCases-img.svg')
+    
+        .swiper-nav.swiper-nav--orange
+          // handled by swiper API
+          .swiper-nav__fraction
+          // custom swiper API
+          .swiper-nav__progress
+            .swiper-nav__progress-fill(js-set-usecases-progress)
+                    
               
   // PLANS
   .plans(js-plans-container)

@@ -55,37 +55,46 @@ block content
 
   // USE CASES
   .use-cases
+    .use-cases__img.use-cases__img--mobile.wow(data-teleport-target="use-cases-img")
     .container.container--narrow
       h2.wow O Partner Compliance protege sua marca contra:
-      .use-cases__wrapper
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".1s")
-            h3 Infração de compliance
-            p.t-p2 Regras de compliance existem para que todos que falam em nome da sua marca o façam da mesma forma. Isso passa para o usuário a segurança de que se trata de uma parceria oficial. O descumprimento dessas regras coloca em risco a relação com seus clientes.
-            .label.label--blue saiba mais
-            a(href="#").link-p2 Perfis falsos no Instagram? Evite páginas fake
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".2s")
-            h3 Parceiros não autorizados
-            p.t-p2 Quando uma empresa diz ter uma parceria ou outro tipo de relação com sua marca, mas na verdade não tem. Essa prática retira os usuários do fluxo de compra correto, afetando suas taxas de conversão.
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".3s")
-            h3 Apropriação de identidade
-            p.t-p2 Parceiros (autorizados ou não) que assumem sua identidade e se fazem passar pela sua marca confundem o usuário. Nesses casos, seus clientes não conseguem diferenciar o site de um parceiro do site oficial, gerando mal-entendidos.
-  
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".1s")
-            h3 E-mails de parceiros não autorizados
-            p.t-p2 É muito fácil para parceiros não autorizados assumirem a identidade da sua marca na hora de enviar e-mails. Essa prática afeta a confiança dos usuários nos e-mails que você envia, prejudicando sua relação com clientes.
-            
-        // image
-        .use-cases__img.wow(data-animation-class="wowFadeRight")
-          img(src='img/svg/useCases-img.svg')
-  
+      .use-cases__slider(js-usecases-slider)
+        .use-cases__wrapper
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".1s")
+              h3 Infração de compliance
+              p.t-p2 Regras de compliance existem para que todos que falam em nome da sua marca o façam da mesma forma. Isso passa para o usuário a segurança de que se trata de uma parceria oficial. O descumprimento dessas regras coloca em risco a relação com seus clientes.
+              .label.label--blue saiba mais
+              a(href="#").link-p2 Perfis falsos no Instagram? Evite páginas fake
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".2s")
+              h3 Parceiros não autorizados
+              p.t-p2 Quando uma empresa diz ter uma parceria ou outro tipo de relação com sua marca, mas na verdade não tem. Essa prática retira os usuários do fluxo de compra correto, afetando suas taxas de conversão.
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".3s")
+              h3 Apropriação de identidade
+              p.t-p2 Parceiros (autorizados ou não) que assumem sua identidade e se fazem passar pela sua marca confundem o usuário. Nesses casos, seus clientes não conseguem diferenciar o site de um parceiro do site oficial, gerando mal-entendidos.
+    
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".1s")
+              h3 E-mails de parceiros não autorizados
+              p.t-p2 É muito fácil para parceiros não autorizados assumirem a identidade da sua marca na hora de enviar e-mails. Essa prática afeta a confiança dos usuários nos e-mails que você envia, prejudicando sua relação com clientes.
+              
+          // image
+          .use-cases__img.wow(data-animation-class="wowFadeRight" js-teleport data-teleport-condition="<992" data-teleport-to="use-cases-img")
+            img(src='img/svg/useCases-img.svg')
+    
+        .swiper-nav.swiper-nav--orange
+          // handled by swiper API
+          .swiper-nav__fraction
+          // custom swiper API
+          .swiper-nav__progress
+            .swiper-nav__progress-fill(js-set-usecases-progress)
+                
                     
   // PLANS
   .plans(js-plans-container)

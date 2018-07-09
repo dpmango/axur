@@ -55,31 +55,40 @@ block content
   
   // USE CASES
   .use-cases
+    .use-cases__img.use-cases__img--mobile.wow(data-teleport-target="use-cases-img")
     .container.container--narrow
       h2.wow O Data Leakage Discovery protege sua marca contra:
-      .use-cases__wrapper.use-cases__wrapper--give-space-img
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".1s")
-            h3 Vazamento de informações
-            p.t-p2 Quando dados confidenciais ou documentos da sua empresa são disponibilizados sem autorização na internet. Isso afeta a reputação da sua marca, já que passa uma imagem de vulnerabilidade dos seus sistemas de segurança.
-            .label.label--blue saiba mais
-            a(href="#").link-p2 Perfis falsos no Instagram? Evite páginas fake
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".2s")
-            h3 Divulgação de vulnerabilidades
-            p.t-p2 Falhas de segurança, quando descobertas e divulgadas, afetam a credibilidade da sua marca. Usuários desconfiados não voltam a fazer negócios e fica muito mais difícil convencer novos clientes.
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".3s")
-            h3 Vazamento de dados de clientes 
-            p.t-p2 A divulgação de dados confidenciais dos clientes da sua base pode ser desastrosa para a credibilidade da sua marca. Esse tipo de incidente deve ser corrigido o mais rápido possível para minimizar os danos à sua imagem.
-  
-        // image
-        .use-cases__img.wow(data-animation-class="wowFadeRight")
-          img(src='img/svg/useCases-img.svg')
-  
+      .use-cases__slider(js-usecases-slider)
+        .use-cases__wrapper.use-cases__wrapper--give-space-img
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".1s")
+              h3 Vazamento de informações
+              p.t-p2 Quando dados confidenciais ou documentos da sua empresa são disponibilizados sem autorização na internet. Isso afeta a reputação da sua marca, já que passa uma imagem de vulnerabilidade dos seus sistemas de segurança.
+              .label.label--blue saiba mais
+              a(href="#").link-p2 Perfis falsos no Instagram? Evite páginas fake
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".2s")
+              h3 Divulgação de vulnerabilidades
+              p.t-p2 Falhas de segurança, quando descobertas e divulgadas, afetam a credibilidade da sua marca. Usuários desconfiados não voltam a fazer negócios e fica muito mais difícil convencer novos clientes.
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".3s")
+              h3 Vazamento de dados de clientes 
+              p.t-p2 A divulgação de dados confidenciais dos clientes da sua base pode ser desastrosa para a credibilidade da sua marca. Esse tipo de incidente deve ser corrigido o mais rápido possível para minimizar os danos à sua imagem.
+    
+          // image
+          .use-cases__img.wow(data-animation-class="wowFadeRight" js-teleport data-teleport-condition="<992" data-teleport-to="use-cases-img")
+            img(src='img/svg/useCases-img.svg')
+    
+        .swiper-nav.swiper-nav--orange
+          // handled by swiper API
+          .swiper-nav__fraction
+          // custom swiper API
+          .swiper-nav__progress
+            .swiper-nav__progress-fill(js-set-usecases-progress)
+                
   // PLANS
   .plans(js-plans-container)
     .container

@@ -620,6 +620,7 @@ $(document).ready(function(){
     }
 
     // PRODUCTS MOBILE SWIPER
+    var plansSliderMobile = $('[js-plans-slider]');
     var plansSliderMobileOptions = {
       wrapperClass: "swiper-wrapper",
       slideClass: "plans__col",
@@ -639,13 +640,42 @@ $(document).ready(function(){
       on: {
         progress: function(progress){
           var reverseTransform = Math.floor(progress * 100) - 100
-          blogSliderProgress.css({
+          $('[js-set-plans-progress]').css({
             'transform': 'translate('+ reverseTransform + '%,0)'
           })
         }
       }
     };
-    var plansSliderMobile = $('[js-plans-slider]');
+
+    // PRODUCTS MOBILE SWIPER
+    var usecasesSliderMobile = $('[js-usecases-slider]');
+    var usecasesSliderMobileOptions = {
+      wrapperClass: "use-cases__wrapper",
+      slideClass: "use-cases__col",
+      direction: 'horizontal',
+      loop: false,
+      watchOverflow: true,
+      setWrapperSize: false,
+      spaceBetween: 30,
+      slidesPerView: 'auto',
+      normalizeSlideIndex: true,
+      freeMode: false,
+      slidesOffsetAfter: 30,
+      pagination: {
+        el: '.swiper-nav__fraction',
+        type: 'fraction',
+      },
+      on: {
+        progress: function(progress){
+          var reverseTransform = Math.floor(progress * 100) - 100
+          $('[js-set-usecases-progress]').css({
+            'transform': 'translate('+ reverseTransform + '%,0)'
+          })
+        }
+      }
+    };
+
+
 
 
     initMobileSwipers()
@@ -656,11 +686,18 @@ $(document).ready(function(){
         if (plansSliderMobile.hasClass('swiper-container-horizontal')) {
           plansSliderMobile[0].swiper.destroy(true, true);
         }
+        if (usecasesSliderMobile.hasClass('swiper-container-horizontal')) {
+          usecasesSliderMobile[0].swiper.destroy(true, true);
+        }
         return
       }
       if (!plansSliderMobile.hasClass('swiper-container-horizontal')) {
-        return new Swiper(plansSliderMobile[0], plansSliderMobileOptions);
+        new Swiper(plansSliderMobile[0], plansSliderMobileOptions);
       }
+      if (!usecasesSliderMobile.hasClass('swiper-container-horizontal')) {
+        new Swiper(usecasesSliderMobile[0], usecasesSliderMobileOptions);
+      }
+
     }
   }
 

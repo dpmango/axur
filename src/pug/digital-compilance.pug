@@ -75,53 +75,62 @@ block content
 
   // USE CASES
   .use-cases
+    .use-cases__img.use-cases__img--mobile.wow(data-teleport-target="use-cases-img")
     .container.container--narrow
       h2.wow O Digital Brand Compliance protege sua marca contra:
-      .use-cases__wrapper
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".1s")
-            h3 Abuso de marca
-            p.t-p2 Pessoas não autorizadas usando sua marca para se aproveitar da credibilidade que que ela tem com o público. Incidentes como esse afetam a imagem e a reputação da sua marca, afastando clientes e gerando prejuízos para seu negócio.
-            .label.label--blue saiba mais
-            a(href="#").link-p2 Perfis falsos no Instagram? Evite páginas fake
-            
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".2s")
-            h3 Domínios similares 
-            p.t-p2 Criminosos podem registrar domínios parecidos com sua marca (por exemplo, com erros de digitação ou letras em posições trocadas) com dois objetivos: vendê-los a você ou usá-los em ações para enganar e roubar dados dos seus clientes.
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".3s")
-            h3 Aplicativos fraudulentos
-            p.t-p2 Um aplicativo não oficial usa sua marca para atrair seus clientes e roubar dados, divulgar informações enganosas ou vender produtos falsos. Independentemente do objetivo, esse tipo de ação compromete a confiança do usuário nos seus aplicativos oficiais.
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".1s")
-            h3 Perfis falsos em redes sociais
-            p.t-p2 Com poucos recursos (a logo e o nome da sua empresa), qualquer pessoa pode criar um perfil falso em uma rede social e se fazer passar pela sua marca. Esse tipo de apropriação de identidade faz com que você perca o controle sobre as infomações divulgadas e as interações com seus clientes.
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".2s")
-            h3 Abuso de marca em e-mails
-            p.t-p2 Assim como nas redes sociais, assumir a identidade da sua marca na hora de enviar e-mails é bastante simples. Muito usada por spammers, essa prática afeta a confiança dos usuários nos e-mails que você envia, prejudicando sua relação com clientes.
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".3s")
-            h3 Indicação falsa no Google Maps
-            p.t-p2 Endereços falsos associados à sua marca atraem pessoas para os locais errados no mundo físico. Isso pode gerar, no mínimo, uma frustação do cliente em potencial, prejudicando sua reputação e seu faturamento.
-            
-        // col
-        .use-cases__col
-          .use-case.wow(data-animation-delay=".1s")
-            h3 Uso indevido em busca paga
-            p.t-p2 Sua marca pode ser usada em anúncios falsos que aparecem em sites de busca. Ao pesquisar por termos relacionados à sua empresa, seu cliente será exposto a esse conteúdo já na primeira página do buscador, podendo ser enganado e afastado da jornada de compra.
-        
-        // image
-        .use-cases__img.wow(data-animation-class="wowFadeRight")
-          img(src='img/svg/useCases-img.svg')
+      .use-cases__slider(js-usecases-slider)
+        .use-cases__wrapper
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".1s")
+              h3 Abuso de marca
+              p.t-p2 Pessoas não autorizadas usando sua marca para se aproveitar da credibilidade que que ela tem com o público. Incidentes como esse afetam a imagem e a reputação da sua marca, afastando clientes e gerando prejuízos para seu negócio.
+              .label.label--blue saiba mais
+              a(href="#").link-p2 Perfis falsos no Instagram? Evite páginas fake
+              
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".2s")
+              h3 Domínios similares 
+              p.t-p2 Criminosos podem registrar domínios parecidos com sua marca (por exemplo, com erros de digitação ou letras em posições trocadas) com dois objetivos: vendê-los a você ou usá-los em ações para enganar e roubar dados dos seus clientes.
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".3s")
+              h3 Aplicativos fraudulentos
+              p.t-p2 Um aplicativo não oficial usa sua marca para atrair seus clientes e roubar dados, divulgar informações enganosas ou vender produtos falsos. Independentemente do objetivo, esse tipo de ação compromete a confiança do usuário nos seus aplicativos oficiais.
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".1s")
+              h3 Perfis falsos em redes sociais
+              p.t-p2 Com poucos recursos (a logo e o nome da sua empresa), qualquer pessoa pode criar um perfil falso em uma rede social e se fazer passar pela sua marca. Esse tipo de apropriação de identidade faz com que você perca o controle sobre as infomações divulgadas e as interações com seus clientes.
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".2s")
+              h3 Abuso de marca em e-mails
+              p.t-p2 Assim como nas redes sociais, assumir a identidade da sua marca na hora de enviar e-mails é bastante simples. Muito usada por spammers, essa prática afeta a confiança dos usuários nos e-mails que você envia, prejudicando sua relação com clientes.
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".3s")
+              h3 Indicação falsa no Google Maps
+              p.t-p2 Endereços falsos associados à sua marca atraem pessoas para os locais errados no mundo físico. Isso pode gerar, no mínimo, uma frustação do cliente em potencial, prejudicando sua reputação e seu faturamento.
+              
+          // col
+          .use-cases__col
+            .use-case.wow(data-animation-delay=".1s")
+              h3 Uso indevido em busca paga
+              p.t-p2 Sua marca pode ser usada em anúncios falsos que aparecem em sites de busca. Ao pesquisar por termos relacionados à sua empresa, seu cliente será exposto a esse conteúdo já na primeira página do buscador, podendo ser enganado e afastado da jornada de compra.
+          
+          // image
+          .use-cases__img.wow(data-animation-class="wowFadeRight" js-teleport data-teleport-condition="<992" data-teleport-to="use-cases-img")
+            img(src='img/svg/useCases-img.svg')
     
+        .swiper-nav.swiper-nav--orange
+          // handled by swiper API
+          .swiper-nav__fraction
+          // custom swiper API
+          .swiper-nav__progress
+            .swiper-nav__progress-fill(js-set-usecases-progress)
+                    
       
   // PLANS
   .plans(js-plans-container)
