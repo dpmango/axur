@@ -18,4 +18,4 @@ PageList:
 - file: contacts.html
   ready: 90
 - file: solicitar.html
-  ready: 75
+  ready: 90

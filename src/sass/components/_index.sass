@@ -187,6 +187,29 @@
           color: white
           z-index: 2
           +sprite('check')
+    &.list-mark--no-heading
+      li
+        &::before
+          display: block
+          content: ' '
+          background: #FF5719
+          border-radius: 4px
+          color: white
+          size: 20px
+          position: absolute
+          left: -0px
+          top: 0
+          z-index: 1
+        &::after
+          display: inline-block
+          content: ' '
+          position: absolute
+          filter: brightness(0) invert(100%)
+          left: 5px
+          top: 5px
+          color: white
+          z-index: 2
+          +sprite('check')
 
   &--row
     display: flex
