@@ -4,18 +4,18 @@ PageList:
 - file: homepage.html
   ready: 90
 - file: digital-fraud.html
-  ready: 70
+  ready: 75
 - file: sales-abuse.html
-  ready: 70
+  ready: 75
 - file: digital-compilance.html
-  ready: 70
+  ready: 75
 - file: partner-compilance.html
-  ready: 70
+  ready: 75
 - file: data-leak.html
-  ready: 70
+  ready: 75
 - file: threat-discovery.html
-  ready: 70
+  ready: 75
 - file: contacts.html
-  ready: 70
+  ready: 90
 - file: solicitar.html
-  ready: 70
+  ready: 75

@@ -15,6 +15,8 @@
 .f-product
   background-image: linear-gradient(-180deg, #FFFFFF 0%, #FAFAFA 29%)
   padding-top: 100px
+  &--more-pad
+    padding-top: 140px
 
 .f-product-box
   background: white
@@ -41,11 +43,15 @@
     h2
       margin-top: 0
     .t-p1
-      max-width: 240px
+      margin-top: -.5em
+      max-width: 290px
   &__right
     padding-top: 60px
     .t-p2
       max-width: 450px
+    .t-p3
+      margin-top: 40px
+      line-height: 1
     h4
       max-width: 330px
       margin-bottom: 0
@@ -68,6 +74,7 @@
     position: absolute
     left: 0
     bottom: 0
+    font-size: 0
 
 
   &__wrapper
@@ -82,6 +89,15 @@
     h2
       margin-top: 0
       max-width: 370px
+    &--wider
+      margin-bottom: 40px
+      h2
+        max-width: 450px
+    &--centered
+      // margin-bottom: 60px
+      h2
+        margin-left: 50px
+        max-width: 290px
 
   &__right
     flex: 0 1 56%

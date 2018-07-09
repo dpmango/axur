@@ -136,7 +136,7 @@
           background-color: $colorGreen
           border-color: $colorGreen
         &::after
-          transform: translateY(-50%) scale(1)
+          transform: scale(1)
   label
     display: block
     width: 100%
@@ -145,8 +145,9 @@
     &::before
       position: absolute
       left: 0
-      top: 50%
-      transform: translateY(-50%)
+      top: -5px
+      // top: 50%
+      // transform: translateY(-50%)
       display: inline-block
       content: ' '
       size: 24px
@@ -160,8 +161,8 @@
     &::after
       position: absolute
       left: 7px
-      top: 50%
-      transform: translateY(-50%) scale(0)
+      top: 4px
+      transform: scale(0)
       display: inline-block
       content: ' '
       +sprite('check')

@@ -21,16 +21,16 @@ block content
                 span conheça a plataforma
               
 
-      .hero__image.wow(data-animation-class="wowFadeRight")
+      .hero__image.hero__image--for6.wow(data-animation-class="wowFadeRight")
         #include-anim-6
       .hero__actionable(data-teleport-target="hero-actionable")
       
-  include components/_service-functions-panels
+  include components/_service-functions-list
   
   include components/_service-numbers
   
-  // Featured product      
-  .f-product
+  // Featured product
+  .f-product.f-product--more-pad
 
     // featured product benefits
     .f-products-benefits
@@ -38,19 +38,19 @@ block content
         img(src='img/svg/featureProductBg-triangle.svg')
       .container
         .f-products-benefits__wrapper
-          .f-products-benefits__left.wow
+          .f-products-benefits__left.f-products-benefits__left--wider.wow
             h2 Vamos fundo para garantir sua segurança
           .f-products-benefits__right
             .f-products-benefits__list
               .f-products-benefits__col.wow
                 h4 
                   span Saiba antes de todo mundo
-                t.t-p2 Nossa plataforma monitora riscos constantemente, para você tomar as ações necessárias e proteger seus clientes. E tudo isso antes de o problema virar notícia.
+                p.t-p2 Nossa plataforma monitora riscos constantemente, para você tomar as ações necessárias e proteger seus clientes. E tudo isso antes de o problema virar notícia.
                 
               .f-products-benefits__col.wow
                 h4 
                   span Churn sob controle
-                t.t-p2 Dados sempre protegidos e um plano bem definido para resolver incidentes. Isso garante a segurança que seus clientes precisam para permanecer na sua base.
+                p.t-p2 Dados sempre protegidos e um plano bem definido para resolver incidentes. Isso garante a segurança que seus clientes precisam para permanecer na sua base.
                 
                 
   // USE CASES
@@ -62,40 +62,40 @@ block content
         .use-cases__col
           .use-case.wow(data-animation-delay=".1s")
             h3 Contas fraudadas
-            t.t-p2 De contas de e-commerce a contas bancárias, esquemas de phishing roubam suas informações para comercializá-las na deep web, com objetivo de tirar vantagem em fraudes.
+            p.t-p2 De contas de e-commerce a contas bancárias, esquemas de phishing roubam suas informações para comercializá-las na deep web, com objetivo de tirar vantagem em fraudes.
             .label.label--blue saiba mais
             a(href="#").link-p2 Saiba tudo sobre ameaças da Deep Web
         // col
         .use-cases__col
           .use-case.wow(data-animation-delay=".2s")
             h3 Telas falsas para phishing
-            t.t-p2 Comercialização de telas prontas que simulam páginas de grandes empresas, como bancos. Essas telas são usadas para enganar usuários em esquemas de phishing.
+            p.t-p2 Comercialização de telas prontas que simulam páginas de grandes empresas, como bancos. Essas telas são usadas para enganar usuários em esquemas de phishing.
         // col
         .use-cases__col
           .use-case.wow(data-animation-delay=".3s")
             h3 Comércio de cartões de crédito
-            t.t-p2 Números e senhas de cartões de crédito, roubados através de fraudes na internet, são vendidos para serem usados ilegalmente e sem o conhecimento dos seus donos.
+            p.t-p2 Números e senhas de cartões de crédito, roubados através de fraudes na internet, são vendidos para serem usados ilegalmente e sem o conhecimento dos seus donos.
         // col
         .use-cases__col
           .use-case.wow(data-animation-delay=".1s")
             h3 Pagamento de boletos e contas
-            t.t-p2 Serviços de pagamento ilegais que usam dinheiro de contas roubadas. Em troca, quem utiliza o serviço repassa uma porcentagem do valor pago aos operadores do esquema.
+            p.t-p2 Serviços de pagamento ilegais que usam dinheiro de contas roubadas. Em troca, quem utiliza o serviço repassa uma porcentagem do valor pago aos operadores do esquema.
 
         // col
         .use-cases__col
           .use-case.wow(data-animation-delay=".2s")
             h3 Aprovações de compras ilegais
-            t.t-p2 Serviço ilegal que oferece na deep web contas roubadas para aprovação de compras. Isso é feito sem consentimento do dono da conta, que dificilmente desconfia que ela foi comprometida.
+            p.t-p2 Serviço ilegal que oferece na deep web contas roubadas para aprovação de compras. Isso é feito sem consentimento do dono da conta, que dificilmente desconfia que ela foi comprometida.
         // col
         .use-cases__col
           .use-case.wow(data-animation-delay=".3s")
             h3 Validação de contas e cc
-            t.t-p2 Criação e disponibilização de softwares específicos para validar contas de e-commerce ou cartões de crédito roubados."
+            p.t-p2 Criação e disponibilização de softwares específicos para validar contas de e-commerce ou cartões de crédito roubados."
         // col
         .use-cases__col
           .use-case.wow(data-animation-delay=".3s")
             h3 Acessos não autorizados a sistemas
-            t.t-p2 Uso de senhas roubadas ou exploração de falhas de segurança e vulnerabilidades para acessar sem autorização sistemas de empresas.
+            p.t-p2 Uso de senhas roubadas ou exploração de falhas de segurança e vulnerabilidades para acessar sem autorização sistemas de empresas.
 
         // image
         .use-cases__img.wow(data-animation-class="wowFadeRight")
