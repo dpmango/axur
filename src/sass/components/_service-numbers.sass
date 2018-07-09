@@ -35,3 +35,48 @@
     position: absolute
     right: -30px
     bottom: -140px
+
++r($desktop)
+  .service-num
+    padding: 75px 0 90px
+    &__col
+      flex-basis: 33.3%
+      max-width: 33.3%
+    &__title
+      font-size: 42px
+      span
+        font-size: 21px
+
+
++r(850)
+  .service-num
+    padding: 55px 0 70px
+    &__wrapper
+      flex-wrap: wrap
+      justify-content: center
+    &__col
+      flex-basis: 240px
+      max-width: 240px
+    &__bg-image
+      bottom: -110px
+      img
+        max-width: 80%
+
++r($mobile)
+  .service-num
+    &__wrapper
+      display: block
+      margin-left: 52px
+      margin-right: auto
+    &__col
+      max-width: 100%
+      padding: 15px 0
+      margin-bottom: 10px
+    &__title
+      font-size: 35px
+      span
+        font-size: 20px
+    &__bg-image
+      bottom: -130px
+      img
+        max-width: 70%

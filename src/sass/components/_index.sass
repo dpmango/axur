@@ -162,21 +162,32 @@
     li
       padding-left: 45px
       margin-bottom: 22px
-      &::before
-        display: block
-        content: ' '
-        background: #FF5719
-        border-radius: 4px
-        color: white
-        size: 20px
-        position: absolute
-        left: 0
-        top: 0
-        z-index: 1
       &::after
-        filter: brightness(0) invert(100%)
-        left: 5px
-        top: 5px
+        display: none
+      h3, h4
+        position: relative
+        &::before
+          display: block
+          content: ' '
+          background: #FF5719
+          border-radius: 4px
+          color: white
+          size: 20px
+          position: absolute
+          left: -45px
+          top: 0
+          z-index: 1
+        &::after
+          display: inline-block
+          content: ' '
+          position: absolute
+          filter: brightness(0) invert(100%)
+          left: -40px
+          top: 5px
+          color: white
+          z-index: 2
+          +sprite('check')
+
   &--row
     display: flex
     margin-right: -30px
@@ -186,6 +197,8 @@
       h3, h4
         margin-top: 0
         margin-bottom: 1em
+        +r($mobile)
+          margin-bottom: .5em
     &[data-cols="3"]
       li
         flex: 0 1 33.3%
@@ -193,3 +206,37 @@
         min-width: 1px
         h3, h4, p
           max-width: 246px
+      +r($desktop)
+        justify-content: center
+        flex-wrap: wrap
+        li
+          flex: 0 1 50%
+          max-width: 50%
+          // display: flex
+          margin-bottom: 40px
+          &:last-child
+            margin-bottom: -0px
+          &:nth-child(2)
+            h3, h4, p
+              margin-left: auto
+          &:nth-child(3)
+            h3, h4, p
+              margin-left: auto
+              margin-right: auto
+      +r($mobile)
+        display: block
+        margin-left: 0
+        margin-right: 0
+        li
+          max-width: 100%
+          margin-left: auto
+          margin-right: auto
+          // padding: 0
+          padding-right: 0
+          margin-bottom: 35px
+          &:nth-child(2), &:nth-child(3)
+            h3, h4, p
+              margin-left: 0
+              margin-right: 0
+          h3, h4, p
+            max-width: 255px
