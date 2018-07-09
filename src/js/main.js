@@ -619,6 +619,49 @@ $(document).ready(function(){
       blogSlider.addSlide(index, blogSlideTpl)
     }
 
+    // PRODUCTS MOBILE SWIPER
+    var plansSliderMobileOptions = {
+      wrapperClass: "swiper-wrapper",
+      slideClass: "plans__col",
+      direction: 'horizontal',
+      loop: false,
+      watchOverflow: true,
+      setWrapperSize: false,
+      spaceBetween: 8,
+      slidesPerView: 'auto',
+      normalizeSlideIndex: true,
+      freeMode: false,
+      slidesOffsetAfter: 50,
+      pagination: {
+        el: '.swiper-nav__fraction',
+        type: 'fraction',
+      },
+      on: {
+        progress: function(progress){
+          var reverseTransform = Math.floor(progress * 100) - 100
+          blogSliderProgress.css({
+            'transform': 'translate('+ reverseTransform + '%,0)'
+          })
+        }
+      }
+    };
+    var plansSliderMobile = $('[js-plans-slider]');
+
+
+    initMobileSwipers()
+    _window.on('resize', debounce(initMobileSwipers, 200));
+
+    function initMobileSwipers(){
+      if ( _window.width() > 992 ) {
+        if (plansSliderMobile.hasClass('swiper-container-horizontal')) {
+          plansSliderMobile[0].swiper.destroy(true, true);
+        }
+        return
+      }
+      if (!plansSliderMobile.hasClass('swiper-container-horizontal')) {
+        return new Swiper(plansSliderMobile[0], plansSliderMobileOptions);
+      }
+    }
   }
 
   //////////
