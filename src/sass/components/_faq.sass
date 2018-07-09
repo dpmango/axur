@@ -1,12 +1,17 @@
 .faq
   padding: 35px 0 80px
   border-bottom: 1px solid #EEEEEE
-
   &__wrapper
     margin-top: 30px
-
   &__info
     margin-top: 40px
+
++r($mobile)
+  .faq
+    padding-top: 45px
+    padding-bottom: 55px
+    &__wrapper
+      margin-top: 35px
 
 .panel
   border-top: 1px solid $colorLightGray
@@ -48,9 +53,10 @@
     flex-wrap: wrap
     h3, h4
       margin: 0
+      padding-right: 30px
   .label
     margin-left: 8px
-
+    vertical-align: middle
 
   &__content
     display: none
@@ -82,7 +88,18 @@
       .panel
         &__content
           margin-top: 0
-
     &__heading
+      padding: 30px 0 25px 0
       &::after
         right: 0
+    &__name
+      h3, h4
+        padding-right: 20px
+    &__content
+      padding-bottom: 15px
+    &--smaller
+      .panel
+        &__heading
+          padding: 25px 0 25px 0
+        &__content
+          padding-bottom: 10px
