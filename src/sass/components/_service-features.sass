@@ -13,8 +13,9 @@
 
 
 .f-product
-  background-image: linear-gradient(-180deg, #FFFFFF 0%, #FAFAFA 29%)
+  background: linear-gradient(-180deg, #FFFFFF 0%, #FAFAFA 29%)
   padding-top: 100px
+  overflow: hidden
   &--more-pad
     padding-top: 140px
 
@@ -24,6 +25,7 @@
   border-radius: 4px
   margin-bottom: 100px
   padding: 85px 80px 60px
+  // overflow: hidden
 
   &__wrapper
     display: flex
@@ -31,7 +33,7 @@
     margin-right: -15px
 
   &__left, &__right
-    // position: relative
+    position: relative
     flex: 0 1 50%
     max-width: 50%
     min-width: 1px

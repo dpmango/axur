@@ -265,7 +265,7 @@ $(document).ready(function(){
 
       // update toggle
       if ( moveDirection === "left" ){
-        $toggle.removeClass('move-right');
+        $toggle.removeClass('move-right').addClass('move-left');
 
         $($labels[0]).addClass('is-active');
         $($labels[1]).removeClass('is-active');

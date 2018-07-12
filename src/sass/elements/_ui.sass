@@ -1,6 +1,5 @@
 // UI
 
-
 // WORKS KIND OF bootstrap - group have label and input
 .ui-group
   position: relative
@@ -21,7 +20,7 @@
     width: 100%
     -webkit-appearance: none
     background: white
-    color: $fontColor
+    color: $colorMuted
     border: 1px solid $colorLightGray
     font-size: 15px
     line-height: 1.5
@@ -31,8 +30,8 @@
     // box-shadow: 0 10px 16px 0 rgba(0,0,0,0.05)
     border-radius: 4px
     transition: color .25s $ease, border .25s $ease
-    &:placeholder
-      color: $colorMuted
+    &::placeholder
+      color: #999
     &:focus
       border-color: $colorOrange2
   textarea
@@ -75,7 +74,7 @@
     width: 100%
     -webkit-appearance: none
     background: white
-    color: $fontColor
+    color: $colorMuted
     border: 1px solid $colorLightGray
     font-size: 15px
     line-height: 1.5
@@ -85,8 +84,8 @@
     box-shadow: 0 10px 16px 0 rgba(0,0,0,0.05)
     border-radius: 4px
     transition: .25s $ease
-    &:placeholder
-      color: $colorMuted
+    &::placeholder
+      color: #999
     &:focus
       border-color: $colorOrange2
 

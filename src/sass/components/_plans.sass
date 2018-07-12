@@ -36,6 +36,7 @@
       margin-left: 16px
       margin-right: 16px
       cursor: pointer
+      transition: background .25s $ease
       &::after
         display: inline-block
         content: ' '
@@ -81,7 +82,7 @@
       transition: .25s $ease
 
   &__slider
-    margin-top: 70px
+    margin-top: 20px
     padding-top: 50px
     position: relative
     .swiper-wrapper
@@ -231,7 +232,8 @@
   background: #fff
   display: flex
   flex-direction: column
-  padding: 40px 40px 60px
+  // padding: 40px 40px 60px
+  padding: 40px 40px 24px
   box-shadow: 0 10px 16px 0 rgba(0,0,0,0.05)
   border-radius: 4px
   h3
@@ -304,7 +306,7 @@
   .plan-card
     padding-left: 40px
     padding-right: 40px
-    padding-bottom: 45px
+    // padding-bottom: 45px
 
 +r($tablet)
   .plan-card
