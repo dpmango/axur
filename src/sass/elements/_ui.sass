@@ -8,12 +8,36 @@
     max-width: 210px
   > label:not(.ui-input__validation)
     display: block
-    line-height: 1
+    position: absolute
+    z-index: 2
+    top: -15px
+    left: 0
     color: $colorMuted
     font-size: 10px
     text-transform: uppercase
     letter-spacing: 0.1em
-    margin-bottom: 5px
+    // text-transform: uppercase
+    // letter-spacing: 0.1em
+    transition: .25s $ease
+  &[js-dynamic-label]
+    > label:not(.ui-input__validation)
+      left: 25px
+      top: 17px
+      line-height: 1
+      color: #999
+      font-size: 15px
+      text-transform: none
+      letter-spacing: 0em
+      pointer-events: none
+
+    &.is-focused
+      > label:not(.ui-input__validation)
+        top: -15px
+        left: 0
+        color: $colorMuted
+        font-size: 10px
+        text-transform: uppercase
+        letter-spacing: 0.1em
 
   input, textarea
     display: block
@@ -38,10 +62,10 @@
     resize: vertical
 
   .ui-input__validation
-    bottom: -18px
+    bottom: 2px
     font-size: 11px
   &.has-error
-    // padding-bottom: 30px
+    padding-bottom: 20px
     input
       border-color: rgba($colorRed, .4)
   &:nth-child(1)

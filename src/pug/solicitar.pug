@@ -12,12 +12,15 @@ block content
         p.t-p1.wow Preencha seus dados para nossos consultores agendarem uma demonstração completa da nossa plataforma.
         
         form.apply__form(action="#" js-validate-apply-form)
-          .ui-group.wow
-            input(type="text" name="email" placeholder="E-mail de contato")
-          .ui-group.wow
-            input(type="text" name="name" placeholder="Nome completo")
-          .ui-group.wow
-            input(type="text" name="empresa" placeholder="Empresa")
+          .ui-group.wow(js-dynamic-label)
+            label E-mail de contato
+            input(type="text" name="email" placeholder="")
+          .ui-group.wow(js-dynamic-label)
+            label Nome completo
+            input(type="text" name="name" placeholder="")
+          .ui-group.wow(js-dynamic-label)
+            label Empresa
+            input(type="text" name="empresa" placeholder="")
           .ui-group.ui-group--short.wow
             label país
             select(name="country" js-selectric placeholder="Select country")

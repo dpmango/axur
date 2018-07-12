@@ -949,6 +949,26 @@ $(document).ready(function(){
         this.rows = minRows + rows;
     });
 
+  // dynamic label
+  _document
+    .on('focus', '[js-dynamic-label] input, [js-dynamic-label] textarea', function(){
+      var input = $(this);
+      var parent = input.parent();
+
+      parent.addClass('is-focused')
+    })
+    .on('blur', '[js-dynamic-label] input, [js-dynamic-label] textarea', function(){
+      var input = $(this);
+      var parent = input.parent();
+
+      if ( input.val() !== "" ){
+        parent.addClass('is-focused')
+      } else {
+        parent.removeClass('is-focused')
+      }
+
+    })
+
   // Masked input
   function initMasks(){
     $("[js-dateMask]").mask("99.99.99",{placeholder:"ДД.ММ.ГГ"});

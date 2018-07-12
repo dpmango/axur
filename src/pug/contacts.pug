@@ -10,12 +10,15 @@ block content
       .contacts__content(js-layout-padding data-type="container-left" data-stop="<992")
         h1.wow Como podemos <br>ajudar?
         form.contacts__form(action="#" js-validate-contact-form)
-          .ui-group.wow
-            input(type="text" name="name" placeholder="Nome completo")
-          .ui-group.wow
-            input(type="text" name="email" placeholder="E-mail de contato")
-          .ui-group.wow
-            input(type="text" name="empresa" placeholder="Empresa")
+          .ui-group.wow(js-dynamic-label)
+            label Nome completo
+            input(type="text" name="name" placeholder="")
+          .ui-group.wow(js-dynamic-label)
+            label E-mail de contato
+            input(type="text" name="email" placeholder="")
+          .ui-group.wow(js-dynamic-label)
+            label Empresa
+            input(type="text" name="empresa" placeholder="")
           .ui-group.ui-group--short.wow
             label país
             select(name="country" js-selectric placeholder="Select country")
@@ -40,9 +43,9 @@ block content
               option(value="Digital Fraud Discovery") Digital Fraud Discovery
               option(value="Digital Fraud Discovery") Digital Fraud Discovery
                     
-          .ui-group.wow
+          .ui-group.wow(js-dynamic-label)
             label mensagem
-            textarea(type="text" placeholder="Conte-nos como podemos ajudar." rows="4" data-min-rows="4")
+            textarea(type="text" placeholder="" rows="4" data-min-rows="4")
           
           .ui-group.wow
             .ui-checkbox
