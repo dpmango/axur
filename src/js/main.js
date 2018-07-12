@@ -218,7 +218,13 @@ $(document).ready(function(){
   _document
     .on('click', '[js-faq-toggler]', function(){
       var panel = $(this).parent();
+      var panelSiblings = panel.siblings();
       var panelContent = panel.find('.panel__content');
+
+      // accardeon
+      panelSiblings.find('.panel__content').hide();
+      panelSiblings.removeClass('is-active');
+
       if ( panel.is('.is-active') ){
         panelContent.fadeOut();
         panel.removeClass('is-active');
@@ -1453,10 +1459,9 @@ $(document).ready(function(){
 
 
 // When the window has finished loading create our google map below
-google.maps.event.addDomListener(window, 'load', init);
 
 if ( $('#google-map').length > 0 ){
-
+google.maps.event.addDomListener(window, 'load', init);
 }
 
 function init() {
