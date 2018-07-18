@@ -146,11 +146,15 @@
     &__slider
       margin-top: 60px
       // padding-left: 40px
+      .swiper-wrapper
+        padding-left: 40px
+        padding-right: 40px
     &__slide
       flex: 0 0 350px
       padding: 40px 10px 20px
       &:first-of-type
-        margin-left: 40px
+        // margin-left: 40px
+        margin-left: 0
 
 +r($mobile)
   .blog
@@ -160,8 +164,11 @@
       padding-right: 30px
     &__slider
       // padding-left: 25px
+      .swiper-wrapper
+        padding-left: 25px
+        padding-right: 25px
     &__slide
       flex: 0 0 310px
       padding: 40px 5px 20px
-      &:first-of-type
-        margin-left: 25px
+      // &:first-of-type
+      //   margin-left: 25px
