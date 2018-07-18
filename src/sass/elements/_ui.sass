@@ -20,7 +20,7 @@
     // letter-spacing: 0.1em
     transition: .25s $ease
   &[js-dynamic-label]
-    > label:not(.ui-input__validation)
+    > label.placeholder-label
       left: 25px
       top: 17px
       line-height: 1
@@ -29,15 +29,21 @@
       text-transform: none
       letter-spacing: 0em
       pointer-events: none
+    > label.focused-label
+      top: -15px
+      left: 0
+      color: $colorMuted
+      font-size: 10px
+      text-transform: uppercase
+      letter-spacing: 0.1em
+      opacity: 0
 
     &.is-focused
-      > label:not(.ui-input__validation)
-        top: -15px
-        left: 0
-        color: $colorMuted
-        font-size: 10px
-        text-transform: uppercase
-        letter-spacing: 0.1em
+      > label.focused-label
+        opacity: 1
+      > label.placeholder-label
+        opacity: 0
+
 
   input, textarea
     display: block

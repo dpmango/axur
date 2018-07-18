@@ -11,13 +11,16 @@ block content
         h1.wow Como podemos <br>ajudar?
         form.contacts__form(action="#" js-validate-contact-form)
           .ui-group.wow(js-dynamic-label)
-            label Nome completo
+            label.focused-label Nome completo
+            label.placeholder-label Nome completo
             input(type="text" name="name" placeholder="")
           .ui-group.wow(js-dynamic-label)
-            label E-mail de contato
+            label.focused-label E-mail de contato
+            label.placeholder-label E-mail de contato
             input(type="text" name="email" placeholder="")
           .ui-group.wow(js-dynamic-label)
-            label Empresa
+            label.focused-label Empresa
+            label.placeholder-label Empresa
             input(type="text" name="empresa" placeholder="")
           .ui-group.ui-group--short.wow
             label país
@@ -44,7 +47,8 @@ block content
               option(value="Digital Fraud Discovery") Digital Fraud Discovery
                     
           .ui-group.wow(js-dynamic-label)
-            label mensagem
+            label.focused-label mensagem
+            label.placeholder-label mensagem
             textarea(type="text" placeholder="" rows="4" data-min-rows="4")
           
           .ui-group.wow
