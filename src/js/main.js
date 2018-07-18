@@ -22,6 +22,9 @@ $(document).ready(function(){
     _window.on('resize', debounce(adjustAsyncLayout, 100));
     stickyBgElements(); // adjust svg bg elements positions
     _window.on('resize', debounce(stickyBgElements, 100))
+    setTimeout(stickyBgElements, 100)
+    setTimeout(stickyBgElements, 250)
+    setTimeout(stickyBgElements, 400)
 
     // functional
     initSliders();
