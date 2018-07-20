@@ -795,7 +795,7 @@ $(document).ready(function(){
   // SVG animations with anime.js
   /////////
 
-  var animation_1, animation_1_mobile, animation_2, animation_3, animation_4, animation_5, animation_6, animation_7
+  var animation_1, animation_1_mobile, animation_2, animation_3, animation_4, animation_5, animation_6, animation_7, animation_8
 
   function initSvgAnimations(teleportable){
     var easingSwing = [.02, .01, .47, 1]; // default jQuery easing for anime.js
@@ -892,6 +892,17 @@ $(document).ready(function(){
         path: '/animation-json/anima_7.json'
       })
     }
+
+    if ( $('#include-anim-8').length > 0 ) {
+      var animation_8 = lottie.loadAnimation({
+        container: document.getElementById('include-anim-8'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '/animation-json/anima_8.json'
+      })
+    }
+
 
   }
 
