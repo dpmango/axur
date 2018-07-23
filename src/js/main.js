@@ -903,8 +903,39 @@ $(document).ready(function(){
       })
     }
 
-
   }
+
+  // PARALLAX ANIMATIONS
+  _window.on('scroll', throttle(function(){
+    var wScroll = _window.scrollTop();
+    var $target = $('[js-parallax-animation]');
+    var parent = $target.closest('.container')
+    var parentTop = Math.floor(parent[0].getBoundingClientRect().top) // to window
+    var startListener = parentTop - _window.height()
+    var endListener = startListener + parent.outerHeight();
+    var scrollDiff = startListener - endListener;
+
+    // console.log(startListener, endListener, scrollDiff, parentTop)
+
+    if ( startListener <= 0 && endListener >= 0 ){
+      var animationIcons = $target.find('.animation-icons');
+      console.log(animationIcons)
+      var scrollPercent = 100 * startListener / (scrollDiff)
+      var cssMove = Math.floor(scrollPercent / 2.5)
+      animationIcons.css({
+        'transform': 'translate3d('+cssMove+'%,0,0)'
+      })
+      // anime({
+      //   targets: animationIcons[0],
+      //   translateX: cssMove +'%',
+      //   direction: 'alternate',
+      //   loop: false,
+      //   easing: 'linear',
+      //   duration: 100,
+      // })
+    }
+
+  }, 20));
 
   /////////////
   // STICKY KIT

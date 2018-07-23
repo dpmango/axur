@@ -272,8 +272,9 @@ block content
             .section-heading.wow
               h2 Monitoramos todas as camadas da web, 24h por dia
             
-            .svg-animation-container
-              #include-anim-1
+            .svg-animation-container(js-parallax-animation)
+              //- #include-anim-1
+              include ../inline-svg/animation-1.svg
 
         .how__content
           .how__section.wow
@@ -292,8 +293,9 @@ block content
                 p.t-p2 SMS analisados automaticamente através de algorítimos especializados.
           
           .how__image.how__image--mobile
-            .svg-animation-container
-              #include-anim-1-mobile
+            .svg-animation-container(js-parallax-animation)
+              include ../inline-svg/animation-1.svg
+              //- #include-anim-1-mobile
                 
           .how__section.wow
             h2 Tudo isso com o poder da Inteligência Artificial
