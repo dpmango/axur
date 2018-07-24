@@ -925,14 +925,6 @@ $(document).ready(function(){
       animationIcons.css({
         'transform': 'translate3d('+cssMove+'%,0,0)'
       })
-      // anime({
-      //   targets: animationIcons[0],
-      //   translateX: cssMove +'%',
-      //   direction: 'alternate',
-      //   loop: false,
-      //   easing: 'linear',
-      //   duration: 100,
-      // })
     }
 
   }, 20));
