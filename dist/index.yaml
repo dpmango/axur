@@ -1,0 +1,21 @@
+ProjectTitle: Axur
+
+PageList:
+- file: homepage.html
+  ready: 100
+- file: digital-fraud.html
+  ready: 100
+- file: sales-abuse.html
+  ready: 100
+- file: digital-compilance.html
+  ready: 100
+- file: partner-compilance.html
+  ready: 100
+- file: data-leak.html
+  ready: 100
+- file: threat-discovery.html
+  ready: 100
+- file: contacts.html
+  ready: 100
+- file: solicitar.html
+  ready: 100

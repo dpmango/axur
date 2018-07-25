@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- MADE WITH LOVE BY <> KHMELEVSKOY & ASSOCIATES </> www.khmelevskoy.co-->
+    <meta charset="utf-8">
+    <title>Contacts :: AXUR</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <meta name="format-detection" content="telephone=no">
+    <!-- remove for production-->
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" media="all" href="css/app.css"><!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <!-- place where pjax bindings happen's-->
+    <div id="barba-wrapper">
+      <!-- HEADER :: START-->
+      <header class="header">
+        <div class="container">
+          <div class="header__wrapper wow" data-animation-class="wowFadeDown"><a class="header__logo" href="homepage.html"><img src="img/svg/logo.svg">
+              <!-- used for mobile nav-->
+              <div class="header__cta header__cta--mobile"><span class="btn btn-outline" data-href="#"><span>acesse sua conta</span></span></div></a>
+            <ul class="header__menu">
+              <li><a js-toggle-menu data-target-menu="solutions" href="#">Soluções</a></li>
+              <li><a href="solicitar.html">Peça uma demonstração</a></li>
+            </ul>
+            <ul class="header__lang" js-teleport data-teleport-to="header-lang" data-teleport-condition="&lt;992">
+              <li data-lang="en"><a href="#">EN</a></li>
+              <li data-lang="es"><a href="#">ES</a></li>
+              <li class="is-active" data-lang="pt"><a href="#">PT</a></li>
+            </ul>
+            <div class="header__cta"><a class="btn btn-outline" href="#"><span>acesse sua conta</span></a></div>
+            <div class="header__hamburger">
+              <div class="hamburger hamburger--squeeze" js-toggle-menu data-target-menu="solutions">
+                <div class="hamburger-box">
+                  <div class="hamburger-inner"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- HEADER :: END-->
+      <!-- MENU-->
+      <div class="menu" data-menu="solutions">
+        <div class="menu__wrapper">
+          <div class="menu__close" js-close-menu>
+            <svg class="ico ico-close">
+              <use xlink:href="img/sprite.svg#ico-close"></use>
+            </svg>
+          </div>
+          <div class="menu__nav" js-layout-padding data-type="container-left" data-stop="&lt;860">
+            <div class="menu__nav-triangle-fix" js-triangle-fix></div><a class="menu__link-mobile" href="#">Soluções Axur One</a>
+            <ul class="menu__nav-list">
+              <li><a href="digital-fraud.html"><span>Digital Fraud Discovery</span>
+                  <p class="t-p3">Identifique e remova ataques de phishing e malware</p></a></li>
+              <li><a href="sales-abuse.html"><span>Sales Abuse Discovery</span>
+                  <p class="t-p3">Previna pirataria ou vendas não autorizadas em canais digitais</p></a></li>
+              <li><a href="data-leak.html"><span>Data Leakage Discovery</span>
+                  <p class="t-p3">Monitore possíveis vazamentos de dados para agir rápido</p></a></li>
+              <li><a href="digital-compilance.html"><span>Digital Marketing Compliance</span>
+                  <p class="t-p3">Certifique-se de que ninguém está usando sua marca sem autorização</p></a></li>
+              <li><a href="partner-compilance.html"><span>Partner Compliance</span>
+                  <p class="t-p3">identifique parceiros usando sua marca indevidamente</p></a></li>
+              <li><a href="threat-discovery.html"><span>Threat Intelligence</span>
+                  <p class="t-p3">Escaneie a deep web atrás de ataques, golpes e ameaças</p></a></li>
+            </ul>
+          </div>
+          <div class="menu__sidebar">
+            <div class="menu__sidebar-wrapper" js-layout-padding data-type="container-right" data-stop="&lt;860">
+              <p class="t-p1">Credential Protection</p>
+              <div class="menu__sidebar-links"><a class="link-p3" href="#">Hashcast™ Proteção de senha</a><a class="link-p3" href="#">Leakstream</a></div><a class="menu__link-mobile" href="solicitar.html">Peça uma demonstração</a>
+              <ul class="menu__lang header__lang" data-teleport-target="header-lang"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- what should be changed with every pjax-->
+      <div class="page">
+        <div class="page__content">
+          <!-- CONTACTS-->
+          <div class="contacts">
+            <div class="contacts__wrapper">
+              <div class="contacts__content" js-layout-padding data-type="container-left" data-stop="&lt;992">
+                <h1 class="wow">Como podemos <br>ajudar?</h1>
+                <form class="contacts__form" action="#" js-validate-contact-form>
+                  <div class="ui-group wow" js-dynamic-label>
+                    <label class="focused-label">Nome completo</label>
+                    <label class="placeholder-label">Nome completo</label>
+                    <input type="text" name="name" placeholder="">
+                  </div>
+                  <div class="ui-group wow" js-dynamic-label>
+                    <label class="focused-label">E-mail de contato</label>
+                    <label class="placeholder-label">E-mail de contato</label>
+                    <input type="text" name="email" placeholder="">
+                  </div>
+                  <div class="ui-group wow" js-dynamic-label>
+                    <label class="focused-label">Empresa</label>
+                    <label class="placeholder-label">Empresa</label>
+                    <input type="text" name="empresa" placeholder="">
+                  </div>
+                  <div class="ui-group ui-group--short wow">
+                    <label>país</label>
+                    <select name="country" js-selectric placeholder="Select country">
+                      <option value="Brazil">Brazil</option>
+                      <option value="Brazil">Brazil</option>
+                      <option value="Brazil">Brazil</option>
+                      <option value="Brazil">Brazil</option>
+                      <option value="Brazil">Brazil</option>
+                      <option value="Brazil">Brazil</option>
+                      <option value="Brazil">Brazil</option>
+                    </select>
+                  </div>
+                  <div class="ui-group ui-group--short wow">
+                    <label>telefone</label>
+                    <input type="tel" name="phone" js-mask-phone placeholder="+55">
+                  </div>
+                  <div class="ui-group wow">
+                    <label>assunto</label>
+                    <select name="country" js-selectric>
+                      <option value="Informações sobre produtos">Informações sobre produtos</option>
+                      <option value="Informações sobre produtos">Informações sobre produtos</option>
+                    </select>
+                  </div>
+                  <div class="ui-group wow">
+                    <label>produto</label>
+                    <select name="country" js-selectric>
+                      <option value="Digital Fraud Discovery">Digital Fraud Discovery</option>
+                      <option value="Digital Fraud Discovery">Digital Fraud Discovery</option>
+                    </select>
+                  </div>
+                  <div class="ui-group wow" js-dynamic-label>
+                    <label class="focused-label">mensagem</label>
+                    <label class="placeholder-label">mensagem</label>
+                    <textarea type="text" placeholder="" rows="4" data-min-rows="4"></textarea>
+                  </div>
+                  <div class="ui-group wow">
+                    <div class="ui-checkbox">
+                      <input type="checkbox" name="agree" id="agree">
+                      <label for="agree"> <span>Agendar uma demonstração da plataforma  </span></label>
+                    </div>
+                  </div>
+                  <div class="contacts__form-cta wow">
+                    <button class="btn btn-primary" type="submit"><span>enviar</span></button>
+                  </div>
+                </form>
+              </div>
+              <div class="contacts__map wow" data-animation-class="wowFadeRight">
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9JAi68gF-tibx7N11TMlIkLitQ7gQv4A"></script>
+                <iframe src="https://api.mapbox.com/styles/v1/mapbox/light-v9.html?title=true&amp;access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA#2.07/26.88/-94.95"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FOOTER :: START-->
+        <footer class="footer">
+          <div class="container">
+            <div class="footer__logo wow"><img src="img/svg/logo.svg"></div>
+            <div class="footer__wrapper">
+              <div class="footer__navi">
+                <!-- col-->
+                <div class="footer__navi-col wow" data-animation-delay=".1s">
+                  <h4 js-footer-mobile-toggler>Axur</h4>
+                  <ul class="footer__menu">
+                    <li><a href="#">Sobre nós</a></li>
+                    <li><a href="#">Seja um parceiro</a></li>
+                    <li><a href="#">Vagas</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Perguntas frequentes</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Fale conosco</a></li>
+                  </ul>
+                </div>
+                <!-- col-->
+                <div class="footer__navi-col wow" data-animation-delay=".2s">
+                  <h4 js-footer-mobile-toggler>Soluções Axur One</h4>
+                  <ul class="footer__menu">
+                    <li><a href="#">Digital Brand Compliance</a></li>
+                    <li><a href="#">Digital Fraud Discovery</a></li>
+                    <li><a href="#">Sales Abuse Discovery</a></li>
+                    <li><a href="#">Partner Compliance</a></li>
+                    <li><a href="#">Information Leakage Discovery</a></li>
+                    <li><a href="#">Threat Intelligence Discovery</a></li>
+                  </ul>
+                </div>
+                <!-- col-->
+                <div class="footer__navi-col wow" data-animation-delay=".3s">
+                  <h4 js-footer-mobile-toggler>Credential Protection</h4>
+                  <ul class="footer__menu">
+                    <li><a href="#">Hashcast™ Proteção de senha</a></li>
+                    <li><a href="#">Leakstream</a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- contacts-->
+              <div class="footer__contacts wow" data-animation-delay=".4s">
+                <h4 class="mobile-only" js-footer-mobile-toggler>Addresses</h4>
+                <p>
+                  <strong>Latin America</strong><br/> Av. Paulista, 1374 - 11º Andar <br/> 
+                  São Paulo
+                </p>
+                <p>
+                  <strong>Latin America</strong> <br/> Mostardeiro, 322 - CJ 6 <br/> 
+                  Porto Alegre
+                </p>
+                <p>
+                  <strong>US</strong> <br/> 535 Mission St. <br/> 
+                  San Francisco, CA 94105
+                </p>
+              </div>
+            </div>
+            <div class="footer__bottom wow" data-animation-class="wowFadeLeft">
+              <div class="footer__copy">© Axur. Digital Risk Protection. 2018 Todos os direitos reservados.</div>
+              <div class="footer__socials"><a class="footer__social-google-plus" href="#" target="_blank">
+                  <svg class="ico ico-social-googleplus">
+                    <use xlink:href="img/sprite.svg#ico-social-googleplus"></use>
+                  </svg></a><a class="footer__social-facebook" href="#" target="_blank">
+                  <svg class="ico ico-social-facebook">
+                    <use xlink:href="img/sprite.svg#ico-social-facebook"></use>
+                  </svg></a><a class="footer__social-twitter" href="#" target="_blank">
+                  <svg class="ico ico-social-twitter">
+                    <use xlink:href="img/sprite.svg#ico-social-twitter"></use>
+                  </svg></a></div>
+            </div>
+          </div>
+        </footer>
+        <!-- FOOTER :: END-->
+      </div>
+      <script src="js/vendor.js"></script>
+      <script src="js/app.js"></script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- MADE WITH LOVE BY <> KHMELEVSKOY & ASSOCIATES </> www.khmelevskoy.co-->
+    <meta charset="utf-8">
+    <title>Partner compilance :: AXUR</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <meta name="format-detection" content="telephone=no">
+    <!-- remove for production-->
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" media="all" href="css/app.css"><!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <!-- place where pjax bindings happen's-->
+    <div id="barba-wrapper">
+      <!-- HEADER :: START-->
+      <header class="header">
+        <div class="container">
+          <div class="header__wrapper wow" data-animation-class="wowFadeDown"><a class="header__logo" href="homepage.html"><img src="img/svg/logo.svg">
+              <!-- used for mobile nav-->
+              <div class="header__cta header__cta--mobile"><span class="btn btn-outline" data-href="#"><span>acesse sua conta</span></span></div></a>
+            <ul class="header__menu">
+              <li><a js-toggle-menu data-target-menu="solutions" href="#">Soluções</a></li>
+              <li><a href="solicitar.html">Peça uma demonstração</a></li>
+            </ul>
+            <ul class="header__lang" js-teleport data-teleport-to="header-lang" data-teleport-condition="&lt;992">
+              <li data-lang="en"><a href="#">EN</a></li>
+              <li data-lang="es"><a href="#">ES</a></li>
+              <li class="is-active" data-lang="pt"><a href="#">PT</a></li>
+            </ul>
+            <div class="header__cta"><a class="btn btn-outline" href="#"><span>acesse sua conta</span></a></div>
+            <div class="header__hamburger">
+              <div class="hamburger hamburger--squeeze" js-toggle-menu data-target-menu="solutions">
+                <div class="hamburger-box">
+                  <div class="hamburger-inner"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- HEADER :: END-->
+      <!-- MENU-->
+      <div class="menu" data-menu="solutions">
+        <div class="menu__wrapper">
+          <div class="menu__close" js-close-menu>
+            <svg class="ico ico-close">
+              <use xlink:href="img/sprite.svg#ico-close"></use>
+            </svg>
+          </div>
+          <div class="menu__nav" js-layout-padding data-type="container-left" data-stop="&lt;860">
+            <div class="menu__nav-triangle-fix" js-triangle-fix></div><a class="menu__link-mobile" href="#">Soluções Axur One</a>
+            <ul class="menu__nav-list">
+              <li><a href="digital-fraud.html"><span>Digital Fraud Discovery</span>
+                  <p class="t-p3">Identifique e remova ataques de phishing e malware</p></a></li>
+              <li><a href="sales-abuse.html"><span>Sales Abuse Discovery</span>
+                  <p class="t-p3">Previna pirataria ou vendas não autorizadas em canais digitais</p></a></li>
+              <li><a href="data-leak.html"><span>Data Leakage Discovery</span>
+                  <p class="t-p3">Monitore possíveis vazamentos de dados para agir rápido</p></a></li>
+              <li><a href="digital-compilance.html"><span>Digital Marketing Compliance</span>
+                  <p class="t-p3">Certifique-se de que ninguém está usando sua marca sem autorização</p></a></li>
+              <li><a href="partner-compilance.html"><span>Partner Compliance</span>
+                  <p class="t-p3">identifique parceiros usando sua marca indevidamente</p></a></li>
+              <li><a href="threat-discovery.html"><span>Threat Intelligence</span>
+                  <p class="t-p3">Escaneie a deep web atrás de ataques, golpes e ameaças</p></a></li>
+            </ul>
+          </div>
+          <div class="menu__sidebar">
+            <div class="menu__sidebar-wrapper" js-layout-padding data-type="container-right" data-stop="&lt;860">
+              <p class="t-p1">Credential Protection</p>
+              <div class="menu__sidebar-links"><a class="link-p3" href="#">Hashcast™ Proteção de senha</a><a class="link-p3" href="#">Leakstream</a></div><a class="menu__link-mobile" href="solicitar.html">Peça uma demonstração</a>
+              <ul class="menu__lang header__lang" data-teleport-target="header-lang"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- what should be changed with every pjax-->
+      <div class="page">
+        <div class="page__content">
+          <!-- HERO-->
+          <div class="hero hero--no-bg">
+            <div class="hero__wrapper">
+              <div class="hero__content" js-layout-padding data-type="container-left" data-stop="&lt;992">
+                <div class="hero__content-wrapper wow">
+                  <h1 class="hero__title">Partner <br>Compliance</h1>
+                  <p class="t-p1">Garanta que parceiros, revendedores e associados cumpram com as <strong>regras de uso da sua marca</strong>. Além, é claro, de ficar atento a quem diz ter ligação com sua empresa, mas não tem autorização para isso.</p>
+                  <div js-teleport data-teleport-to="hero-actionable" data-teleport-condition="&lt;992">
+                    <!-- signup form-->
+                    <form class="signup-form hero__form" action="#" js-validate-signup>
+                      <div class="ui-input ui-input--iconed">
+                        <input type="text" name="email" placeholder="Seu e-mail corporativo…">
+                        <svg class="ico ico-mail">
+                          <use xlink:href="img/sprite.svg#ico-mail"></use>
+                        </svg>
+                      </div>
+                      <button class="btn btn-primary" type="submit"> <span>conheça a plataforma</span></button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="hero__image hero__image--for6 wow" data-animation-class="wowFadeRight">
+                <div id="include-anim-6"></div>
+              </div>
+              <div class="hero__actionable" data-teleport-target="hero-actionable"></div>
+            </div>
+          </div>
+          <!-- FUNCTIONS-->
+          <div class="functions">
+            <div class="functions__wrapper">
+              <div class="functions__content" js-layout-padding data-type="container-left" data-stop="&lt;992">
+                <h2 class="wow">Como funciona nosso monitoramento</h2>
+                <div class="functions__list">
+                  <ul class="list-num">
+                    <li class="wow">
+                      <h4>Defina o que é importante</h4>
+                      <p class="t-p2">A partir da sua estratégia, selecione quais riscos mais ameaçam sua presença digital. Assim, nossa tecnologia se concentra no que é mais relevante para sua marca e identifica riscos mais rápido.</p>
+                    </li>
+                    <li class="wow">
+                      <h4>Monitore todos os canais digitais</h4>
+                      <p class="t-p2">Com as prioridades definidas, usamos Inteligência Artificial para monitorar todos os canais em busca de ameaças. Seja em sites, aplicativos, redes sociais, e-mails, canais de vendas e até na deep web, não deixamos nada escapar.</p>
+                    </li>
+                    <li class="wow">
+                      <h4>Remova os riscos para sua marca</h4>
+                      <p class="t-p2">Com as ameaças identificadas, trabalhamos para remover todo conteúdo que esteja indevidamente associado a ela. Para isso, você escolhe entre o Takedown Assistido ou o OneShot, nossa ferramenta de takedown automático.</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- image on the right      -->
+              <div class="functions__image wow" data-animation-delay=".3s"><img src="img/functionsImage.png" srcset="img/functionsImage@2x.png 2x"/>
+              </div>
+            </div>
+          </div>
+          <!-- SERVICE NUMBERS-->
+          <div class="service-num">
+            <div class="container container--narrow">
+              <div class="service-num__wrapper">
+                <div class="service-num__col">
+                  <div class="service-num__el wow" data-animation-delay=".1s">
+                    <div class="service-num__title">36 <span>horas</span></div>
+                    <p class="t-p2">da detecção até a correção da ameaça, em média</p>
+                  </div>
+                </div>
+                <div class="service-num__col">
+                  <div class="service-num__el wow" data-animation-delay=".2s">
+                    <div class="service-num__title">99,17 <span>%</span></div>
+                    <p class="t-p2">das ameaças removidas com sucesso</p>
+                  </div>
+                </div>
+                <div class="service-num__col">
+                  <div class="service-num__el wow" data-animation-delay=".3s">
+                    <div class="service-num__title">88 <span>%</span></div>
+                    <p class="t-p2">dos casos resolvidos <br>em até 2 notificações</p>
+                  </div>
+                </div>
+              </div>
+              <div class="service-num__bg-image wow" data-animation-class="wowFadeRight"><img src="img/svg/serviceNumbersBg-oval.svg"></div>
+            </div>
+          </div>
+          <!-- Featured product      -->
+          <div class="f-product f-product--more-pad">
+            <!-- featured product benefits-->
+            <div class="f-products-benefits">
+              <div class="f-products-benefits__bg"><img src="img/svg/featureProductBg-triangle.svg"></div>
+              <div class="container">
+                <div class="f-products-benefits__wrapper">
+                  <div class="f-products-benefits__left f-products-benefits__left--centered wow">
+                    <h2>Sua parceria, suas regras</h2>
+                  </div>
+                  <div class="f-products-benefits__right">
+                    <div class="f-products-benefits__list">
+                      <div class="f-products-benefits__col wow">
+                        <h4> <span>Garanta a qualidade das relações</span></h4>
+                        <p class="t-p2">Mantenha toda sua rede de parceiros atuando sob as mesmas regras. Isso ajuda a criar um padrão de atendimento que deixa seus clientes mais satisfeitos.</p>
+                      </div>
+                      <div class="f-products-benefits__col wow">
+                        <h4> <span>Valorize quem está com você</span></h4>
+                        <p class="t-p2">Não permitir o uso indevido da sua marca também é uma forma de mostrar o quanto seus parceiros são importantes para seu negócio.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- USE CASES-->
+          <div class="use-cases">
+            <div class="use-cases__img use-cases__img--mobile wow" data-teleport-target="use-cases-img"></div>
+            <div class="container container--narrow">
+              <h2 class="wow">O Partner Compliance protege sua marca contra:</h2>
+              <div class="use-cases__slider" js-usecases-slider>
+                <div class="use-cases__wrapper">
+                  <!-- col-->
+                  <div class="use-cases__col">
+                    <div class="use-case wow" data-animation-delay=".1s">
+                      <h3>Infração de compliance</h3>
+                      <p class="t-p2">Regras de compliance existem para que todos que falam em nome da sua marca o façam da mesma forma. Isso passa para o usuário a segurança de que se trata de uma parceria oficial. O descumprimento dessas regras coloca em risco a relação com seus clientes.</p>
+                      <div class="label label--blue">saiba mais</div><a class="link-p2" href="#">Perfis falsos no Instagram? Evite páginas fake</a>
+                    </div>
+                  </div>
+                  <!-- col-->
+                  <div class="use-cases__col">
+                    <div class="use-case wow" data-animation-delay=".2s">
+                      <h3>Parceiros não autorizados</h3>
+                      <p class="t-p2">Quando uma empresa diz ter uma parceria ou outro tipo de relação com sua marca, mas na verdade não tem. Essa prática retira os usuários do fluxo de compra correto, afetando suas taxas de conversão.</p>
+                    </div>
+                  </div>
+                  <!-- col-->
+                  <div class="use-cases__col">
+                    <div class="use-case wow" data-animation-delay=".3s">
+                      <h3>Apropriação de identidade</h3>
+                      <p class="t-p2">Parceiros (autorizados ou não) que assumem sua identidade e se fazem passar pela sua marca confundem o usuário. Nesses casos, seus clientes não conseguem diferenciar o site de um parceiro do site oficial, gerando mal-entendidos.</p>
+                    </div>
+                  </div>
+                  <!-- col-->
+                  <div class="use-cases__col">
+                    <div class="use-case wow" data-animation-delay=".1s">
+                      <h3>E-mails de parceiros não autorizados</h3>
+                      <p class="t-p2">É muito fácil para parceiros não autorizados assumirem a identidade da sua marca na hora de enviar e-mails. Essa prática afeta a confiança dos usuários nos e-mails que você envia, prejudicando sua relação com clientes.</p>
+                    </div>
+                  </div>
+                  <!-- image-->
+                  <div class="use-cases__img wow" data-animation-class="wowFadeRight" js-teleport data-teleport-condition="&lt;992" data-teleport-to="use-cases-img"><img src="img/svg/useCases-img.svg"></div>
+                </div>
+                <div class="swiper-nav swiper-nav--orange">
+                  <!-- handled by swiper API-->
+                  <div class="swiper-nav__fraction"></div>
+                  <!-- custom swiper API-->
+                  <div class="swiper-nav__progress">
+                    <div class="swiper-nav__progress-fill" js-set-usecases-progress></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- PLANS-->
+          <div class="plans" js-plans-container>
+            <div class="container">
+              <div class="plans__head wow">
+                <div class="t-label c-orange">partner compliance</div>
+                <h2>Estimate your cost</h2>
+                <!-- is-active is for the label state-->
+                <div class="plans__switch">
+                  <div class="plans__switch-select" js-select-plan data-allowed="monthly;yearly">
+                    <input type="hidden" name="selected-plan" value="yearly">
+                    <label>Cobrança mensal</label>
+                    <div class="plans__switch-toggle move-right"></div>
+                    <label class="is-active">Cobrança anual
+                      <div class="label label--green">15% de desconto</div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- slider-->
+            <div class="plans__slider">
+              <div class="plans__slider-bg"><img src="img/plansBg.png" srcset="img/plansBg@2x.png 2x"/>
+              </div>
+              <div class="plans__slider-container container" js-plans-slider>
+                <div class="swiper-wrapper">
+                  <!-- col-->
+                  <div class="plans__col wow">
+                    <div class="plan-card">
+                      <h3>Startup</h3>
+                      <ul class="list-mark">
+                        <li>Domínios Similares</li>
+                        <li>Perfis falsos em redes sociais</li>
+                      </ul>
+                      <div class="plan-card__price">
+                        <div class="plan-card__price-num"><span data-per-month="R$1.149" data-per-year="R$999">R$999</span><span>/mês</span></div><span>ATÉ 5 USUÁRIOS</span>
+                      </div>
+                      <div class="plan-card__cta"><a class="btn btn-primary btn--block" href="#"><span>veja em ação</span></a></div>
+                    </div>
+                  </div>
+                  <!-- col-->
+                  <div class="plans__col wow">
+                    <div class="plan-card plan-card--popular">
+                      <h3>Professional</h3>
+                      <div class="t-label c-orange">most popular</div>
+                      <ul class="list-mark">
+                        <li>Domínios Similares</li>
+                        <li>Perfis falsos em redes sociais</li>
+                        <li>Aplicativos fraudulentos</li>
+                      </ul>
+                      <div class="plan-card__price">
+                        <div class="plan-card__price-num"><span data-per-month="R$2.299" data-per-year="R$1.999">R$1.999</span><span>/mês</span></div><span>ATÉ 5 USUÁRIOS</span>
+                      </div>
+                      <div class="plan-card__cta"><a class="btn btn-primary btn--block" href="#"><span>veja em ação</span></a></div>
+                    </div>
+                  </div>
+                  <!-- col-->
+                  <div class="plans__col wow"> 
+                    <div class="plan-card">
+                      <h3>Corporate</h3>
+                      <ul class="list-mark">
+                        <li>Domínios Similares</li>
+                        <li>Perfis falsos em redes sociais</li>
+                        <li>Aplicativos fraudulentos</li>
+                        <li>Uso abusivo de marca</li>
+                      </ul>
+                      <div class="plan-card__price">
+                        <div class="plan-card__price-num"><span data-per-month="R$3.449" data-per-year="R$2.999">R$2.999</span><span>/mês</span></div><span>usuários ilimitados</span>
+                      </div>
+                      <div class="plan-card__cta"><a class="btn btn-primary btn--block" href="#"><span>veja em ação</span></a></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-nav swiper-nav--orange">
+                  <!-- handled by swiper API-->
+                  <div class="swiper-nav__fraction"></div>
+                  <!-- custom swiper API-->
+                  <div class="swiper-nav__progress">
+                    <div class="swiper-nav__progress-fill" js-set-plans-progress></div>
+                  </div>
+                </div>
+              </div>
+              <div class="plans__slider-info wow"><a class="link-p2" href="#">Fale com um de nossos consultores    </a></div>
+            </div>
+          </div>
+          <!-- CTA-->
+          <div class="cta cta--product wow">
+            <div class="container">
+              <div class="cta__wrapper">
+                <h3>Escolha uma internet mais segura para sua marca e seus clientes</h3>
+                <!-- signup form-->
+                <form class="signup-form cta__form" action="#" js-validate-signup>
+                  <div class="ui-input ui-input--iconed">
+                    <input type="text" name="email" placeholder="Seu e-mail corporativo…">
+                    <svg class="ico ico-mail">
+                      <use xlink:href="img/sprite.svg#ico-mail"></use>
+                    </svg>
+                  </div>
+                  <button class="btn btn-primary" type="submit"> <span>conheça a plataforma</span></button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- FAQ-->
+          <div class="faq">
+            <div class="container container--770">
+              <!-- section heading-->
+              <div class="section-heading section-heading--centered wow">
+                <h2>Perguntas frequentes</h2>
+                <p class="t-p2">Ainda ficou com alguma dúvida?Veja as respostas que preparamos para ajudar você.</p>
+              </div>
+              <div class="faq__wrapper">
+                <!-- panel-->
+                <div class="panel is-active wow">
+                  <div class="panel__heading" js-faq-toggler>
+                    <div class="panel__name">
+                      <h3>How does Axur keep my data secure?<span class="label label--popular">Popular</span></h3>
+                    </div>
+                  </div>
+                  <div class="panel__content">
+                    <p class="t-p2">Axur publishes and strictly adheres to a <a href="#">privacy policy</a> aimed at protecting all parties that interact with our service. Our Privacy Policy explicitly details the information we may collect about you, and how we will use that information.</p>
+                    <p class="t-p2">Furthermore, Axur strictly adheres to a data minimization policy by which logs are automatically deleted after 14 days (see Recorded Future’s privacy policy for more information).</p>
+                  </div>
+                </div>
+                <!-- panel-->
+                <div class="panel wow">
+                  <div class="panel__heading" js-faq-toggler>
+                    <div class="panel__name">
+                      <h3>Does Axure encrypt customer data?<span class="label label--popular">Popular</span></h3>
+                    </div>
+                  </div>
+                  <div class="panel__content">
+                    <p class="t-p2">Axur publishes and strictly adheres to a <a href="#">privacy policy</a> aimed at protecting all parties that interact with our service. Our Privacy Policy explicitly details the information we may collect about you, and how we will use that information.</p>
+                  </div>
+                </div>
+                <!-- panel-->
+                <div class="panel wow">
+                  <div class="panel__heading" js-faq-toggler>
+                    <div class="panel__name">
+                      <h3>What customer information does Axur store?</h3>
+                    </div>
+                  </div>
+                  <div class="panel__content">
+                    <p class="t-p2">Axur publishes and strictly adheres to a <a href="#">privacy policy</a> aimed at protecting all parties that interact with our service. Our Privacy Policy explicitly details the information we may collect about you, and how we will use that information.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="faq__info wow">
+                <p class="t-p2">Sua pergunta não está aqui? <a href="#">Acesse nosso FAQ completo</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FOOTER :: START-->
+        <footer class="footer">
+          <div class="container">
+            <div class="footer__logo wow"><img src="img/svg/logo.svg"></div>
+            <div class="footer__wrapper">
+              <div class="footer__navi">
+                <!-- col-->
+                <div class="footer__navi-col wow" data-animation-delay=".1s">
+                  <h4 js-footer-mobile-toggler>Axur</h4>
+                  <ul class="footer__menu">
+                    <li><a href="#">Sobre nós</a></li>
+                    <li><a href="#">Seja um parceiro</a></li>
+                    <li><a href="#">Vagas</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Perguntas frequentes</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Fale conosco</a></li>
+                  </ul>
+                </div>
+                <!-- col-->
+                <div class="footer__navi-col wow" data-animation-delay=".2s">
+                  <h4 js-footer-mobile-toggler>Soluções Axur One</h4>
+                  <ul class="footer__menu">
+                    <li><a href="#">Digital Brand Compliance</a></li>
+                    <li><a href="#">Digital Fraud Discovery</a></li>
+                    <li><a href="#">Sales Abuse Discovery</a></li>
+                    <li><a href="#">Partner Compliance</a></li>
+                    <li><a href="#">Information Leakage Discovery</a></li>
+                    <li><a href="#">Threat Intelligence Discovery</a></li>
+                  </ul>
+                </div>
+                <!-- col-->
+                <div class="footer__navi-col wow" data-animation-delay=".3s">
+                  <h4 js-footer-mobile-toggler>Credential Protection</h4>
+                  <ul class="footer__menu">
+                    <li><a href="#">Hashcast™ Proteção de senha</a></li>
+                    <li><a href="#">Leakstream</a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- contacts-->
+              <div class="footer__contacts wow" data-animation-delay=".4s">
+                <h4 class="mobile-only" js-footer-mobile-toggler>Addresses</h4>
+                <p>
+                  <strong>Latin America</strong><br/> Av. Paulista, 1374 - 11º Andar <br/> 
+                  São Paulo
+                </p>
+                <p>
+                  <strong>Latin America</strong> <br/> Mostardeiro, 322 - CJ 6 <br/> 
+                  Porto Alegre
+                </p>
+                <p>
+                  <strong>US</strong> <br/> 535 Mission St. <br/> 
+                  San Francisco, CA 94105
+                </p>
+              </div>
+            </div>
+            <div class="footer__bottom wow" data-animation-class="wowFadeLeft">
+              <div class="footer__copy">© Axur. Digital Risk Protection. 2018 Todos os direitos reservados.</div>
+              <div class="footer__socials"><a class="footer__social-google-plus" href="#" target="_blank">
+                  <svg class="ico ico-social-googleplus">
+                    <use xlink:href="img/sprite.svg#ico-social-googleplus"></use>
+                  </svg></a><a class="footer__social-facebook" href="#" target="_blank">
+                  <svg class="ico ico-social-facebook">
+                    <use xlink:href="img/sprite.svg#ico-social-facebook"></use>
+                  </svg></a><a class="footer__social-twitter" href="#" target="_blank">
+                  <svg class="ico ico-social-twitter">
+                    <use xlink:href="img/sprite.svg#ico-social-twitter"></use>
+                  </svg></a></div>
+            </div>
+          </div>
+        </footer>
+        <!-- FOOTER :: END-->
+      </div>
+      <script src="js/vendor.js"></script>
+      <script src="js/app.js"></script>
+    </div>
+  </body>
+</html>

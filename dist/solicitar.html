@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- MADE WITH LOVE BY <> KHMELEVSKOY & ASSOCIATES </> www.khmelevskoy.co-->
+    <meta charset="utf-8">
+    <title>Solicitar :: AXUR</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <meta name="format-detection" content="telephone=no">
+    <!-- remove for production-->
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" media="all" href="css/app.css"><!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <!-- place where pjax bindings happen's-->
+    <div id="barba-wrapper">
+      <!-- HEADER :: START-->
+      <header class="header">
+        <div class="container">
+          <div class="header__wrapper wow" data-animation-class="wowFadeDown"><a class="header__logo" href="homepage.html"><img src="img/svg/logo.svg">
+              <!-- used for mobile nav-->
+              <div class="header__cta header__cta--mobile"><span class="btn btn-outline" data-href="#"><span>acesse sua conta</span></span></div></a>
+            <ul class="header__menu">
+              <li><a js-toggle-menu data-target-menu="solutions" href="#">Soluções</a></li>
+              <li><a href="solicitar.html">Peça uma demonstração</a></li>
+            </ul>
+            <ul class="header__lang" js-teleport data-teleport-to="header-lang" data-teleport-condition="&lt;992">
+              <li data-lang="en"><a href="#">EN</a></li>
+              <li data-lang="es"><a href="#">ES</a></li>
+              <li class="is-active" data-lang="pt"><a href="#">PT</a></li>
+            </ul>
+            <div class="header__cta"><a class="btn btn-outline" href="#"><span>acesse sua conta</span></a></div>
+            <div class="header__hamburger">
+              <div class="hamburger hamburger--squeeze" js-toggle-menu data-target-menu="solutions">
+                <div class="hamburger-box">
+                  <div class="hamburger-inner"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- HEADER :: END-->
+      <!-- MENU-->
+      <div class="menu" data-menu="solutions">
+        <div class="menu__wrapper">
+          <div class="menu__close" js-close-menu>
+            <svg class="ico ico-close">
+              <use xlink:href="img/sprite.svg#ico-close"></use>
+            </svg>
+          </div>
+          <div class="menu__nav" js-layout-padding data-type="container-left" data-stop="&lt;860">
+            <div class="menu__nav-triangle-fix" js-triangle-fix></div><a class="menu__link-mobile" href="#">Soluções Axur One</a>
+            <ul class="menu__nav-list">
+              <li><a href="digital-fraud.html"><span>Digital Fraud Discovery</span>
+                  <p class="t-p3">Identifique e remova ataques de phishing e malware</p></a></li>
+              <li><a href="sales-abuse.html"><span>Sales Abuse Discovery</span>
+                  <p class="t-p3">Previna pirataria ou vendas não autorizadas em canais digitais</p></a></li>
+              <li><a href="data-leak.html"><span>Data Leakage Discovery</span>
+                  <p class="t-p3">Monitore possíveis vazamentos de dados para agir rápido</p></a></li>
+              <li><a href="digital-compilance.html"><span>Digital Marketing Compliance</span>
+                  <p class="t-p3">Certifique-se de que ninguém está usando sua marca sem autorização</p></a></li>
+              <li><a href="partner-compilance.html"><span>Partner Compliance</span>
+                  <p class="t-p3">identifique parceiros usando sua marca indevidamente</p></a></li>
+              <li><a href="threat-discovery.html"><span>Threat Intelligence</span>
+                  <p class="t-p3">Escaneie a deep web atrás de ataques, golpes e ameaças</p></a></li>
+            </ul>
+          </div>
+          <div class="menu__sidebar">
+            <div class="menu__sidebar-wrapper" js-layout-padding data-type="container-right" data-stop="&lt;860">
+              <p class="t-p1">Credential Protection</p>
+              <div class="menu__sidebar-links"><a class="link-p3" href="#">Hashcast™ Proteção de senha</a><a class="link-p3" href="#">Leakstream</a></div><a class="menu__link-mobile" href="solicitar.html">Peça uma demonstração</a>
+              <ul class="menu__lang header__lang" data-teleport-target="header-lang"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- what should be changed with every pjax-->
+      <div class="page">
+        <div class="page__content">
+          <!-- APPLY-->
+          <div class="apply">
+            <div class="apply__wrapper">
+              <div class="apply__content" js-layout-padding data-type="container-left" data-stop="&lt;992">
+                <h1 class="wow">Veja o que podemos fazer pela sua marca</h1>
+                <p class="t-p1 wow">Preencha seus dados para nossos consultores agendarem uma demonstração completa da nossa plataforma.</p>
+                <form class="apply__form" action="#" js-validate-apply-form>
+                  <div class="ui-group wow" js-dynamic-label>
+                    <label class="focused-label">E-mail de contato</label>
+                    <label class="placeholder-label">E-mail de contato</label>
+                    <input type="text" name="email" placeholder="">
+                  </div>
+                  <div class="ui-group wow" js-dynamic-label>
+                    <label class="focused-label">Nome completo</label>
+                    <label class="placeholder-label">Nome completo</label>
+                    <input type="text" name="name" placeholder="">
+                  </div>
+                  <div class="ui-group wow" js-dynamic-label>
+                    <label class="focused-label">Empresa</label>
+                    <label class="placeholder-label">Empresa</label>
+                    <input type="text" name="empresa" placeholder="">
+                  </div>
+                  <div class="ui-group ui-group--short wow">
+                    <label>país</label>
+                    <select name="country" js-selectric placeholder="Select country">
+                      <option value="Brazil">Brazil</option>
+                      <option value="Brazil">Brazil</option>
+                      <option value="Brazil">Brazil</option>
+                      <option value="Brazil">Brazil</option>
+                      <option value="Brazil">Brazil</option>
+                      <option value="Brazil">Brazil</option>
+                      <option value="Brazil">Brazil</option>
+                    </select>
+                  </div>
+                  <div class="ui-group ui-group--short wow">
+                    <label>telefone</label>
+                    <input type="tel" name="phone" js-mask-phone placeholder="+55">
+                  </div>
+                  <div class="apply__form-cta wow">
+                    <button class="btn btn-primary" type="submit"><span>peça sua demonstração</span></button>
+                  </div>
+                </form>
+              </div>
+              <div class="apply__image wow"><img src="img/functionsImage.png" srcset="img/functionsImage@2x.png 2x"/>
+              </div>
+            </div>
+          </div>
+          <!-- APPLY INFO-->
+          <div class="apply-info">
+            <div class="container container--narrow">
+              <div class="apply-info__wrapper">
+                <div class="apply-info__col wow">
+                  <h3>Em poucos minutos, você vai conhecer tudo sobre nossa plataforma</h3>
+                  <ul class="list-mark list-mark--boxed list-mark--no-heading">
+                    <li>Inteligência Artificial e Machine Learning a serviço da segurança da sua marca.</li>
+                    <li>Identificação e remoção de ameaças, como phishing, malware, proxy scams e outras.</li>
+                    <li>Acompanhamento das práticas de parceiros e representantes na internet.</li>
+                    <li>Monitoramento constante de ações de criminosos na deep web.</li>
+                    <li>Takedown automático ou assistido para remover os riscos com mais velocidade.</li>
+                  </ul>
+                </div>
+                <div class="apply-info__col wow" data-animation-delay=".1s">
+                  <h3>Ajudamos centenas de empresas ao redor do mundo</h3>
+                  <div class="testimonials-card">
+                    <div class="testimonials-card__quotemark">
+                      <svg class="ico ico-quotemark">
+                        <use xlink:href="img/sprite.svg#ico-quotemark"></use>
+                      </svg>
+                    </div>
+                    <div class="testimonials-card__content">
+                      <p class="t-p2">A Axur possui profissinais de elevado conhecimento que estão comprometidos e engajados com os últimos assuntos relacionados à segurança e estabilidade de DNS em nível global.</p>
+                      <div class="testimonials-card__author"><span>Daniel Fink</span>, Engagement Sr Manager</div><a class="testimonials-card__link" href="#" target="_blank">www.icann.org</a>
+                      <div class="testimonials-card__logo"><img src="img/logo-icann.png" srcset="img/logo-icann@2x.png 2x"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="holder">             
+              <div class="testimonials__logos-grid">
+                <div class="testimonials__logo wow" data-animation-delay=".1s"><img src="img/logo-marisa.png" srcset="img/logo-marisa@2x.png 2x"/>
+                </div>
+                <div class="testimonials__logo wow" data-animation-delay=".15s"><img src="img/logo-mercado.png" srcset="img/logo-mercado@2x.png 2x"/>
+                </div>
+                <div class="testimonials__logo wow" data-animation-delay=".2s"><img src="img/logo-foxbit.png" srcset="img/logo-foxbit@2x.png 2x"/>
+                </div>
+                <div class="testimonials__logo wow" data-animation-delay=".25s"><img src="img/logo-sorocred.png" srcset="img/logo-sorocred@2x.png 2x"/>
+                </div>
+                <div class="testimonials__logo wow" data-animation-delay=".3s"><img src="img/logo-rico.png" srcset="img/logo-rico@2x.png 2x"/>
+                </div>
+                <div class="testimonials__logo wow" data-animation-delay=".35s"><img src="img/logo-ferratum.png" srcset="img/logo-ferratum@2x.png 2x"/>
+                </div>
+                <div class="testimonials__logo wow" data-animation-delay=".4s"><img src="img/logo-spc.png" srcset="img/logo-spc@2x.png 2x"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FOOTER :: START-->
+        <footer class="footer">
+          <div class="container">
+            <div class="footer__logo wow"><img src="img/svg/logo.svg"></div>
+            <div class="footer__wrapper">
+              <div class="footer__navi">
+                <!-- col-->
+                <div class="footer__navi-col wow" data-animation-delay=".1s">
+                  <h4 js-footer-mobile-toggler>Axur</h4>
+                  <ul class="footer__menu">
+                    <li><a href="#">Sobre nós</a></li>
+                    <li><a href="#">Seja um parceiro</a></li>
+                    <li><a href="#">Vagas</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Perguntas frequentes</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Fale conosco</a></li>
+                  </ul>
+                </div>
+                <!-- col-->
+                <div class="footer__navi-col wow" data-animation-delay=".2s">
+                  <h4 js-footer-mobile-toggler>Soluções Axur One</h4>
+                  <ul class="footer__menu">
+                    <li><a href="#">Digital Brand Compliance</a></li>
+                    <li><a href="#">Digital Fraud Discovery</a></li>
+                    <li><a href="#">Sales Abuse Discovery</a></li>
+                    <li><a href="#">Partner Compliance</a></li>
+                    <li><a href="#">Information Leakage Discovery</a></li>
+                    <li><a href="#">Threat Intelligence Discovery</a></li>
+                  </ul>
+                </div>
+                <!-- col-->
+                <div class="footer__navi-col wow" data-animation-delay=".3s">
+                  <h4 js-footer-mobile-toggler>Credential Protection</h4>
+                  <ul class="footer__menu">
+                    <li><a href="#">Hashcast™ Proteção de senha</a></li>
+                    <li><a href="#">Leakstream</a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- contacts-->
+              <div class="footer__contacts wow" data-animation-delay=".4s">
+                <h4 class="mobile-only" js-footer-mobile-toggler>Addresses</h4>
+                <p>
+                  <strong>Latin America</strong><br/> Av. Paulista, 1374 - 11º Andar <br/> 
+                  São Paulo
+                </p>
+                <p>
+                  <strong>Latin America</strong> <br/> Mostardeiro, 322 - CJ 6 <br/> 
+                  Porto Alegre
+                </p>
+                <p>
+                  <strong>US</strong> <br/> 535 Mission St. <br/> 
+                  San Francisco, CA 94105
+                </p>
+              </div>
+            </div>
+            <div class="footer__bottom wow" data-animation-class="wowFadeLeft">
+              <div class="footer__copy">© Axur. Digital Risk Protection. 2018 Todos os direitos reservados.</div>
+              <div class="footer__socials"><a class="footer__social-google-plus" href="#" target="_blank">
+                  <svg class="ico ico-social-googleplus">
+                    <use xlink:href="img/sprite.svg#ico-social-googleplus"></use>
+                  </svg></a><a class="footer__social-facebook" href="#" target="_blank">
+                  <svg class="ico ico-social-facebook">
+                    <use xlink:href="img/sprite.svg#ico-social-facebook"></use>
+                  </svg></a><a class="footer__social-twitter" href="#" target="_blank">
+                  <svg class="ico ico-social-twitter">
+                    <use xlink:href="img/sprite.svg#ico-social-twitter"></use>
+                  </svg></a></div>
+            </div>
+          </div>
+        </footer>
+        <!-- FOOTER :: END-->
+      </div>
+      <script src="js/vendor.js"></script>
+      <script src="js/app.js"></script>
+    </div>
+  </body>
+</html>
